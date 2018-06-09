@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+</head>
+<body>
+    <script>
+        Answer = {
+            
+
+'D0':'E_D0:no OVF BOX \n\n● If CRF has no Overflow Box, CRF shows no OVFBOX . \n\n● Check Overflow Box.',
+'D1':'E_D1:full OVF BOX \n\n● If Overflow Box is full, CRF shows full OVF BOX . \n\n● Check Overflow Box.',
+'D2':'E_D2:NG Entry tank \n\n● If Entry Tank is opened, CRF shows NG Entry tank . \n\n● Check Entry Tank.',
+'D3':'W_D3:See Entry tank \n\n● If something alien is in Entry Tank during the ready, CRF shows See Entry tank . \n\n● Check Entry Tank.',
+'D4':'W_D4:no tray \n\n● If CRF has no Output Tray, CRF shows no tray . \n\n● Check Output Tray.',
+'D5':'W_D5:full tray \n\n● If Output Tray is full, CRF shows full tray . \n\n● Check Output Tray.',
+'DA':'W_DA:coin in tray \n\n● If coins are in Output Tray during the ready, CRF shows coin in tray . \n\n● Check Output Tray.',
+'D6':'E_D6:Payout Belt Jam \n\n● If CRF has a coin jam on Payout Belt, CRF shows Payout Belt Jam . \n\n● Check Payout Belt.',
+'D9':'E_D9:Entry jam \n\n● If CRF has a coin jam between Entry Tank and Sorting Unit, CRF shows Entry Jam . And CRF stops to drive motor. \n\n● Check Entry Tank, Validator, Sorting Unit, Payout Belt, and all Hoppers (8pcs).',
+'DB':'E_DB:Invalid Coin \n\n● If Validator (CRS) detects invalid coin (double coins), CRF shows Invalid coin . And CRF stops to drive motor. \n\n● Check Validator, Sorting Unit, Payout Belt, and all Hoppers (8pcs).',
+'DC':'E_DC:Wiper Error \n\n● CRF counts up the number of coins on Validator:Count A. CRF counts up the number of coins on Sorting Unit: Count B. CRF compares Count A and Count B. If Count B is smaller than Count A, CRF shows Wiper error . And CRF stops to drive motor.\n\n● Check Entry Tank, Validator, Sorting Unit, Payout Belt, and all Hoppers (8pcs).',
+'30':'W_30:Gate error (reject gate) \n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'31':'W_31:Gate error (coin H: 0.01)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'32':'W_32:Gate error (coin G: 0.02)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'33':'W_33:Gate error (coin F: 0.05)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'34':'W_34:Gate error (coin E: 0.10)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'35':'W_35:Gate error (coin D: 0.20)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'36':'W_36:Gate error (coin C: 0.50)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'37':'W_37:Gate error (coin B: 1.00)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'38':'W_38:Gate error (coin A: 2.00)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot open a gate, coins are carried to Overflow Box. CRF shows warning W_3X:Gate error .\n\n● If this warning appears frequently, Check and clean the 9 gates and the 11 sensors. See 6 Pass Sensors and 5 Count Sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'40':'E_40:Gate error (reject gate)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'41':'E_41:Gate error (coin H: 0.01)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'42':'E_42:Gate error (coin G: 0.02)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'43':'E_43:Gate error (coin F: 0.05)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'44':'E_44:Gate error (coin E: 0.10)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'45':'E_45:Gate error (coin D: 0.20)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'46':'E_46:Gate error (coin C: 0.50)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'47':'E_47:Gate error (coin B: 1.00)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'48':'E_48:Gate error (coin A: 2.00)\n\n● Sorting Unit has 9 gates and 11 sensors. CRF counts up the number of coins on the 11 sensors. If CRF cannot close a gate, coins are carried to the different hopper. CRF shows error E_4X:Gate error .\n\n● If this error happens frequently, Check and clean the 9 gates and the 11 sensors.\n\n● Please see to B8 Details window in Operating Manualfor more details.',
+'21':'E_21:Short (coin H: 0.01)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'22':'E_22:Short (coin G: 0.02)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'23':'E_23:Short (coin F: 0.05)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'24':'E_24:Short (coin E: 0.10)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'25':'E_25:Short (coin D: 0.20)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'26':'E_26:Short (coin C: 0.50)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'27':'E_27:Short (coin B: 1.00)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'28':'E_28:Short (coin A: 2.00)\n\n● If CRF has shortage of coins, CRF shows E2X:Short .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8 Details window in Operating Manual formore details.',
+'51':'E_51:Over (coin H:0.01)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'52':'E_52:Over (coin G:0.02)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'53':'E_53:Over (coin F:0.05)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'54':'E_54:Over (coin E:0.10)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'55':'E_55:Over (coin D:0.20)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'56':'E_56:Over (coin C:0.50)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'57':'E_57:Over (coin B:1.00)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'58':'E_58:Over (coin A:2.00)\n\n● If CRF has over payment of coins, CRF shows E5X:Over .\n\n● Check the payout, cash counts, and dispense data.\n\n● Please see to B5 Read Cash Counts in the Methodtab and B8. Details window in Operating Manual formore details.',
+'A1':'E_A1:0.01Payout (coin H:0.01)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A2':'E_A2:0.02Payout (coin G:0.02)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A3':'E_A3:0.05Payout (coin F:0.05)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A4':'E_A4:0.10Payout (coin E:0.10)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A5':'E_A5:0.20Payout (coin D:0.20)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A6':'E_A6:0.50Payout (coin C:0.50)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A7':'E_A7:1.00Payout (coin B:1.00)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'A8':'E_A8:2.00Payout (coin A:2.00)\n\n● If CRF has a payout sensor low error, CRF shows E_AX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B1':'E_B1:0.01Payout (coin H:0.01)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B2':'E_B2:0.02Payout (coin G:0.02)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B3':'E_B3:0.05Payout (coin F:0.05)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B4':'E_B4:0.10Payout (coin E:0.10)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B5':'E_B5:0.20Payout (coin D:0.20)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B6':'E_B6:0.50Payout (coin C:0.50)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B7':'E_B7:1.00Payout (coin B:1.00)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'B8':'E_B8:2.00Payout (coin A:2.00)\n\n● If CRF has a payout sensor high error, CRF shows E_BX:X.XXPayout .\n\n● Check the payout sensor of hopper.\n\n● Check the setting of hopper.',
+'C1':'E_C1:0.01Payout (coin H:0.01)\n\n● If CRF has a payout sensor timeout error, CRF shows E_CX:X.XXPayout .\n\n● Check the payout sensor of hopper.',
+'C2':'E_C2:0.02Payout (coin G:0.02)\n\n● If CRF has a payout sensor timeout error, CRF shows E_CX:X.XXPayout .\n\n● Check the payout sensor of hopper.',
+'C3':'E_C3:0.05Payout (coin F:0.05)\n\n● If CRF has a payout sensor timeout error, CRF shows E_CX:X.XXPayout .\n\n● Check the payout sensor of hopper.',
+'C4':'E_C4:0.10Payout (coin E:0.10)\n\n● Check the setting of hopper.',
+'C5':'E_C5:0.20Payout (coin D:0.20)\n\n● Check the setting of hopper.',
+'C6':'E_C6:0.50Payout (coin C:0.50)\n\n● Check the setting of hopper.',
+'C7':'E_C7:1.00Payout (coin B:1.00)\n\n● Check the setting of hopper.',
+'C8':'E_C8:2.00Payout (coin A:2.00)\n\n● Check the setting of hopper.',
+'90':'E_90:CRS Board error \n\n● If CRS detects a CRS board error, CRF shows E_90:CRS Board error . \n\n● Check Validator.',
+'91':'E_91:CRS Entry Sens \n\n● If CRS detects any coins on Input Tray during start up, CRF shows E_91:CRS Entry Sense . \n\n● Remove the coins and restart CRF.',
+'92':'E_92:CRS Coin Sens \n\n● If CRS detects any coins on the coin sensor in Validator during start up, CRF shows E_92:CRS Coin Sens . \n\n● Remove the coins and restart CRF.',
+'93':'E_93:CRS Opt Sens \n\n● If CRS detects any coins on the optical sensor in Validator during start up, CRF shows E_93:CRS Opt Sens . \n\n● Remove the coins and restart CRF.',
+'94':'E_94: CRS flash ROM \n\n● If CRS detects a flash ROM error, CRF shows E_94:CRS flash ROM . \n\n● Check Validator. Need to write the firmware to Validator.\n\n● Please see to D Upgrade tool and D2 Upgrade sub(CRS) firmware and D4 Boot programming for firmware in Operating Manual for more details.',
+
+
+
+        };
+
+        UserEnter = prompt("請輸入2碼錯誤碼(CRF)!");
+        if (UserEnter == null)
+            alert("請重新選擇!");
+        else if (UserEnter == "")
+            alert("未輸入資料!");
+        else
+            alert(Answer[UserEnter.toUpperCase()]);
+
+//
+    </script>
+    <a href="crf.html">●再查一次</a><br>
+    
+    <a href="../HwErrorCode.html">●回上一層</a><br>
+    
+    <a href="../main.html">●回主選單</a><br>
+    
+    <p style="font-size:50%;">Update at 107/6/7</p>
+    <br>
+</body>
+</html>

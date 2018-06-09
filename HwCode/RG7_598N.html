@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+</head>
+<body>
+
+
+    <script>
+    GCode={
+'29':'\n●Communication error in PIN Pad \n●1. USB communication error.  2. Contact the maintenance staff.',
+'50':'\n●System error in PIN Pad \n●1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.',
+
+    };
+
+    DCode={
+'290902':'\n●I/F error',
+    };
+	
+	HCode={
+'01':'\n●Encrypt Block error',
+'02':'\n●Encrypt Block error',
+'03':'\n●Mac Calculate error',
+'04':'\n●Random Data Get error',
+'06':'\n●Line PORT Open error',
+'09':'\n●MasterKey Registration error',
+'0A':'\n●WorkKey Registration error',
+'0E':'\n●BRM I/F error',
+'0F':'\n●Key Input Start error',
+'10':'\n●Key (or PIN) Input End error',
+'11':'\n●Pin Input Start error',
+'12':'\n●Pin Input Cancel error',
+'13':'\n●Pin Block Get error',
+'14':'\n●Version Information Read error',
+'18':'\n●Initialize error',
+'19':'\n●I/F Recovery error',
+'1A':'\n●RSA Encryption error',
+'20':'\n●START_KEY_EXCHANGE error',
+'21':'\n●IMPORT_RSA_PUBLIC_KEY error',
+'22':'\n●EXPORT_RSA_ISSUER_SIGNED_ITEM error',
+'23':'\n●IMPORT_RSA_SIGNED_DES_KEY error',
+'25':'\n●EXPORT_RSA_EPP_SIGNED_ITEM error',
+'26':'\n●LOAD_CERTIFICATE error',
+'27':'\n●GET_CERTIFICATE error',
+'28':'\n●REPLACE_CERTIFICATE error',
+'29':'\n●IMPORT_RSA_ENCIPHERED_PKCS_KEY error',
+'30':'\n●SECUREKEY_ENTRY error',
+'31':'\n●GENERATE_KCV error',
+'32':'\n●EMV_IMPORT_PUBLIC_KEY error',
+'33':'\n●DIGEST error',
+'F0':'\n●DLL error',
+	}
+	
+	LCode={
+'01':'\n●Command length not comply with definition',
+'02':'\n●KeyID(s) is outside of valid range',
+'03':'\n●Invalid Write Mode Specified',
+'04':'\n●Key with specified ID doesn’t exist',
+'05':'\n●Key with specified ID is locked',
+'06':'\n●The Key to be stored has invalid length (not 8 ,16 or 24 bytes or less than 16 bytes with MK Attributes or greater than 8 bytes with IV Attributes )',
+'07':'\n●Key ID has wrong attribute',
+'08':'\n●IV has wrong attribute',
+'09':'\n●Key Attribute not Match the exist Attribute',
+'0A':'\n●Key Check Value Verification Failure',
+'0B':'\n●Other KeyId Has the Same Key Value',
+'10':'\n●Key with specified ID Useviolation',
+'11':'\n●Key with specified ID Not Allowed to do that',
+'12':'\n●Check Mode Invalid',
+'13':'\n●Verify Mode Invalid',
+'14':'\n●KCV verification failed',
+'15':'\n●Macing Invalid Or Verify Failure',
+'16':'\n●Invalid Mode or Entry Mode specified',
+'17':'\n●Invalid data - values out of range',
+'18':'\n●Invalid Length or Offset+Length - out of range',
+'19':'\n●Invalid Offset or Length - out of range',
+'20':'\n●Invalid PIN Length',
+'21':'\n●PIN verification failed',
+'22':'\n●PIN Encryption Suspended ,try Pin after one hour',
+'23':'\n●No Pin',
+'24':'\n●The password in key buffer has wrong length',
+'25':'\n●The password in key buffer verification failed',
+'31':'\n●Invalid modulus length specified',
+'32':'\n●Invalid exponent length specified',
+'33':'\n●Invalid structure received',
+'34':'\n●Invalid PKCS Padding',
+'35':'\n●Invalid Signature Length',
+'36':'\n●Signature verification failed',
+'37':'\n●Key with specified ID not Loaded',
+'41':'\n●INVALID CERTIFICATE FROMAT',
+'42':'\n●INVALID CERTIFICATE VERSION',
+'43':'\n●INVALID CERTIFICATE ISSUER',
+'44':'\n●INVALID CERTIFICATE VALIDITY',
+'45':'\n●INVALID CERTIFICATE SUBJECT',
+'46':'\n●INVALID CERTIFICATE ALGOR',
+'47':'\n●Certificate with specified ID Not Exist',
+'50':'\n●Invalid Date Disabled',
+'51':'\n●Invalid User Block Address specified',
+'52':'\n●Invalid Serial Number specified',
+'55':'\n●The smart card not set or not exist',
+'56':'\n●The smart card not answer the APDU command   ',
+'60':'\n●Invalid dukpt Key value',
+'61':'\n●Dukpt not initialize',
+'62':'\n●KSN not imported',
+'63':'\n●Already initialized',
+'64':'\n●No resource',
+'65':'\n●Software Timeout',
+'71':'\n●ALGORITHM UNSUPP',
+'72':'\n●COMMAND UNSUPP',
+'73':'\n●HARDWARE ERROR OR INTER ERROR',
+'74':'\n●Command Lock :Not allow Execute',
+'75':'\n●KEYCOMMAND_MAC',
+'80':'\n●Authentication failure',
+'81':'\n●Key with specified ID does not authentication',
+'82':'\n●EPP Keypair and/or Serial# signature not loaded',
+'83':'\n●EPP Keypair and/or Serial# signature already loaded',
+'84':'\n●EPP Certification already loaded',
+'A1':'\n●ERR_ZT596_OPENCOM',
+'A2':'\n●ERR_ZT596_CLOSECOM',
+'A3':'\n●COMNOTOPEN',
+'A4':'\n●COMCLOSEFAIL',
+'A5':'\n●PARA_ERROR',
+'A6':'\n●COMSENDERROR',
+'A7':'\n●COMRECEIVE',
+'A8':'\n●ERROR_SEQ',
+'A9':'\n●ERROR_CRC16',
+'FE':'\n●PINPAD device was removed, or "RemoveInstall" is unexecuted after PINPAD device was removed.',
+'FF':'\n●Battery Low voltage',
+'9C':'\n●Other communication error',
+'FC':'\n●Parameter error',
+'FD':'\n●Operation canceled',
+'FE':'\n●Operation timeout ',
+'FF':'\n●Communication failure /Open com failed ',
+	}
+	
+    UserEnter = prompt("請輸入EPP(598N)錯誤碼(6碼)!");
+    
+    if (UserEnter == null) // user按下取消
+        alert("請重新選擇!");
+    
+    else if (UserEnter == "") // 未輸入任何資料
+        alert("未輸入資料!");
+		
+	else if (UserEnter.length != 6)
+        alert("請確實輸入6碼!");
+	
+    else { 
+		GcodeUser = UserEnter.substring(0,2);
+		HcodeUser = UserEnter.substring(2,4); //detail code的前2碼
+		LcodeUser = UserEnter.substring(4,6); //detail code的後2碼
+		
+		if (GcodeUser == 50){ //如6碼中的前二碼為50開頭，則需將detail code拆成H跟L
+			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + HCode[HcodeUser.toUpperCase()] + " " +LCode[LcodeUser.toUpperCase()]);
+			
+			if (GCode[GcodeUser.toUpperCase()] == undefined ||HCode[HcodeUser.toUpperCase()] == undefined || LCode[LcodeUser.toUpperCase()] == undefined)
+				alert("抱歉，查無資料!");
+			else
+				alert(showFinal);
+		}	
+		else{
+			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
+		
+			if (DCode[UserEnter.toUpperCase()] == undefined)
+				alert("抱歉，查無資料!");
+			else
+			alert(showFinal);
+		//document.write(showFinal.small()); //可輸出在網頁上
+		}
+	}
+
+        
+
+    </script>
+    
+    <a href="RG7_598N.html">●再查一次</a><br>
+    <a href="RG7_unit.html">●回上一層</a><br>
+    <a href="../main.html">●回主選單</a><br>
+	
+</body>
+</html>

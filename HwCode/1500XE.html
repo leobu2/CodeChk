@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+</head>
+<body>
+    <script>
+        Answer = {
+            'BU': 'BU      Burn: program controller',
+            '00': '00      No Error',
+            '01': '01      Software Faulty',
+            '05': '05      Communication problem with ChipCard Controller',
+            '06': '06      Communication problem with ChipCard / or wrong ChipCard inserted(ChipCard number not "226-0PR" )',
+            '08': '08      Stacker EEPROM missing / defective',
+            '10': '10      Controller Faulty',
+            '09': '09      前側定位感應鐵片檢出',
+            '11': '11      Missing Software (download)',
+            '12': '12      Safety switch open',
+            '13': '13      Device disable present',
+            '14': '14      CMD-V4 minimum configuration is missing',
+            '17': '17      Belt drive of Clamp defective',
+            '18': '18      Banknotes jammed during dispensing',
+            '19': '19      Clamp transport defective / blocked',
+            '20': '20      Single reject switch(MA2/SM1) defective / blocked',
+            '21': '21      Faulty measuring station(DDU)',
+            '22': '22      Photosensor amplifier faulty or Photosensor initialization unsuccessful',
+            '23': '23      Routing disk (DCM2/SM3) defective / blocking',
+            '24': '24      Rejeck / retract drive(MA6) defective / blocked(lifting magnet)',
+            '25': '25      Dispensing drive (DCM1) defective / blocked',
+            '26': '26      Stacker wheel drive (SM9) defective / blocked',
+            '28': '28      Shutter error',
+            '29': '29      Cash-out photosensor covered (manipulation)',
+            '31': '31      Too many problems during dispensing from cassette 1',
+            '32': '32      Too many problems during dispensing from cassette 2',
+            '33': '33      Too many problems during dispensing from cassette 3',
+            '34': '34      Too many problems during dispensing from cassette 4',
+            '41': '41      Banknotes cannot be dispensed or incorrect pressure on noyes in new cassette 1',
+            '42': '42      Banknotes cannot be dispensed or incorrect pressure on noyes in new cassette 2',
+            '43': '43      Banknotes cannot be dispensed or incorrect pressure on noyes in new cassette 3',
+            '44': '44      Banknotes cannot be dispensed or incorrect pressure on noyes in new cassette 4',
+            '51': '51      Too many bad banknotes ( cassette 1)',
+            '52': '52      Too many bad banknotes ( cassette 2)',
+            '53': '53      Too many bad banknotes ( cassette 3)',
+            '54': '54      Too many bad banknotes ( cassette 4)',
+            '61': '61      Cassette defective ( cassette 1)',
+            '62': '62      Cassette defective ( cassette 2)',
+            '63': '63      Cassette defective ( cassette 3)',
+            '64': '64      Cassette defective ( cassette 4)',
+            '70': '70      Banknote measuring station (DDU) not ready',
+            '71': '71      Dispensing sensor PSDx dirty or pressure sensor faulty (EX: 燈號71=PSD1，72＝PSD2)',
+            '72': '72      Dispensing sensor PSDx dirty or pressure sensor faulty (EX: 燈號71=PSD1，72＝PSD2)',
+            '73': '73      Dispensing sensor PSDx dirty or pressure sensor faulty (EX: 燈號71=PSD1，72＝PSD2)',
+            '74': '74      Dispensing sensor PSDx dirty or pressure sensor faulty (EX: 燈號71=PSD1，72＝PSD2)',
+            '81': '81      Cassette empty sensor PSEx dirty (EX: 燈號81=PSE1，82＝PSE2)',
+            '82': '82      Cassette empty sensor PSEx dirty (EX: 燈號81=PSE1，82＝PSE2)',
+            '83': '83      Cassette empty sensor PSEx dirty (EX: 燈號81=PSE1，82＝PSE2)',
+            '84': '84      Cassette empty sensor PSEx dirty (EX: 燈號81=PSE1，82＝PSE2)',
+            '90': '90      Photosensor PS 1  dirty',
+            '91': '91      Photosensor PS 18  dirty',
+            '93': '93      Photosensor PS 2  dirty',
+            '95': '95      Photosensor PS 27  dirty',
+            '9A': '9A      Photosensor PS 28  dirty',
+
+        };
+
+        UserEnter = prompt("請輸入錯誤碼(1500XE OR C280 CDM 2碼)!");
+        if (UserEnter == null)
+            alert("請重新選擇!");
+        else if (UserEnter == "")
+            alert("未輸入資料!");
+        else
+            alert(Answer[UserEnter.toUpperCase()]);
+
+
+    </script>
+    
+    <a href="1500XE.html">●再查一次</a><br>
+    
+    <a href="../HwErrorCode.html">●回上一層</a><br>
+  
+    <a href="../main.html">●回主選單</a><br>
+    <br>
+</body>
+</html>

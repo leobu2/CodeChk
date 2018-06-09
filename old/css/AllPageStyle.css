@@ -1,0 +1,45 @@
+﻿body {
+text-shadow:2px 2px 2px #000000;
+font-weight:normal;
+color:#CCCCCC;
+background-color:#62778A;
+/*border:8px double #E0E0E0;*/
+letter-spacing:1pt;
+word-spacing:1pt;
+font-size:150px;
+text-align:center;
+font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif;
+line-height:1.3;
+margin:0px;
+padding:30px 12px 12px 12px;
+        
+}
+a { text-decoration: none } 
+a:link {
+            color: #ffffff;
+        }
+        /* 設定尚未點閱過的連結樣式 */
+        a:visited {
+            color:#ffffff;
+        }
+        /* 設定過去曾經閱過的連結 */
+        a:hover {
+            color: #ffffff;
+        }
+        /* 設定滑鼠游標指在連結位置上的樣式 */
+        a:active {
+            color:#ffffff;
+        }
+        /* 設定上點擊過的連結樣式 */
+
+indexLittleWord{
+    font-size:200%;
+    position:center;
+}
+
+Mainlogo{
+    position:center;
+}
+
+
+    
