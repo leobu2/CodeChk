@@ -2017,7 +2017,7 @@
 	};
 
     UserEnter = prompt("請輸入BRM錯誤碼(4碼或6碼)!\n\n[注意:只輸入4碼將無法查詢XFS-SP CODE & GROUP CODE]");
-    
+    showuser = "===錯誤碼 " + UserEnter.toUpperCase() + " 的查詢結果如下: ==="
     if (UserEnter == null) // user按下取消
         alert("請重新選擇!");
     
@@ -2034,7 +2034,7 @@
 			DcodeUser = UserEnter.substring(2,6);//後4碼
 			
 			if (XFSCode[UserEnter.toUpperCase()] != undefined){//如xfs code有查到
-				showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + XFSCode[UserEnter.toUpperCase()]);
+				showFinal = (showuser + "【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + XFSCode[UserEnter.toUpperCase()]);
 				
 				if ( XFSCode[UserEnter.toUpperCase()] == undefined)
 					alert("抱歉，查無資料!");
@@ -2042,7 +2042,7 @@
 					alert(showFinal);
 			}
 			else{//沒查到xfs code, 就看其他BRM 4碼code
-				showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[DcodeUser.toUpperCase()]);
+				showFinal = (showuser + "【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[DcodeUser.toUpperCase()]);
 				
 				if (DCode[DcodeUser.toUpperCase()] == undefined)
 					alert("抱歉，查無資料!");
@@ -2053,7 +2053,7 @@
 
 		}
 		else{ //ˋ4碼code
-			showFinal = ( "===CODE: "+UserEnter.toUpperCase()+" 查詢結果如下: ===" +"\n\n【DETAIL CODE】\n\n" + DCode[UserEnter.toUpperCase()]);
+			showFinal = (showuser + "\n\n【DETAIL CODE】\n\n" + DCode[UserEnter.toUpperCase()]);
 			if (DCode[UserEnter.toUpperCase()] == undefined )
 				alert("抱歉，查無資料!");
 			else
