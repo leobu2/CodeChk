@@ -18,10 +18,14 @@
 
 </head>
 <body>
-
-    <script>
+	<script>
+		var city;
+		var country;
+		$.get("http://ipinfo.io", function(response) {city=response.city,country=response.country;},"jsonp");
+	</script>
+	<script>
 	//2碼 group code
-    GCode={
+    		GCode={
  '01':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Door open/Hardware error in BRM\n●基本處置動作>>1. The front/back door is open. Or there are remaining banknotes in BRM. Or the control board failure in BRM. 2. Close the door or remove the banknotes from BRM. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
  '02':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Sensor is abnormal in BRM. 2. Clean a sensor in BRM. 3. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
  '03':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Replacement of BRM is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
@@ -2122,7 +2126,22 @@
 	
 	<img style="width:100%" src="../images/Rg7Layout/BRM DEBUG.jpg"/>
 	
-    
+	<script>
+		appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
+		var Today = new Date();
+
+
+		var data = [[Today,document.title,UserEnter.toUpperCase(),city,country]];
+		var parameter = {
+		url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
+		name: "工作表1",
+		data: data.toString(),
+		row: data.length,
+		column: data[0].length,
+		insertType:"bottom",
+		};
+		$.get(appUrl, parameter);
+	</script> 
 
 </body>
 </html>
