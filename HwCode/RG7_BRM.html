@@ -2122,12 +2122,12 @@
 
 		var data = [[Today,document.title,UserEnter.toUpperCase(),city,country]];
 		var parameter = {
-		url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
-		name: "工作表1",
-		data: data.toString(),
-		row: data.length,
-		column: data[0].length,
-		insertType:"bottom",
+			url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
+			name: "工作表1",
+			data: data.toString(),
+			row: data.length,
+			column: data[0].length,
+			insertType:"bottom",
 		};
 		$.get(appUrl, parameter);
 	</script> 
