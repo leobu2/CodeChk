@@ -19,6 +19,11 @@
 </head>
 <body>
     <script>
+		var city;
+		var country;
+		$.get("http://ipinfo.io", function(response) {city=response.city,country=response.country;},"jsonp");
+	</script>
+    <script>
         Answer = {
             '122': '122 Recoverable 38 Operation guide lamp parameter is incorrect.\n\n[錯誤分類：Errors in interface system]',
             '123': '123 Recoverable 38 1st print line adjustment parameter (prescribed part in medium) is erroneous.\n\n[錯誤分類：Errors in interface system]',
@@ -180,24 +185,26 @@
         else
             alert(Answer[UserEnter.toUpperCase()]);
 
-    	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
-        var Today = new Date();
-        var data = [[Today,document.title,UserEnter]];
-        var parameter = {
-            url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
-            name: "工作表1",
-            data: data.toString(),
-            row: data.length,
-            column: data[0].length,
-            insertType:"bottom",
-        };
-        $.get(appUrl, parameter);
+
     </script>
     <a href="S4680.html">●再查一次</a><br>
     
     <a href="../HwErrorCode.html">●回上一層</a><br>
     
     <a href="../main.html">●回主選單</a><br>
-    <br>
+    	<script>
+		appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
+		var Today = new Date();
+		var data = [[Today,document.title,UserEnter.toUpperCase(),city,country]];
+		var parameter = {
+		url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
+		name: "工作表1",
+		data: data.toString(),
+		row: data.length,
+		column: data[0].length,
+		insertType:"bottom",
+		};
+		$.get(appUrl, parameter);
+	</script> 
 </body>
 </html>
