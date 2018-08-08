@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>CODE-RG7/感應器功能</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -17,6 +18,11 @@
 
 </head>
 <body>
+	<script>
+		var city;
+		var country;
+		$.get("http://ipinfo.io", function(response) {city=response.city,country=response.country;},"jsonp");
+	</script>
     <script>
         Answer = {
 'SC02':'●編號：SC02\n\n●模組：接客部\n\n●功能：偵測客戶的手部動作',
@@ -201,6 +207,20 @@
 	<a href="RG7分析.html">●回上一層</a><br>
   
     <a href="../main.html">●回主選單</a><br>
-    <br>
+ 	<script>
+		appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
+		var Today = new Date();
+		var data = [[Today,document.title,UserEnter.toUpperCase(),city,country]];
+		var parameter = {
+		url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
+		name: "工作表1",
+		data: data.toString(),
+		row: data.length,
+		column: data[0].length,
+		insertType:"bottom",
+		};
+		$.get(appUrl, parameter);
+	</script> 
+	
 </body>
 </html>
