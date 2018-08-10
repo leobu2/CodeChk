@@ -22,6 +22,8 @@
 		var city;
 		var country;
 		$.get("https://ipinfo.io", function(response) {city=response.city,country=response.country;},"jsonp");
+		city = city.toString();
+		country= country.toString();
 	</script>
     <script>
         Answer = {
