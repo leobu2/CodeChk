@@ -1,8 +1,8 @@
 
 var region_name; //"Taipei City"
 var country_name;//"Taiwan"
-var latitude;//25.0478
-var longitude;	//121.5318
+var latitude;//25.0478 (緯度)
+var longitude;	//121.5318 (經度)
 var ip;//192.168.1.1
 function getPosition(){
 	$.getJSON("https://ip-api.io/json/",
