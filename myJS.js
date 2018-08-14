@@ -5,7 +5,7 @@ var latitude;//25.0478
 var longitude;	//121.5318
 
 function getPosition(){
-	$.getJSON("http://ip-api.io/json/",
+	$.getJSON("https://ip-api.io/json/",
 	
     function(result) {
         console.log(result);
