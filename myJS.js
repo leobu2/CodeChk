@@ -18,7 +18,8 @@ function getPosition(){
 }	
 
 function myFunInput(UserEnter,title){
-
+	getPosition();//get ip location again, for Apple can't add info normally
+	
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
 	var Today = new Date();
 	var data = [[Today,title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip]];
