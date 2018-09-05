@@ -29,7 +29,7 @@ function detectBrowser(){
     if (isSafari) {
         browser = 'Safari/Chrome';
     }
-    return browser;
+    //return browser;
 }
 
 
