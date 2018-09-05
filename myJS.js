@@ -7,31 +7,35 @@ var ip;//192.168.1.1
 
 function getPosition(){}//KEEP THIS FUNCTION FOR HTML PAGE USE
 
-function detectBrowser(){
-    var isIE = navigator.userAgent.search("MSIE") > -1;
-    var isIE7 = navigator.userAgent.search("MSIE 7") > -1;
-    var isFirefox = navigator.userAgent.search("Firefox") > -1;
-    var isOpera = navigator.userAgent.search("Opera") > -1;
-    var isSafari = navigator.userAgent.search("Safari") > -1;//Google瀏覽器是用這核心
-    
-    if (isIE7) {
-        browser = 'IE7';
-    }
-    if (isIE) {
-        browser = 'IE';
-    }
-    if (isFirefox) {
-        browser = 'Firefox';
-    }
-    if (isOpera) {
-        browser = 'Opera';
-    }
-    if (isSafari) {
-        browser = 'Safari/Chrome';
-    }
-    //return browser;
-}
-
+function detectOS() { 
+        var sUserAgent = navigator.userAgent; 
+        var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows"); 
+        var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel"); 
+        if (isMac) return "Mac"; 
+        var isUnix = (navigator.platform == "X11") && !isWin && !isMac; 
+        if (isUnix) return "Unix"; 
+        var isLinux = (String(navigator.platform).indexOf("Linux") > -1); 
+        var bIsAndroid = sUserAgent.toLowerCase().match(/android/i) == "android";
+        if (isLinux) {
+          if(bIsAndroid) return "Android";
+        else return "Linux"; 
+        }
+        if (isWin) { 
+        var isWin2K = sUserAgent.indexOf("Windows NT 5.0") > -1 || sUserAgent.indexOf("Windows 2000") > -1; 
+        if (isWin2K) return "Win2000"; 
+        var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1; 
+        if (isWinXP) return "WinXP"; 
+        var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1; 
+        if (isWin2003) return "Win2003"; 
+        var isWinVista= sUserAgent.indexOf("Windows NT 6.0") > -1 || sUserAgent.indexOf("Windows Vista") > -1; 
+        if (isWinVista) return "WinVista"; 
+        var isWin7 = sUserAgent.indexOf("Windows NT 6.1") > -1 || sUserAgent.indexOf("Windows 7") > -1; 
+        if (isWin7) return "Win7"; 
+        } 
+        return "other"; 
+	document.writeln("您的操作系统是：" + detectOS()); 
+      	alert(detectOS());
+} 
 
 function myFunInput(UserEnter,title){
 		
@@ -57,5 +61,5 @@ function myFunInput(UserEnter,title){
 			};
 			$.get(appUrl, parameter);
     	});	
- detectBrowser();
+	detectOS() 
 }
