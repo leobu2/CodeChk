@@ -7,6 +7,32 @@ var ip;//192.168.1.1
 
 function getPosition(){}//KEEP THIS FUNCTION FOR HTML PAGE USE
 
+function detectBrowser(){
+    var isIE = navigator.userAgent.search("MSIE") > -1;
+    var isIE7 = navigator.userAgent.search("MSIE 7") > -1;
+    var isFirefox = navigator.userAgent.search("Firefox") > -1;
+    var isOpera = navigator.userAgent.search("Opera") > -1;
+    var isSafari = navigator.userAgent.search("Safari") > -1;//Google瀏覽器是用這核心
+    
+    if (isIE7) {
+        browser = 'IE7';
+    }
+    if (isIE) {
+        browser = 'IE';
+    }
+    if (isFirefox) {
+        browser = 'Firefox';
+    }
+    if (isOpera) {
+        browser = 'Opera';
+    }
+    if (isSafari) {
+        browser = 'Safari/Chrome';
+    }
+    return browser;
+}
+
+
 function myFunInput(UserEnter,title){
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
@@ -31,4 +57,5 @@ function myFunInput(UserEnter,title){
 			};
 			$.get(appUrl, parameter);
     	});	
+ detectBrowser();
 }
