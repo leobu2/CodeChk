@@ -25,83 +25,131 @@
 	<script>
 	//2碼 group code
     		GCode={
- '01':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Door open/Hardware error in BRM\n●基本處置動作>>1. The front/back door is open. Or there are remaining banknotes in BRM. Or the control board failure in BRM. 2. Close the door or remove the banknotes from BRM. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
- '02':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Sensor is abnormal in BRM. 2. Clean a sensor in BRM. 3. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
- '03':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Replacement of BRM is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '04':'\n●故障類別>>BRM unit (installation errors)\n●說明>>BRM faulty status\n●基本處置動作>>1. BRM is off the ATM cabinet. 2. Install the BRM properly and close the safe door and front/back door. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
- '05':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Inspection of the PCB in upper unit is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '06':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Adjustment of the PCB in upper unit is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '07':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Inspection of the PCB in upper unit is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '08':'\n●故障類別>>BRM unit (installation errors)\n●說明>>Failure in BRM\n●基本處置動作>>1. Adjustment of the PCB in upper unit is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '10':'\n●故障類別>>Bucket unit\n●說明>>Banknote jam in banknote bucket of BRM\n●基本處置動作>>1. Banknotes remain in the banknote bucket. 2. Remove the banknotes in the banknote bucket. 3. Reset the system from maintenance menu.\n●檢查位置>>(1)(2)(7)', 
- '11':'\n●故障類別>>Bucket unit\n●說明>>Banknote jam in banknote bucket of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor is abnormal in the banknote bucket. 2. Remove the banknotes or clean the sensor in the banknote bucket. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, cleaning is required. Contact the maintenance staff.\n●檢查位置>>(1)(2)(7)', 
- '12':'\n●故障類別>>Bucket unit\n●說明>>Failure in banknote bucket of BRM\n●基本處置動作>>1. Sensor is abnormal in the banknote bucket. 2. Cleaning and adjustment in the banknote bucket are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '13':'\n●故障類別>>Bucket unit\n●說明>>Failure in banknote bucket of BRM\n●基本處置動作>>1. Replacement of the banknote bucket is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '15':'\n●故障類別>>Transport-F\n●說明>>Banknote jam in transport-F of BRM\n●基本處置動作>>1. There is abnormal banknote in transport-F. 2. Remove the banknotes in the transport-F. 3. Reset the system from maintenance menu.\n●檢查位置>>(3)(9)', 
- '16':'\n●故障類別>>Transport-F\n●說明>>Banknote jam in transport-F of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor is abnormal in the transport-F. 2. Remove the banknotes or clean the sensor in the transport-F. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, cleaning is required. Contact the maintenance staff.\n●檢查位置>>(3)(9)', 
- '17':'\n●故障類別>>Transport-F\n●說明>>Failure in transport-F of BRM\n●基本處置動作>>1. Sensor is abnormal in the transport-F. 2. Cleaning and adjustment in the transport-F are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '18':'\n●故障類別>>Transport-F\n●說明>>Failure in transport-F of BRM\n●基本處置動作>>1. Replacement of the transport-F is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '19':'\n●故障類別>>XFS-SP\n●說明>>Cassette configuration error in BRM\n●基本處置動作>>1. Any cassettes were exchanged or not set properly. 2. Check all cassette is in correct position and the new cassette configuration is the same as last configuration. 3. Perform standard cash from maintenance menu in case of correct configuration. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
- '20':'\n●故障類別>>XFS-SP\n●說明>>Banknote jam in banknote bucket, escrow of BRM\n●基本處置動作>>1. Banknotes remain in the banknote bucket, escrow. 2. Remove the banknotes in the banknote bucket, escrow. 3. Reset the system from maintenance menu.\n●檢查位置>>(1)', 
- '21':'\n●故障類別>>XFS-SP\n●說明>>Replenishment error in BRM\n●基本處置動作>>1. Banknotes remain in the reject cassette or retract cassette or deposit cassette. 2. Remove the banknotes in the reject cassette or retract cassette or deposit cassette. 3. Reset the system from maintenance menu.\n●檢查位置>>', 
- '22':'\n●故障類別>>XFS-SP\n●說明>>Door open/Units are unfixed in BRM\n●基本處置動作>>1. The front/back door is open. Or the BRM is off the ATM cabinet or any cassettes or recognizer is off the BRM. 2. Install them properly and close the safe door and front/back door. 3. Reset the system from maintenance menu.\n●檢查位置>>', 
- '25':'\n●故障類別>>XFS-SP\n●說明>>Counter check error in BRM\n●基本處置動作>>1. The banknote counter indicates incorrect value. 2. Settle the current transaction and enter new counter value again from maintenance menu.\n●檢查位置>>', 
- '26':'\n●故障類別>>XFS-SP\n●說明>>System error in BRM\n●基本處置動作>>1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n●檢查位置>>', 
- '28':'\n●故障類別>>XFS-SP\n●說明>>System error in BRM\n●基本處置動作>>1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n●檢查位置>>', 
- '29':'\n●故障類別>>XFS-SP\n●說明>>Communication error in BRM\n●基本處置動作>>1. USB or LAN communication error. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '30':'\n●故障類別>>Escrow unit\n●說明>>Banknote jam in escrow of BRM\n●基本處置動作>>1. There is abnormal banknote in the escrow. 2. Remove the banknotes in the escrow. 3. Reset the system from maintenance menu.\n●檢查位置>>(5)(6)', 
- '31':'\n●故障類別>>Escrow unit\n●說明>>Banknote jam in escrow of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor is abnormal in the escrow. 2. Remove the banknotes or clean the sensor in the escrow. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, cleaning is required. Contact the maintenance staff.\n●檢查位置>>(5)(6)', 
- '32':'\n●故障類別>>Escrow unit\n●說明>>Failure in escrow of BRM\n●基本處置動作>>1. Sensor is abnormal in the escrow. 2. Cleaning and adjustment in the escrow are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '33':'\n●故障類別>>Escrow unit\n●說明>>Failure in escrow of BRM\n●基本處置動作>>1. Replacement of the escrow is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '35':'\n●故障類別>>Cassette R\n●說明>>Banknote jam in cassette R of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette R. 2. Check the contents of cassette R and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette R.\n●檢查位置>>(8)', 
- '36':'\n●故障類別>>Cassette R\n●說明>>Banknote jam in cassette R of BRM\n●基本處置動作>>1. There is abnormal banknote or abnormal sensor in the cassette R. 2. Check the contents of cassette R or the exterior of cassette R, the sensor of cassette R in BRM side. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(8)', 
- '37':'\n●故障類別>>Cassette R\n●說明>>Failure in cassette R of BRM\n●基本處置動作>>1. There is abnormal sensor at the cassette R. 2. Cleaning and adjustment of the cassette R are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '38':'\n●故障類別>>Cassette R\n●說明>>Failure in cassette R of BRM\n●基本處置動作>>1. Replacement of the cassette R is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '40':'\n●故障類別>>Recognition unit\n●說明>>Banknote jam in recognizer of BRM\n●基本處置動作>>1. There is abnormal banknote in the recognizer. 2. Remove the banknotes in the recognizer. 3. Reset the system from maintenance menu.\n●檢查位置>>(3)', 
- '41':'\n●故障類別>>Recognition unit\n●說明>>Banknote jam in recognizer of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor is abnormal in the recognizer. 2. Remove the banknotes or clean the sensor in the recognizer. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, cleaning is required. Contact the maintenance staff.\n●檢查位置>>(3)', 
- '42':'\n●故障類別>>XFS-SP\n●說明>>Failure in recognizer of BRM\n●基本處置動作>>1. Sensor is abnormal in the recognizer. 2. Cleaning and adjustment in the recognizer are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '43':'\n●故障類別>>XFS-SP\n●說明>>Failure in recognizer of BRM\n●基本處置動作>>1. Replacement of the recognizer is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '45':'\n●故障類別>>Transport-O\n●說明>>Banknote jam in transport-O of BRM\n●基本處置動作>>1. There is abnormal banknote in transport-O. 2. Remove the banknotes in the transport-O. 3. Reset the system from maintenance menu.\n●檢查位置>>(4)(5)(7)', 
- '46':'\n●故障類別>>Transport-O\n●說明>>Banknote jam in transport-O of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor is abnormal in the transport-O. 2. Remove the banknotes or clean the sensor in the transport-O. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, cleaning is required. Contact the maintenance staff.\n●檢查位置>>(4)(5)(7)', 
- '47':'\n●故障類別>>Transport-O\n●說明>>Failure in transport-O of BRM\n●基本處置動作>>1. Sensor is abnormal in the transport-O. 2. Cleaning and adjustment in the transport-O are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '48':'\n●故障類別>>Transport-O\n●說明>>Failure in transport-O of BRM\n●基本處置動作>>1. Replacement of the transport-O is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '50':'\n●故障類別>>Cassette A\n●說明>>Abnormal banknote in cassette A of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette A. 2. Check the contents of cassette A and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette A.\n●檢查位置>>(11)(17)', 
- '51':'\n●故障類別>>Cassette A\n●說明>>Banknote jam in cassette A of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor in the cassette A. 2. Check the contents of cassette A and set banknotes properly or clean the sensor. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(11)(17)', 
- '52':'\n●故障類別>>Cassette A\n●說明>>Failure in cassette A of BRM\n●基本處置動作>>1. There is abnormal sensor in the cassette A. 2. Clean the cassette A and reset the system from maintenance menu. 3. In case error can not be cleared, adjustment of sensor is required. Contact the maintenance staff.\n●檢查位置>>', 
- '53':'\n●故障類別>>Cassette A\n●說明>>Failure in cassette A of BRM\n●基本處置動作>>1. Replacement of the cassette A is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '55':'\n●故障類別>>Cassette B\n●說明>>Abnormal banknote in cassette B of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette B. 2. Check the contents of cassette B and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette B.\n●檢查位置>>(12)(18)', 
- '56':'\n●故障類別>>Cassette B\n●說明>>Banknote jam in cassette B of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor in the cassette B. 2. Check the contents of cassette B and set banknotes properly or clean the sensor. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(12)(18)', 
- '57':'\n●故障類別>>Cassette B\n●說明>>Failure in cassette B of BRM\n●基本處置動作>>1. There is abnormal sensor in the cassette B. 2. Clean the cassette B and reset the system from maintenance menu. 3. In case error can not be cleared, adjustment of sensor is required. Contact the maintenance staff.\n●檢查位置>>', 
- '58':'\n●故障類別>>Cassette B\n●說明>>Failure in cassette B of BRM\n●基本處置動作>>1. Replacement of the cassette B is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '60':'\n●故障類別>>Cassette C\n●說明>>Abnormal banknote in cassette C of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette C. 2. Check the contents of cassette C and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette C.\n●檢查位置>>(13)(19)', 
- '61':'\n●故障類別>>Cassette C\n●說明>>Banknote jam in cassette C of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor in the cassette C. 2. Check the contents of cassette C and set banknotes properly or clean the sensor. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(13)(19)', 
- '62':'\n●故障類別>>Cassette C\n●說明>>Failure in cassette C of BRM\n●基本處置動作>>1. There is abnormal sensor in the cassette C. 2. Clean the cassette C and reset the system from maintenance menu. 3. In case error can not be cleared, adjustment of sensor is required. Contact the maintenance staff.\n●檢查位置>>', 
- '63':'\n●故障類別>>Cassette C\n●說明>>Failure in cassette C of BRM\n●基本處置動作>>1. Replacement of the cassette C is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '65':'\n●故障類別>>Cassette D\n●說明>>Abnormal banknote in cassette D of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette D. 2. Check the contents of cassette D and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette D.\n●檢查位置>>(14)(20)', 
- '66':'\n●故障類別>>Cassette D\n●說明>>Banknote jam in cassette D of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor in the cassette D. 2. Check the contents of cassette D and set banknotes properly or clean the sensor. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(14)(20)', 
- '67':'\n●故障類別>>Cassette D\n●說明>>Failure in cassette D of BRM\n●基本處置動作>>1. There is abnormal sensor in the cassette D. 2. Clean the cassette D and reset the system from maintenance menu. 3. In case error can not be cleared, adjustment of sensor is required. Contact the maintenance staff.\n●檢查位置>>', 
- '68':'\n●故障類別>>Cassette D\n●說明>>Failure in cassette D of BRM\n●基本處置動作>>1. Replacement of the cassette D is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '70':'\n●故障類別>>Cassette E\n●說明>>Abnormal banknote in cassette E of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette E. 2. Check the contents of cassette E and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette E.\n●檢查位置>>(15)(21)', 
- '71':'\n●故障類別>>Cassette E\n●說明>>Banknote jam in cassette E of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor in the cassette E. 2. Check the contents of cassette E and set banknotes properly or clean the sensor. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(15)(21)', 
- '72':'\n●故障類別>>Cassette E\n●說明>>Failure in cassette E of BRM\n●基本處置動作>>1. There is abnormal sensor in the cassette E. 2. Clean the cassette E and reset the system from maintenance menu. 3. In case error can not be cleared, adjustment of sensor is required. Contact the maintenance staff.\n●檢查位置>>', 
- '73':'\n●故障類別>>Cassette E\n●說明>>Failure in cassette E of BRM\n●基本處置動作>>1. Replacement of the cassette E is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '75':'\n●故障類別>>Cassette F\n●說明>>Banknote jam in cassette F of BRM\n●基本處置動作>>1. There is abnormal banknote in cassette F. 2. Check the contents of cassette F and set banknotes properly. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, replace the cassette F.\n●檢查位置>>(16)(22)', 
- '76':'\n●故障類別>>Cassette F\n●說明>>Banknote jam in cassette F of BRM\n●基本處置動作>>1. There is abnormal banknote or abnormal sensor in the cassette F. 2. Check the contents of cassette F or the exterior of cassette F, the sensor of cassette F in BRM side. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>(16)(22)', 
- '77':'\n●故障類別>>Cassette F\n●說明>>Failure in cassette F of BRM\n●基本處置動作>>1. There is abnormal sensor at the cassette F. 2. Cleaning and adjustment of the cassette F are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '78':'\n●故障類別>>Cassette F\n●說明>>Failure in cassette F of BRM\n●基本處置動作>>1. Replacement of the cassette F is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '80':'\n●故障類別>>Transport-M\n●說明>>Banknote jam in transport-M of BRM\n●基本處置動作>>1. There is abnormal banknote in transport-M. 2. Remove the banknotes in the transport-M. 3. Reset the system from maintenance menu.\n●檢查位置>>(10)', 
- '81':'\n●故障類別>>Transport-M\n●說明>>Banknote jam in transport-M of BRM\n●基本處置動作>>1. There is abnormal banknote or sensor is abnormal in the transport-M. 2. Remove the banknotes or clean the sensor in the transport-M. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, cleaning is required. Contact the maintenance staff.\n●檢查位置>>(10)', 
- '82':'\n●故障類別>>Transport-M\n●說明>>Failure in transport-M of BRM\n●基本處置動作>>1. Sensor is abnormal in the transport-M. 2. Cleaning and adjustment in the transport-M are required. 3. Contact the maintenance staff.\n●檢查位置>>', 
- '83':'\n●故障類別>>Transport-M\n●說明>>Failure in transport-M of BRM\n●基本處置動作>>1. Replacement of the transport-M is required. 2. Contact the maintenance staff.\n●檢查位置>>', 
- '85':'\n●故障類別>>CABC (cabinet shutter)\n●說明>>Cabinet shutter error in ATM cabinet\n●基本處置動作>>1. There is banknote or foreign object at cabinet shutter. 2. Remove the banknote or foreign object from cabinet shutter. 3. Restart the system from maintenance menu.\n●檢查位置>>', 
- '87':'\n●故障類別>>CABC (cabinet shutter)\n●說明>>Cabinet shutter error in ATM cabinet\n●基本處置動作>>1. There is banknote or foreign object at cabinet shutter. 2. Remove the banknote or foreign object from cabinet shutter. 3. Restart the system from maintenance menu.\n●檢查位置>>', 
- '88':'\n●故障類別>>CABC (cabinet shutter)\n●說明>>\n●基本處置動作>>\n●檢查位置>>',
- '91':'\n●故障類別>>Control unit\n●說明>>System error in BRM\n●基本處置動作>>1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n●檢查位置>>', 
- '92':'\n●故障類別>>Control unit\n●說明>>Counter check error in BRM\n●基本處置動作>>1. The banknote counter indicates incorrect value. 2. Settle the current transaction and enter new counter value again from maintenance menu.\n●檢查位置>>', 
- '97':'\n●故障類別>>Logic error\n●說明>>System error in BRM\n●基本處置動作>>1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n●檢查位置>>', 
- '98':'\n●故障類別>>Logic error\n●說明>>Failure in escrow of BRM\n●基本處置動作>>1. There is abnormal banknote in the escrow, or the open guide of escrow is opening. 2. Remove the banknotes and close the open guide. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, contact the maintenance staff.\n●檢查位置>>', 
- '99':'\n●故障類別>>Logic error\n●說明>>System error in BRM\n●基本處置動作>>1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n●檢查位置>>', 
-	};
+
+'01':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:Clean banknote entrance/exit equipment or remove banknotes or other material and reset.\N●排除位置:',
+'02':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:Banknote entrance/exit equipment requires adjustment. Contact maintenance.\N●排除位置:',
+'03':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:Equipment failure (exchange)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:Banknote entrance/exit equipment requires exchange. Contact maintenance.\N●排除位置:',
+'04':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:Operational error\N●故障說明:Banknote entrance/exit equipment not set properly or no power supply\N●排除方式:Set the banknote entrance/exit and properly close the ATM housing door.\N●排除位置:',
+'05':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:PCB Upper (inspection)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:PCB Upper requires adjustment. Contact maintenance.\N●排除位置:',
+'06':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:PCB Upper (exchange)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:PCB Upper requires exchange. Contact maintenance.\N●排除位置:',
+'07':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:PCB Lower (inspection)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:PCB Lower requires adjustment. Contact maintenance.\N●排除位置:',
+'08':'●故障模組:BRM unit (faulty set etc.)\N●故障分類:PCB Lower (exchange)\N●故障說明:Mechanism error in banknote entrance/exit equipment\N●排除方式:PCB Lower requires exchange. Contact maintenance.\N●排除位置:',
+'10':'●故障模組:Entrance\N●故障分類:Faulty media\N●故障說明:Entrance error\N●排除方式:Banknotes remain in entrance. Remove banknotes from entrance.\N●排除位置:(1,2)',
+'11':'●故障模組:Entrance\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Entrance error\N●排除方式:Clean entrance or remove banknotes or other material and reset.\N●排除位置:(1,2)',
+'12':'●故障模組:Entrance\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Entrance error\N●排除方式:Entrance requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'13':'●故障模組:Entrance\N●故障分類:Equipment failure (exchange)\N●故障說明:Entrance error\N●排除方式:Entrance requires exchange. Contact maintenance.\N●排除位置:',
+'15':'●故障模組:Transport F\N●故障分類:Faulty media\N●故障說明:Transport F error\N●排除方式:Banknotes remain in Transport F. Remove banknotes from Transport F.\N●排除位置:(7)',
+'16':'●故障模組:Transport F\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Transport F error\N●排除方式:Clean Transport F or remove banknotes or other material and reset.\N●排除位置:(7)',
+'17':'●故障模組:Transport F\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Transport F error\N●排除方式:Transport F requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'18':'●故障模組:Transport F\N●故障分類:Equipment failure (exchange)\N●故障說明:Transport F error\N●排除方式:Transport F requires exchange. Contact maintenance.\N●排除位置:',
+'19':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:Cassette structural check error\N●排除方式:Setup cassette structure for fill and reset.\N●排除位置:A,B,C,D,E',
+'20':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:Deposit banknote reserve error\N●排除方式:Banknotes remain in customer-service unit. Remove banknotes from customer-service unit.\N●排除位置:(1)',
+'21':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:Cassette fill accuracy check error\N●排除方式:After collecting banknotes, verify against the counter count and check with the customer.\N●排除位置:',
+'22':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:Missing unit error\N●排除方式:Correctly set unit, cassette, and recognition unit.\N●排除位置:',
+'23':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:\N●排除方式:\N●排除位置:',
+'24':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:\N●排除方式:\N●排除位置:',
+'25':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:Banknote count check error\N●排除方式:After collecting banknotes, verify against the counter count and check with the customer.\N●排除位置:',
+'26':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:System failure\N●排除方式:Contact maintenance.\N●排除位置:',
+'27':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:Program logical error\N●排除方式:Contact maintenance.\N●排除位置:',
+'28':'●故障模組:TCR driver\N●故障分類:(SP Reserve)\N●故障說明:DL processing error\N●排除方式:Contact maintenance.\N●排除位置:',
+'29':'●故障模組:Line error etc.\N●故障分類:Hard reset request\N●故障說明:Line error\N●排除方式:Contact maintenance.\N●排除位置:',
+'30':'●故障模組:Temporary hold\N●故障分類:Faulty media\N●故障說明:Temporary hold equipment error\N●排除方式:Banknotes remain in temporary hold. Remove banknotes from temporary hold.\N●排除位置:(8,9)',
+'31':'●故障模組:Temporary hold\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Temporary hold equipment error\N●排除方式:Clean temporary hold or remove banknotes or other material and reset.\N●排除位置:(8,9)',
+'32':'●故障模組:Temporary hold\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Temporary hold equipment error\N●排除方式:Temporary hold requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'33':'●故障模組:Temporary hold\N●故障分類:Equipment failure (exchange)\N●故障說明:Temporary hold equipment error\N●排除方式:Temporary hold requires exchange. Contact maintenance.\N●排除位置:',
+'35':'●故障模組:Transport U\N●故障分類:Faulty media\N●故障說明:Transport U error\N●排除方式:Banknotes remain in Transport U. Remove banknotes from Transport U.\N●排除位置:(2,11)',
+'36':'●故障模組:Transport U\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Transport U error\N●排除方式:Clean Transport U or remove banknotes or other material and reset.\N●排除位置:(2,11)',
+'37':'●故障模組:Transport U\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Transport U error\N●排除方式:Transport U requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'38':'●故障模組:Transport U\N●故障分類:Equipment failure (exchange)\N●故障說明:Transport U error\N●排除方式:Transport U requires exchange. Contact maintenance.\N●排除位置:',
+'40':'●故障模組:Recognition unit\N●故障分類:Faulty media\N●故障說明:Recognition unit error\N●排除方式:Banknotes remain in recognition unit. Remove banknotes from recognition unit.\N●排除位置:(4)',
+'41':'●故障模組:Recognition unit\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Recognition unit error\N●排除方式:Clean recognition unit or remove banknotes or other material and reset.\N●排除位置:(4)',
+'42':'●故障模組:Recognition unit\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Recognition unit error\N●排除方式:Recognition unit requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'43':'●故障模組:Recognition unit\N●故障分類:Equipment failure (exchange)\N●故障說明:Recognition unit error\N●排除方式:Recognition unit requires exchange. Contact maintenance.\N●排除位置:',
+'45':'●故障模組:Transport O\N●故障分類:Faulty media\N●故障說明:Transport O error\N●排除方式:Banknotes remain in Transport O. Remove banknotes from Transport O.\N●排除位置:(3,13,14,15,16,17)',
+'46':'●故障模組:Transport O\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Transport O error\N●排除方式:Clean Transport O or remove banknotes or other material and reset.\N●排除位置:(3,13,14,15,16,17)',
+'47':'●故障模組:Transport O\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Transport O error\N●排除方式:Transport O requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'48':'●故障模組:Transport O\N●故障分類:Equipment failure (exchange)\N●故障說明:Transport O error\N●排除方式:Transport O requires exchange. Contact maintenance.\N●排除位置:',
+'50':'●故障模組:Cassette A\N●故障分類:Faulty media\N●故障說明:Cassette A error\N●排除方式:Check status of banknotes inside Cassette A. Reset banknotes correctly.\N●排除位置:(19,25)',
+'51':'●故障模組:Cassette A\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette A error\N●排除方式:Clean Cassette A or remove banknotes or other material and reset.\N●排除位置:(19,25)',
+'52':'●故障模組:Cassette A\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette A error\N●排除方式:Cassette A requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'53':'●故障模組:Cassette A\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette A error\N●排除方式:Cassette A requires exchange. Contact maintenance.\N●排除位置:',
+'55':'●故障模組:Cassette B\N●故障分類:Faulty media\N●故障說明:Cassette B error\N●排除方式:Check status of banknotes inside Cassette B. Reset banknotes correctly.\N●排除位置:(20,26)',
+'56':'●故障模組:Cassette B\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette B error\N●排除方式:Clean Cassette B or remove banknotes or other material and reset.\N●排除位置:(20,26)',
+'57':'●故障模組:Cassette B\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette B error\N●排除方式:Cassette B requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'58':'●故障模組:Cassette B\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette B error\N●排除方式:Cassette B requires exchange. Contact maintenance.\N●排除位置:',
+'60':'●故障模組:Cassette C\N●故障分類:Faulty media\N●故障說明:Cassette C error\N●排除方式:Check status of banknotes inside Cassette C. Reset banknotes correctly.\N●排除位置:(21,27)',
+'61':'●故障模組:Cassette C\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette C error\N●排除方式:Clean Cassette C or remove banknotes or other material and reset.\N●排除位置:(21,27)',
+'62':'●故障模組:Cassette C\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette C error\N●排除方式:Cassette C requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'63':'●故障模組:Cassette C\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette C error\N●排除方式:Cassette C requires exchange. Contact maintenance.\N●排除位置:',
+'65':'●故障模組:Cassette D\N●故障分類:Faulty media\N●故障說明:Cassette D error\N●排除方式:Check status of banknotes inside Cassette D. Reset banknotes correctly.\N●排除位置:(22,28)',
+'66':'●故障模組:Cassette D\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette D error\N●排除方式:Clean Cassette D or remove banknotes or other material and reset.\N●排除位置:(22,28)',
+'67':'●故障模組:Cassette D\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette D error\N●排除方式:Cassette D requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'68':'●故障模組:Cassette D\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette D error\N●排除方式:Cassette D requires exchange. Contact maintenance.\N●排除位置:',
+'70':'●故障模組:Cassette E\N●故障分類:Faulty media\N●故障說明:Cassette E error\N●排除方式:Check status of banknotes inside Cassette E. Reset banknotes correctly.\N●排除位置:(23,29)',
+'71':'●故障模組:Cassette E\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette E error\N●排除方式:Clean Cassette E or remove banknotes or other material and reset.\N●排除位置:(23,29)',
+'72':'●故障模組:Cassette E\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette E error\N●排除方式:Cassette E requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'73':'●故障模組:Cassette E\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette E error\N●排除方式:Cassette E requires exchange. Contact maintenance.\N●排除位置:',
+'75':'●故障模組:Cassette F\N●故障分類:Faulty media (Reserve)\N●故障說明:Cassette F error\N●排除方式:Banknotes remain in Cassette F. Remove banknotes from Cassette F.\N●排除位置:',
+'76':'●故障模組:Cassette F\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette F error\N●排除方式:Clean Cassette F or remove banknotes or other material and reset.\N●排除位置:(24,30)',
+'77':'●故障模組:Cassette F\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette F error\N●排除方式:Cassette F requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'78':'●故障模組:Cassette F\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette F error\N●排除方式:Cassette F requires exchange. Contact maintenance.\N●排除位置:',
+'80':'●故障模組:Transport M\N●故障分類:Faulty media\N●故障說明:Transport M error\N●排除方式:Banknotes remain in Transport M. Remove banknotes from Transport M.\N●排除位置:(5,6)',
+'81':'●故障模組:Transport M\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Transport M error\N●排除方式:Clean Transport M or remove banknotes or other material and reset.\N●排除位置:(5,6)',
+'82':'●故障模組:Transport M\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Transport M error\N●排除方式:Transport M requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'83':'●故障模組:Transport M\N●故障分類:Equipment failure (exchange)\N●故障說明:Transport M error\N●排除方式:Transport M requires exchange. Contact maintenance.\N●排除位置:',
+'92':'●故障模組:Controls\N●故障分類:Close inspection required\N●故障說明:Error in banknote counting\N●排除方式:After collecting banknotes, verify against the counter count.\N●排除位置:',
+'97':'●故障模組:Logic error\N●故障分類:Program error\N●故障說明:System error\N●排除方式:Reset. If the error remains after resetting, turn the power off and then on again.\N●排除位置:',
+'99':'●故障模組:Logic error\N●故障分類:Command rejected\N●故障說明:System error\N●排除方式:Reset. If the error remains after resetting, turn the power off and then on again.\N●排除位置:',
+'A0':'●故障模組:Exit 1\N●故障分類:Faulty media\N●故障說明:Exit 1 error\N●排除方式:Banknotes remain in Exit 1. Remove banknotes from Exit 1.\N●排除位置:(11)',
+'A1':'●故障模組:Exit 1\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Exit 1 error\N●排除方式:Clean Exit 1 or remove banknotes or other material and reset.\N●排除位置:(11)',
+'A2':'●故障模組:Exit 1\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Exit 1 error\N●排除方式:Exit 1 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'A3':'●故障模組:Exit 1\N●故障分類:Equipment failure (exchange)\N●故障說明:Exit 1 error\N●排除方式:Exit 1 requires exchange. Contact maintenance.\N●排除位置:',
+'A5':'●故障模組:Exit 2\N●故障分類:Faulty media\N●故障說明:Exit 2 error\N●排除方式:Banknotes remain in Exit 2. Remove banknotes from Exit 2.\N●排除位置:(12)',
+'A6':'●故障模組:Exit 2\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Exit 2 error\N●排除方式:Clean Exit 2 or remove banknotes or other material and reset.\N●排除位置:(12)',
+'A7':'●故障模組:Exit 2\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Exit 2 error\N●排除方式:Exit 2 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'A8':'●故障模組:Exit 2\N●故障分類:Equipment failure (exchange)\N●故障說明:Exit 2 error\N●排除方式:Exit 2 requires exchange. Contact maintenance.\N●排除位置:',
+'B0':'●故障模組:Cassette A2\N●故障分類:Faulty media\N●故障說明:Cassette A2 error\N●排除方式:Check status of banknotes inside Cassette A2. Reset banknotes correctly.\N●排除位置:(30,35)',
+'B1':'●故障模組:Cassette A2\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette A2 error\N●排除方式:Clean Cassette A2 or remove banknotes or other material and reset.\N●排除位置:(30,35)',
+'B2':'●故障模組:Cassette A2\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette A2 error\N●排除方式:Cassette A2 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'B3':'●故障模組:Cassette A2\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette A2 error\N●排除方式:Cassette A2 requires exchange. Contact maintenance.\N●排除位置:',
+'B5':'●故障模組:Cassette A3\N●故障分類:Faulty media\N●故障說明:Cassette A3 error\N●排除方式:Check status of banknotes inside Cassette A3. Reset banknotes correctly.\N●排除位置:(40,45)',
+'B6':'●故障模組:Cassette A3\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette A3 error\N●排除方式:Clean Cassette A3 or remove banknotes or other material and reset.\N●排除位置:(40,45)',
+'B7':'●故障模組:Cassette A3\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette A3 error\N●排除方式:Cassette A3 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'B8':'●故障模組:Cassette A3\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette A3 error\N●排除方式:Cassette A3 requires exchange. Contact maintenance.\N●排除位置:',
+'C0':'●故障模組:Cassette B2\N●故障分類:Faulty media\N●故障說明:Cassette B2 error\N●排除方式:Check status of banknotes inside Cassette B2. Reset banknotes correctly.\N●排除位置:(31,36)',
+'C1':'●故障模組:Cassette B2\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette B2 error\N●排除方式:Clean Cassette B2 or remove banknotes or other material and reset.\N●排除位置:(31,36)',
+'C2':'●故障模組:Cassette B2\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette B2 error\N●排除方式:Cassette B2 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'C3':'●故障模組:Cassette B2\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette B2 error\N●排除方式:Cassette B2 requires exchange. Contact maintenance.\N●排除位置:',
+'C5':'●故障模組:Cassette B3\N●故障分類:Faulty media\N●故障說明:Cassette B3 error\N●排除方式:Check status of banknotes inside Cassette B3. Reset banknotes correctly.\N●排除位置:(41,46)',
+'C6':'●故障模組:Cassette B3\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette B3 error\N●排除方式:Clean Cassette B3 or remove banknotes or other material and reset.\N●排除位置:(41,46)',
+'C7':'●故障模組:Cassette B3\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette B3 error\N●排除方式:Cassette B3 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'C8':'●故障模組:Cassette B3\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette B3 error\N●排除方式:Cassette B3 requires exchange. Contact maintenance.\N●排除位置:',
+'D0':'●故障模組:Cassette C2\N●故障分類:Faulty media\N●故障說明:Cassette C2 error\N●排除方式:Check status of banknotes inside Cassette C2. Reset banknotes correctly.\N●排除位置:(32,37)',
+'D1':'●故障模組:Cassette C2\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette C2 error\N●排除方式:Clean Cassette C2 or remove banknotes or other material and reset.\N●排除位置:(32,37)',
+'D2':'●故障模組:Cassette C2\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette C2 error\N●排除方式:Cassette C2 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'D3':'●故障模組:Cassette C2\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette C2 error\N●排除方式:Cassette C2 requires exchange. Contact maintenance.\N●排除位置:',
+'D5':'●故障模組:Cassette C3\N●故障分類:Faulty media\N●故障說明:Cassette C3 error\N●排除方式:Check status of banknotes inside Cassette C3. Reset banknotes correctly.\N●排除位置:(42,47)',
+'D6':'●故障模組:Cassette C3\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette C3 error\N●排除方式:Clean Cassette C3 or remove banknotes or other material and reset.\N●排除位置:(42,47)',
+'D7':'●故障模組:Cassette C3\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette C3 error\N●排除方式:Cassette C3 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'D8':'●故障模組:Cassette C3\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette C3 error\N●排除方式:Cassette C3 requires exchange. Contact maintenance.\N●排除位置:',
+'E0':'●故障模組:Cassette D2\N●故障分類:Faulty media\N●故障說明:Cassette D2 error\N●排除方式:Check status of banknotes inside Cassette D2. Reset banknotes correctly.\N●排除位置:(33,38)',
+'E1':'●故障模組:Cassette D2\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette D2 error\N●排除方式:Clean Cassette D2 or remove banknotes or other material and reset.\N●排除位置:(33,38)',
+'E2':'●故障模組:Cassette D2\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette D2 error\N●排除方式:Cassette D2 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'E3':'●故障模組:Cassette D2\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette D2 error\N●排除方式:Cassette D2 requires exchange. Contact maintenance.\N●排除位置:',
+'E5':'●故障模組:Cassette D3\N●故障分類:Faulty media\N●故障說明:Cassette D3 error\N●排除方式:Check status of banknotes inside Cassette D3. Reset banknotes correctly.\N●排除位置:(43,48)',
+'E6':'●故障模組:Cassette D3\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette D3 error\N●排除方式:Clean Cassette D3 or remove banknotes or other material and reset.\N●排除位置:(43,48)',
+'E7':'●故障模組:Cassette D3\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette D3 error\N●排除方式:Cassette D3 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'E8':'●故障模組:Cassette D3\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette D3 error\N●排除方式:Cassette D3 requires exchange. Contact maintenance.\N●排除位置:',
+'F0':'●故障模組:Cassette E2\N●故障分類:Faulty media\N●故障說明:Cassette E2 error\N●排除方式:Check status of banknotes inside Cassette E2. Reset banknotes correctly.\N●排除位置:(34,39)',
+'F1':'●故障模組:Cassette E2\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette E2 error\N●排除方式:Clean Cassette E2 or remove banknotes or other material and reset.\N●排除位置:(34,39)',
+'F2':'●故障模組:Cassette E2\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette E2 error\N●排除方式:Cassette E2 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'F3':'●故障模組:Cassette E2\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette E2 error\N●排除方式:Cassette E2 requires exchange. Contact maintenance.\N●排除位置:',
+'F5':'●故障模組:Cassette E3\N●故障分類:Faulty media\N●故障說明:Cassette E3 error\N●排除方式:Check status of banknotes inside Cassette E3. Reset banknotes correctly.\N●排除位置:(44,49)',
+'F6':'●故障模組:Cassette E3\N●故障分類:Equipment failure (cleaning, inspection)\N●故障說明:Cassette E3 error\N●排除方式:Clean Cassette E3 or remove banknotes or other material and reset.\N●排除位置:(44,49)',
+'F7':'●故障模組:Cassette E3\N●故障分類:Equipment failure (cleaning, adjustment)\N●故障說明:Cassette E3 error\N●排除方式:Cassette E3 requires cleaning/adjustment. Contact maintenance.\N●排除位置:',
+'F8':'●故障模組:Cassette E3\N●故障分類:Equipment failure (exchange)\N●故障說明:Cassette E3 error\N●排除方式:Cassette E3 requires exchange. Contact maintenance.\N●排除位置:',			
+			
+ };
 	
   //6碼 
     XFSCode={
@@ -1933,29 +1981,9 @@
 '3329':'\NMedia remainder after each command operation\NCassette E handover(DRC Upper)(SC124)\N',
 '3338':'\NMedia remainder after each command operation\NRemainder in customer-service unit\N',
 '3339':'\NMedia remainder after each command operation\NRemainder in temporary hold\N',
-"'3380':'\NRJ Control Mode B Error in Stroe\NCategory1 banknote was detected when the following counting. 
-\n-Dispense counting
- \n * Reject notes are transported to Exit2.
- \n-Collect counting (Cassette Empty)
-  \n* Reject notes are transported to Exit1 or Exit2.
- \n-Store counting
-  \n* Reject notes exist on transport path.\N',"
-"'3381':'\NRJ Control Mode B Error in Cancel
- (not support)\NCategory1 banknote was detected when the following counting. 
-\n-Dispense counting
- \n * Reject notes are transported to Exit2.
- \n-Collect counting (Cassette Empty)
-  \n* Reject notes are transported to Exit1 or Exit2.
- \n-Store counting
-  \n* Reject notes exist on transport path.\N',"
-"'3382':'\NRJ Control Mode B Error in Dispense
- RJ Control Mode B Error in Collect(Cassette Empty)\NCategory1 banknote was detected when the following counting. 
-\n-Dispense counting
- \n * Reject notes are transported to Exit2.
- \n-Collect counting (Cassette Empty)
-  \n* Reject notes are transported to Exit1 or Exit2.
- \n-Store counting
-  \n* Reject notes exist on transport path.\N',"
+'3380':'\NRJ Control Mode B Error in Stroe\NCategory1 banknote was detected when the following counting. \n-Dispense counting \n * Reject notes are transported to Exit2. \n-Collect counting (Cassette Empty)  \n* Reject notes are transported to Exit1 or Exit2. \n-Store counting  \n* Reject notes exist on transport path.\N',
+'3381':'\NRJ Control Mode B Error in Cancel (not support)\NCategory1 banknote was detected when the following counting. \n-Dispense counting \n * Reject notes are transported to Exit2. \n-Collect counting (Cassette Empty)  \n* Reject notes are transported to Exit1 or Exit2. \n-Store counting  \n* Reject notes exist on transport path.\N',
+'3382':'\NRJ Control Mode B Error in Dispense RJ Control Mode B Error in Collect(Cassette Empty)\NCategory1 banknote was detected when the following counting. \n-Dispense counting \n * Reject notes are transported to Exit2. \n-Collect counting (Cassette Empty)  \n* Reject notes are transported to Exit1 or Exit2. \n-Store counting  \n* Reject notes exist on transport path.\N',
 '4300':'\NEntrance separation\NRJ over (○ times): not generated\N',
 '4301':'\NEntrance separation\NSkew continuous RJ (○ times): not generated\N',
 '4302':'\NEntrance separation\NMultiple-sheet feed continuous RJ (○ times): not generated\N',
@@ -2198,18 +2226,10 @@
 '5401':'\N`A` stacker separation\NEnd\N',
 '5402':'\N`A` stacker separation\NPoor separation (separation sensor(SC55.56) OR dark wait timeout)\N',
 '5405':'\N`A` stacker separation\NPoor separation (separation sensor(SC55.56) AND lit wait timeout)\N',
-"'5406':'\N`A` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5407':'\N`A` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5408':'\N`A` stacker separation
- (Bill-picker sensor change wait timeout dark -> lit (1000ms))
- (not support)\N\N',"
-"'5409':'\N`A` stacker separation
- (Bill-picker sensor change wait timeout lit -> dark (1000ms))
- (not support)\N\N',"
+'5406':'\N`A` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5407':'\N`A` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5408':'\N`A` stacker separation (Bill-picker sensor change wait timeout dark -> lit (1000ms)) (not support)\N\N',
+'5409':'\N`A` stacker separation (Bill-picker sensor change wait timeout lit -> dark (1000ms)) (not support)\N\N',
 '540A':'\N`A` stacker handover sensor lit wait timeout (not support)\N\N',
 '540B':'\N`A` stacker handover sensor lit wait timeout (not support)\N\N',
 '540C':'\N`A` stacker handover sensor lit wait timeout (not support)\N\N',
@@ -2217,66 +2237,31 @@
 '540E':'\N`A` stacker handover sensor lit wait timeout (not support)\N\N',
 '540F':'\N`A` stacker handover sensor lit wait timeout (not support)\N\N',
 '5410':'\N`A` stacker handover sensor lit wait timeout (not support)\N\N',
-"'5411':'\N`A` stacker separation
- `retry over error` of Poor separation\N\N',"
+'5411':'\N`A` stacker separation `retry over error` of Poor separation\N\N',
 '5412':'\N`A` stacker separation (`correction retry over error` for notes which approached) (not support)\N\N',
-"'5413':'\N`A` stacker separation
- `retry over error` of revised Skew
- (not support)\N\N',"
-"'5414':'\N`A` stacker separation
- `retry over error` of notes size abnormality 
- (not support)\N\N',"
-"'5415':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5416':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5417':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5418':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5419':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'541A':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'541B':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'541C':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'541D':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'541E':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'541F':'\N`A` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
+'5413':'\N`A` stacker separation `retry over error` of revised Skew (not support)\N\N',
+'5414':'\N`A` stacker separation `retry over error` of notes size abnormality  (not support)\N\N',
+'5415':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5416':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5417':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5418':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5419':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'541A':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'541B':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'541C':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'541D':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'541E':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'541F':'\N`A` stacker separation 1st sensor lit wait timeout (not support)\N\N',
 '54F0':'\NMechanics common module\NMotor type error\N',
 '54F1':'\NMechanics common module\NResponse timeout\N',
 '54F3':'\NMechanics common module\NParameter error\N',
 '5501':'\N`B` stacker separation\NEnd\N',
 '5502':'\N`B` stacker separation\NPoor separation (separation sensor(SC60.61) OR dark wait timeout)\N',
 '5505':'\N`B` stacker separation\NPoor separation (separation sensor(SC60.61) AND lit wait timeout)\N',
-"'5506':'\N`B` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5507':'\N`B` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5508':'\N`B` stacker separation
- (Bill-picker sensor change wait timeout dark -> lit (1000ms))
- (not support)\N\N',"
-"'5509':'\N`B` stacker separation
- (Bill-picker sensor change wait timeout lit -> dark (1000ms))
- (not support)\N\N',"
+'5506':'\N`B` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5507':'\N`B` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5508':'\N`B` stacker separation (Bill-picker sensor change wait timeout dark -> lit (1000ms)) (not support)\N\N',
+'5509':'\N`B` stacker separation (Bill-picker sensor change wait timeout lit -> dark (1000ms)) (not support)\N\N',
 '550A':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '550B':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '550C':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
@@ -2284,66 +2269,31 @@
 '550E':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '550F':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '5510':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
-"'5511':'\N`B` stacker separation
- `retry over error` of Poor separation\N\N',"
+'5511':'\N`B` stacker separation `retry over error` of Poor separation\N\N',
 '5512':'\N`B` stacker separation (`correction retry over error` for notes which approached) (not support)\N\N',
-"'5513':'\N`B` stacker separation
- `retry over error` of revised Skew
- (not support)\N\N',"
-"'5514':'\N`B` stacker separation
- `retry over error` of notes size abnormality 
- (not support)\N\N',"
-"'5515':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5516':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5517':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5518':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5519':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'551A':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'551B':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'551C':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'551D':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'551E':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'551F':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
+'5513':'\N`B` stacker separation `retry over error` of revised Skew (not support)\N\N',
+'5514':'\N`B` stacker separation `retry over error` of notes size abnormality  (not support)\N\N',
+'5515':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5516':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5517':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5518':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5519':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'551A':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'551B':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'551C':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'551D':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'551E':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'551F':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
 '55E1':'\NMechanics common module\NMotor type error\N',
 '55E2':'\NMechanics common module\NResponse timeout\N',
 '55E4':'\NMechanics common module\NParameter error\N',
 '5601':'\N`C` stacker separation\NEnd\N',
 '5602':'\N`C` stacker separation\NPoor separation (separation sensor(SC65.66) OR dark wait timeout)\N',
 '5605':'\N`C` stacker separation\NPoor separation (separation sensor(SC65.66) AND lit wait timeout)\N',
-"'5606':'\N`C` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5607':'\N`C` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5608':'\N`C` stacker separation
- (Bill-picker sensor change wait timeout dark -> lit (1000ms))
- (not support)\N\N',"
-"'5609':'\N`C` stacker separation
- (Bill-picker sensor change wait timeout lit -> dark (1000ms))
- (not support)\N\N',"
+'5606':'\N`C` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5607':'\N`C` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5608':'\N`C` stacker separation (Bill-picker sensor change wait timeout dark -> lit (1000ms)) (not support)\N\N',
+'5609':'\N`C` stacker separation (Bill-picker sensor change wait timeout lit -> dark (1000ms)) (not support)\N\N',
 '560A':'\N`C` stacker handover sensor lit wait timeout (not support)\N\N',
 '560B':'\N`C` stacker handover sensor lit wait timeout (not support)\N\N',
 '560C':'\N`C` stacker handover sensor lit wait timeout (not support)\N\N',
@@ -2351,66 +2301,31 @@
 '560E':'\N`C` stacker handover sensor lit wait timeout (not support)\N\N',
 '560F':'\N`C` stacker handover sensor lit wait timeout (not support)\N\N',
 '5610':'\N`C` stacker handover sensor lit wait timeout (not support)\N\N',
-"'5611':'\N`C` stacker separation
- `retry over error` of Poor separation\N\N',"
+'5611':'\N`C` stacker separation `retry over error` of Poor separation\N\N',
 '5612':'\N`C` stacker separation (`correction retry over error` for notes which approached) (not support)\N\N',
-"'5613':'\N`C` stacker separation
- `retry over error` of revised Skew
- (not support)\N\N',"
-"'5614':'\N`C` stacker separation
- `retry over error` of notes size abnormality 
- (not support)\N\N',"
-"'5615':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5616':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5617':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5618':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5619':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'561A':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'561B':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'561C':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'561D':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'561E':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'561F':'\N`C` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
+'5613':'\N`C` stacker separation `retry over error` of revised Skew (not support)\N\N',
+'5614':'\N`C` stacker separation `retry over error` of notes size abnormality  (not support)\N\N',
+'5615':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5616':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5617':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5618':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5619':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'561A':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'561B':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'561C':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'561D':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'561E':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'561F':'\N`C` stacker separation 1st sensor lit wait timeout (not support)\N\N',
 '56F0':'\NMechanics common module\NMotor type error\N',
 '56F1':'\NMechanics common module\NResponse timeout\N',
 '56F3':'\NMechanics common module\NParameter error\N',
 '5701':'\N`D` stacker separation\NEnd\N',
 '5702':'\N`D` stacker separation\NPoor separation (separation sensor(SC70.71) OR dark wait timeout)\N',
 '5705':'\N`D` stacker separation\NPoor separation (separation sensor(SC70.71) AND lit wait timeout)\N',
-"'5706':'\N`D` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5707':'\N`D` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5708':'\N`D` stacker separation
- (Bill-picker sensor change wait timeout dark -> lit (1000ms))
- (not support)\N\N',"
-"'5709':'\N`D` stacker separation
- (Bill-picker sensor change wait timeout lit -> dark (1000ms))
- (not support)\N\N',"
+'5706':'\N`D` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5707':'\N`D` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5708':'\N`D` stacker separation (Bill-picker sensor change wait timeout dark -> lit (1000ms)) (not support)\N\N',
+'5709':'\N`D` stacker separation (Bill-picker sensor change wait timeout lit -> dark (1000ms)) (not support)\N\N',
 '570A':'\N`D` stacker handover sensor lit wait timeout (not support)\N\N',
 '570B':'\N`D` stacker handover sensor lit wait timeout (not support)\N\N',
 '570C':'\N`D` stacker handover sensor lit wait timeout (not support)\N\N',
@@ -2418,66 +2333,31 @@
 '570E':'\N`D` stacker handover sensor lit wait timeout (not support)\N\N',
 '570F':'\N`D` stacker handover sensor lit wait timeout (not support)\N\N',
 '5710':'\N`D` stacker handover sensor lit wait timeout (not support)\N\N',
-"'5711':'\N`D` stacker separation
- `retry over error` of Poor separation\N\N',"
+'5711':'\N`D` stacker separation `retry over error` of Poor separation\N\N',
 '5712':'\N`D` stacker separation (`correction retry over error` for notes which approached) (not support)\N\N',
-"'5713':'\N`D` stacker separation
- `retry over error` of revised Skew
- (not support)\N\N',"
-"'5714':'\N`D` stacker separation
- `retry over error` of notes size abnormality 
- (not support)\N\N',"
-"'5715':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5716':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5717':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5718':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5719':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'571A':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'571B':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'571C':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'571D':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'571E':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'571F':'\N`D` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
+'5713':'\N`D` stacker separation `retry over error` of revised Skew (not support)\N\N',
+'5714':'\N`D` stacker separation `retry over error` of notes size abnormality  (not support)\N\N',
+'5715':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5716':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5717':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5718':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5719':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'571A':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'571B':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'571C':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'571D':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'571E':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'571F':'\N`D` stacker separation 1st sensor lit wait timeout (not support)\N\N',
 '57E1':'\NMechanics common module\NMotor type error\N',
 '57E2':'\NMechanics common module\NResponse timeout\N',
 '57E4':'\NMechanics common module\NParameter error\N',
 '5801':'\N`E` stacker separation\NEnd\N',
 '5802':'\N`E` stacker separation\NPoor separation (separation sensor(SC75.76) OR dark wait timeout)\N',
 '5805':'\N`E` stacker separation\NPoor separation (separation sensor(SC75.76) AND lit wait timeout)\N',
-"'5806':'\N`B` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5807':'\N`B` stacker separation
- Poor separation (separation sensor AND dark wait timeout(XXms))
- (not support)\N\N',"
-"'5808':'\N`B` stacker separation
- (Bill-picker sensor change wait timeout dark -> lit (1000ms))
- (not support)\N\N',"
-"'5809':'\N`B` stacker separation
- (Bill-picker sensor change wait timeout lit -> dark (1000ms))
- (not support)\N\N',"
+'5806':'\N`B` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5807':'\N`B` stacker separation Poor separation (separation sensor AND dark wait timeout(XXms)) (not support)\N\N',
+'5808':'\N`B` stacker separation (Bill-picker sensor change wait timeout dark -> lit (1000ms)) (not support)\N\N',
+'5809':'\N`B` stacker separation (Bill-picker sensor change wait timeout lit -> dark (1000ms)) (not support)\N\N',
 '580A':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '580B':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '580C':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
@@ -2485,48 +2365,21 @@
 '580E':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '580F':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
 '5810':'\N`B` stacker handover sensor lit wait timeout (not support)\N\N',
-"'5811':'\N`B` stacker separation
- `retry over error` of Poor separation\N\N',"
+'5811':'\N`B` stacker separation `retry over error` of Poor separation\N\N',
 '5812':'\N`B` stacker separation (`correction retry over error` for notes which approached) (not support)\N\N',
-"'5813':'\N`B` stacker separation
- `retry over error` of revised Skew
- (not support)\N\N',"
-"'5814':'\N`B` stacker separation
- `retry over error` of notes size abnormality 
- (not support)\N\N',"
-"'5815':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5816':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5817':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5818':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'5819':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'581A':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'581B':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'581C':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'581D':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'581E':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
-"'581F':'\N`B` stacker separation
- 1st sensor lit wait timeout
- (not support)\N\N',"
+'5813':'\N`B` stacker separation `retry over error` of revised Skew (not support)\N\N',
+'5814':'\N`B` stacker separation `retry over error` of notes size abnormality  (not support)\N\N',
+'5815':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5816':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5817':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5818':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'5819':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'581A':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'581B':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'581C':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'581D':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'581E':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
+'581F':'\N`B` stacker separation 1st sensor lit wait timeout (not support)\N\N',
 '58F0':'\NMechanics common module\NMotor type error\N',
 '58F1':'\NMechanics common module\NResponse timeout\N',
 '58F3':'\NMechanics common module\NParameter error\N',
@@ -4618,10 +4471,8 @@
 'F860':'\NMaintenance. unit test\NUSB memory check error\N',
 'F900':'\NMaintenance command\NCommand RJ\N',
 'F901':'\NIn-use status unimplemented error\NCommand requiring in-use status implemented without in-use status\N',
-"'F902':'\NCannot operate due to model difference\N・ Model no.. country info notified in SG load command does not match model no.. country info in main firm
- ・ Model no.. country info mismatch with recognition unit\N',"
-"'F903':'\NSG load error\N・ Recognized banknote type info abnormal
- ・ Denomination info abnormal\N',"
+'F902':'\NCannot operate due to model difference\N・ Model no.. country info notified in SG load command does not match model no.. country info in main firm ・ Model no.. country info mismatch with recognition unit\N',
+'F903':'\NSG load error\N・ Recognized banknote type info abnormal ・ Denomination info abnormal\N',
 'F910':'\NDVC0 command parameter error\NDVC0 non-standard command received\N',
 'F911':'\NDVC0 command length check error\N\N',
 'F912':'\NCannot operate due to CABC error\NCABC shutter not closed. or remainder 1/2 sensor ON\N',
@@ -4680,8 +4531,7 @@
 'F95A':'\NCannot execute log read (DVC0.1 active)\NLog read command received while DVC0.1 active\N',
 'F95B':'\N數據引導類型未指定\N\N',
 'F95C':'\N數據寫入類型未指定\N\N',
-"'F970':'\NCounter read type error\NCounter read type other than the following types executed:
- ① Operation counter. ② Atr6 counter\N',"
+'F970':'\NCounter read type error\NCounter read type other than the following types executed: Operation counter. ② Atr6 counter\N',
 'F980':'\NSG load\NCommand unreceived error\N',
 'F981':'\NMechanism not initialized after attachment/removal of upper unit\NOther command executed without initialization command after attaching or removing upper unit or opening or closing rear door\N',
 'F982':'\NMechanism not initialized after attachment/removal of lower unit\NOther command executed without initialization command after attaching or removing banknote cassette or opening or closing rear door\N',
@@ -4741,7 +4591,7 @@
 
 	};
 
-    UserEnter = prompt("請輸入BRM錯誤碼(4碼或6碼，如: C400或01C400)!\n\n[注意:只輸入4碼將無法查詢XFS-SP CODE & GROUP CODE]");
+    UserEnter = prompt("請輸入TG7錯誤碼(4碼或6碼，如: C400或01C400)!");
     showuser = "【您輸入了: " + UserEnter.toUpperCase() + " ，查詢結果如下】\n\n"
     if (UserEnter == null) // user按下取消
         alert("請重新選擇!");
@@ -4791,11 +4641,11 @@
 
     </script>
     
-    <a href="RG7_BRM.html">●再查一次</a><br>
-    <a href="RG7_UNIT.html">●回上一層</a><br>
+    <a href="TG7.html">●再查一次</a><br>
+    <a href="Sensor.html">●回上一層</a><br>
     <a href="../main.html">●回主選單</a><br>
 	
-	<img style="width:100%" src="../images/Rg7Layout/BRM DEBUG.jpg"/>
+	
 	
 	<script>
 		myFunInput(UserEnter,document.title);
