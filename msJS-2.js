@@ -43,7 +43,7 @@ function checkCookie() {
 }
 
 function myFunInput(UserEnter,title){
-	checkCookie();
+	
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
 	var Today = new Date();
@@ -67,5 +67,5 @@ function myFunInput(UserEnter,title){
 			};
 			$.get(appUrl, parameter);
     	});	
-	 
+	 checkCookie();
 }
