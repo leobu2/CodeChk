@@ -5,7 +5,18 @@ var latitude;//25.0478 (緯度)
 var longitude;	//121.5318 (經度)
 var ip;//192.168.1.1
 
-function getPosition(){}//KEEP THIS FUNCTION FOR HTML PAGE USE
+function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
+	if($.cookie('Name') == null){
+		alert("Cookie/Name = empty，請輸入名字");
+		userInputName = prompt("請輸入名字!");
+		$.cookie('Name', userInputName, {expires: 7, path: '/'});
+		alert("輸入完成，您的名字是: " + $.cookie('Name'));
+	}else{
+		alert("您的名字是: " + $.cookie('Name'));
+	}	
+
+
+}//KEEP THIS FUNCTION FOR HTML PAGE USE
 
 
 
