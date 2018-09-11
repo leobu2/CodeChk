@@ -16,7 +16,7 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
 		
 		//怕user誤輸入S
-		if(UserID.search('S') = -1 || UserID.search('s') = -1){
+		if(UserID.search('S') == -1 || UserID.search('s') == -1){
 			UserID = 'S' + UserID
 			
 		}else{//將小寫轉大寫
