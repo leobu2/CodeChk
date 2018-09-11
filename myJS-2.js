@@ -14,7 +14,9 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	if(confirm('您要刪除工號以及姓名的Cookie嗎?')){
 		Cookies.remove('UserID');
 		Cookies.remove('UserName');
-		alert('===已刪除===\n目前UserID的值為: ' + UserID + '\n目前UserName的值為: ' + UserName);
+		alert('===已刪除Cookie===\n目前UserID的值為: ' + UserID + '\n目前UserName的值為: ' + UserName);
+	}else{
+		alert('===不刪除Cookie===\n目前UserID的值為: ' + UserID + '\n目前UserName的值為: ' + UserName);
 	}
 		
 		
@@ -22,12 +24,12 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
 				
 		if(UserID.length != 4){ //長度不等於4
-			alert('工號輸入錯誤，請重新輸入!');
+			alert('工號輸入錯誤(不等於4碼)，請重新輸入!');
 			getPosition();
 			
 		}else{ //長度等於4
 			if(isNaN(UserID)){ //如包含非數字資料，則重輸入
-				alert('工號輸入錯誤，請重新輸入!');
+				alert('工號輸入錯誤(包含非數字資料)，請重新輸入!');
 				getPosition();
 			}
 			UserID = 'S' + UserID
@@ -48,7 +50,8 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	}
 	
 	if (UserFlag == 1 ){
-	alert('===歡迎使用===\n ' + UserID + '\n' + UserName);
+		alert('===資料輸入完成，謝謝===\n=====歡迎使用=====\n ' + UserID + '\n' + UserName);
+		UserFlag = 0;
 	}
 			
 	
