@@ -22,8 +22,10 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 		
 	if(Cookies.get('UserID')== null){
 		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
-				
-		if(UserID.length != 4){ //長度不等於4
+		if(UserID == null){	
+			alert('工號輸入錯誤(未輸入值)，請重新輸入!');
+			getPosition();
+		}else if(UserID.length != 4){ //長度不等於4
 			alert('工號輸入錯誤(不等於4碼)，請重新輸入!');
 			getPosition();
 			
@@ -33,21 +35,27 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 				getPosition();
 			}
 			UserID = 'S' + UserID
+			Cookies.set('UserID', UserID, {expires: 888});
+			UserFlag = 1;
 		}
-		
-		Cookies.set('UserID', UserID, {expires: 888});
-		UserFlag = 1;
 	}else{
 		UserID = Cookies.get('UserID');
 	}
 	
+	
 	if(Cookies.get('UserName')== null){
 		UserName = prompt('===使用者認證===\n請輸入中文全名!');
-		Cookies.set('UserName', UserName, {expires: 888});		
-		UserFlag = 1;
+		if(UserName == null){
+			alert('姓名輸入錯誤(未輸入)，請重新輸入!');
+			getPosition();
+		}else{
+			Cookies.set('UserName', UserName, {expires: 888});		
+			UserFlag = 1;
+		}			
 	}else{
 		UserName = Cookies.get('UserName');
 	}
+	
 	
 	if (UserFlag == 1 ){
 		alert('===資料輸入完成，謝謝===\n=====歡迎使用=====\n ' + UserID + '\n' + UserName);
