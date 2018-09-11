@@ -5,7 +5,7 @@ var latitude;//25.0478 (緯度)
 var longitude;	//121.5318 (經度)
 var ip;//192.168.1.1
 var UserName;
-var UserID =;
+var UserID;
 var UserFlag = 0;
 var isUserCorrect;
 /* 
