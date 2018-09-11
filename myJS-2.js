@@ -12,18 +12,17 @@ var isUserCorrect;
  
 function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 
-	UserID = Cookies.get('UserID');
-	UserName = Cookies.get('UserName');
-	isUserCorrect = confirm('請問工號以及姓名是否正確?\n\nS' + UserID + '\n' + UserName);
-	if(isUserCorrect){
-		alert('歡迎使用!\n' + UserID+ '\n' + UserName);
-	}else{
-		Cookies.remove('UserID');
-		Cookies.remove('UserName');
-	}
-	
 	if(Cookies.get('UserID')== null){
-		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)');
+		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
+		
+		//怕user誤輸入S
+		if(UserID.search('S') = -1 || UserID.search('s') = -1){
+			UserID = 'S' + UserID
+			
+		}else{//將小寫轉大寫
+			UserID = UserID.toUpperCase()
+		}
+		
 		Cookies.set('UserID', UserID, {expires: 888});
 		UserFlag = 1;
 	}else{
@@ -31,7 +30,7 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	}
 	
 	if(Cookies.get('UserName')== null){
-		UserName = prompt('===使用者認證===\n請輸入中文全名');
+		UserName = prompt('===使用者認證===\n請輸入中文全名!');
 		Cookies.set('UserName', UserName, {expires: 888});		
 		UserFlag = 1;
 	}else{
@@ -39,7 +38,7 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	}
 	
 	if (UserFlag == 1 ){
-	alert('===歡迎使用===\n ' + "S" + UserID + '\n' + UserName);
+	alert('===歡迎使用===\n ' + UserID + '\n' + UserName);
 	}
 			
 	
