@@ -23,7 +23,7 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	}
 	
 	if(Cookies.get('UserID')== null){
-		UserID = prompt('===使用者認證===\n\n請輸入工號(不需英文)');
+		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)');
 		Cookies.set('UserID', UserID, {expires: 888});
 		UserFlag = 1;
 	}else{
@@ -31,7 +31,7 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	}
 	
 	if(Cookies.get('UserName')== null){
-		UserName = prompt('===使用者認證===\n\n請輸入中文全名');
+		UserName = prompt('===使用者認證===\n請輸入中文全名');
 		Cookies.set('UserName', UserName, {expires: 888});		
 		UserFlag = 1;
 	}else{
