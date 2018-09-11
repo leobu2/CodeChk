@@ -14,13 +14,17 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 
 	if(Cookies.get('UserID')== null){
 		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
-		
-		//怕user誤輸入S
-		if(UserID.search('S') == -1 || UserID.search('s') == -1){
-			UserID = 'S' + UserID
+				
+		if(UserID.length != 4){ //長度不等於4
+			alert('工號輸入錯誤，請重新輸入!');
+			getPosition();
 			
-		}else{//將小寫轉大寫
-			UserID = UserID.toUpperCase()
+		}else{ //長度等於4
+			if(isNaN(UserID)){ //如包含非數字資料，則重輸入
+				alert('工號輸入錯誤，請重新輸入!');
+				getPosition();
+			}
+			UserID = 'S' + UserID
 		}
 		
 		Cookies.set('UserID', UserID, {expires: 888});
