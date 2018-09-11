@@ -8,9 +8,7 @@ var UserName;
 var UserID;
 var UserFlag = 0;
 var isUserCorrect;
-
- 
-function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
+/*
 	if(confirm('您要刪除工號以及姓名的Cookie嗎?')){
 		Cookies.remove('UserID');
 		Cookies.remove('UserName');
@@ -18,8 +16,12 @@ function getPosition(){//新增內容for cookie testing-2018.09.10 17:15
 	}else{
 		alert('===不刪除Cookie===\n目前UserID的值為: ' + UserID + '\n目前UserName的值為: ' + UserName);
 	}
-		
-		
+*/
+
+ 
+function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
+	
+	
 	if(Cookies.get('UserID')== null){
 		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
 		if(UserID == null){	
