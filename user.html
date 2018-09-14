@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>User Info</title>
+  
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="../myJS-2.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-67602727-2');
+	</script>
+    
+</head>
+<body>
+	
+    <h1 >使用者:</h1><br>
+    <p id="p_UserID">工號: </p>
+    <p id="p_UserName">姓名: </p>
+	<input type="button" onclick="resetCookie()" value="按這裡重設使用者資料" /><br><br>
+    
+    <script>
+	    //get cookies of 'UserID' & 'UserName'
+		var id = '工號: ';
+		var name = '姓名: ';
+		document.getElementById("p_UserID").innerHTML =  id + Cookies.get('UserID');
+		document.getElementById("p_UserName").innerHTML = name + Cookies.get('UserName');
+		
+		function resetCookie()
+		{
+			Cookies.remove('UserID');
+			Cookies.remove('UserName');
+			getPosition();
+			//window.location.reload();
+			//object.reload(forcedReload);
+			location.reload(true);
+			
+		}
+		
+		
+    </script>
+    
+
+    
+    
+    <a href="main.html">●回主選單</a><br>
+    
+    <script>
+        //myFunInput(UserEnter,document.title);
+    </script> 
+</body>
+</html>
