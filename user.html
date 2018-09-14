@@ -16,14 +16,28 @@
 	  gtag('js', new Date());
 	  gtag('config', 'UA-67602727-2');
 	</script>
-    
+	<style>
+		.button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 30px;
+			margin: 4px 2px;
+			cursor: pointer;
+			}
+	</style>
 </head>
 <body>
 	
-    <P>[使用者]</P><br>
-    <p id="p_UserID">工號: </p>
-    <p id="p_UserName">姓名: </p>
-	<input type="button" onclick="resetCookie()" value="按這裡重設使用者資料" /><br><br>
+	
+    
+	<p id="p_UserID">工號: </p>
+	<p id="p_UserName">姓名: </p>
+	<input type="button" class="button" onclick="resetCookie()" value="按這裡重設使用者資料" /><br><br>
     
     <script>
 	    //get cookies of 'UserID' & 'UserName'
