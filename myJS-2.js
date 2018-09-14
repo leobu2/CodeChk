@@ -53,7 +53,7 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 			alert('姓名輸入錯誤(取消輸入)!');
 			alert('即將離開輸入畫面，謝謝!');
 			RETURN;
-		}else if(UserName == " "){
+		}else if(UserName == ""){
 			alert('姓名輸入錯誤(未輸入值)，請重新輸入!');
 			getPosition();
 		}else{
