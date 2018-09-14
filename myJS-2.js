@@ -23,12 +23,12 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 	
 	
 	if(Cookies.get('UserID')== null){
-		UserID = prompt('===使用者認證===\n請輸入工號(不需英文)!');
+		UserID = prompt('===關於使用者===\n請輸入工號(不需英文)!');
 		if(UserID == null){	
 			alert('工號輸入錯誤(取消輸入)!');
-			alert('即將離開，謝謝!');
+			alert('即將離開輸入畫面，謝謝!');
 			RETURN;
-			getPosition();
+			
 		}else if(UserID.length != 4){ //長度不等於4
 			alert('工號輸入錯誤(不等於4碼)，請重新輸入!');
 			getPosition();
@@ -48,10 +48,11 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 	
 	
 	if(Cookies.get('UserName')== null){
-		UserName = prompt('===使用者認證===\n請輸入中文全名!');
+		UserName = prompt('===關於使用者===\n請輸入中文全名!');
 		if(UserName == null){
-			alert('姓名輸入錯誤(未輸入)，請重新輸入!');
-			getPosition();
+			alert('姓名輸入錯誤(取消輸入)!');
+			alert('即將離開輸入畫面，謝謝!');
+			RETURN;
 		}else{
 			Cookies.set('UserName', UserName, {expires: 888});		
 			UserFlag = 1;
