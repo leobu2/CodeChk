@@ -26,7 +26,7 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 		UserID = prompt('===關於使用者===\n請輸入工號(不需英文)!');
 		if(UserID == null){	
 			alert('工號輸入錯誤(取消輸入)!');
-			alert('即將離開輸入畫面，謝謝!');
+			
 			RETURN;
 			
 		}else if(UserID.length != 4){ //長度不等於4
@@ -51,7 +51,7 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 		UserName = prompt('===關於使用者===\n請輸入中文全名!');
 		if(UserName == null){
 			alert('姓名輸入錯誤(取消輸入)!');
-			alert('即將離開輸入畫面，謝謝!');
+			
 			RETURN;
 		}else if(UserName == ""){
 			alert('姓名輸入錯誤(未輸入值)，請重新輸入!');
