@@ -76,7 +76,7 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 
 
 
-function myFunInput(UserEnter,title){
+function myFunInput(UserEnter,title,result){
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
 	var Today = new Date();
@@ -89,7 +89,7 @@ function myFunInput(UserEnter,title){
 			latitude = result.latitude;
 			longitude = result.longitude;
 			ip = result.ip;
-			var data = [[Today,title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip,UserID,UserName]];
+			var data = [[Today,title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip,UserID,UserName,result]];
 			var parameter = {
 				url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
 				name: "工作表1",
