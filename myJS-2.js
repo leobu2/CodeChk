@@ -92,7 +92,7 @@ function myFunInput(UserEnter,title,User_result){
 	}
 	
 	//全部搬完後，再把這次的值寫入第一個 ，也就是[0]
-	Cookies.set('his_0') = '查詢日期: ' + today + '\n' + '您查詢了: ' + UserEnter + '\n' + '查詢結果: '+ '\n' + User_result;
+	Cookies.set('his_0') = '查詢日期: ' + today + '\n' + '您查詢了: ' + UserEnter + '\n' + '查詢結果: '+ '\n' + User_result + '\n\n';
 	
 	$.getJSON("https://ip-api.io/json/",	
     		function(result) {
