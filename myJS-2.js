@@ -80,6 +80,19 @@ function myFunInput(UserEnter,title,User_result){
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
 	var Today = new Date();
+	var CookieArray = [];
+	var i;
+	//read cookie and write to memory
+	for (i = 0; i < 20; i++) { 
+		    CookieArray[i] =  Cookies.get('his_'+ i);
+	}
+	//read memory and write to next cookie
+	for (i = 0; i < 20; i++) { 
+		  Cookies.get('his_'+ i+1) = CookieArray[i] ;
+	}
+	
+	//全部搬完後，再把這次的值寫入第一個 ，也就是[0]
+	Cookies.set('his_0') = '查詢日期: ' + today + '\n' + '您查詢了: ' + UserEnter + '\n' + '查詢結果: '+ '\n' + User_result;
 	
 	$.getJSON("https://ip-api.io/json/",	
     		function(result) {
