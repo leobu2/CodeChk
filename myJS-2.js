@@ -88,7 +88,7 @@ function myFunInput(UserEnter,title,User_result){
 	}
 	//read memory and write to next cookie
 	for (i = 0; i < 20; i++) { 
-		  Cookies.set('his_'+ (i+1)) = CookieArray[i] ;
+		  Cookies.set('his_'+ (i+1), CookieArray[i] );
 	}
 	
 	//全部搬完後，再把這次的值寫入第一個 ，也就是[0]
