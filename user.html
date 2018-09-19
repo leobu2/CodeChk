@@ -38,13 +38,23 @@
 	<p id="p_UserID" class="button">工號: </p>
 	<p id="p_UserName" class="button">姓名: </p>
 	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetCookie()" value="如工號或姓名有誤，請按此重新設定" /><br>
-    
+    	<a href="main.html" class="button" style="background-color: #ffaa00;font-size: 60px">●回主選單</a><br>
+	<p id="p_History" class="button">查詢紀錄:</p>
     <script>
 	    //get cookies of 'UserID' & 'UserName'
 		var id = '工號: ';
 		var name = '姓名: ';
 		document.getElementById("p_UserID").innerHTML =  id + Cookies.get('UserID');
 		document.getElementById("p_UserName").innerHTML = name + Cookies.get('UserName');
+	    
+	    //read cookie*20 and show result
+	    	var history;
+		var i;
+		for (i = 0; i < 20; i++) { 
+		    history = history + "\n" + Cookies.get('his_'+ i);
+		}
+	    
+	    	document.getElementById("p_History").innerHTML = "===查詢紀錄===\n" + history;
 		
 		function resetCookie()
 		{
@@ -54,8 +64,8 @@
 			//window.location.reload();
 			//object.reload(forcedReload);
 			location.reload(true);
-			
 		}
+	    
 		
 		
     </script>
@@ -63,7 +73,7 @@
 
     
     
-    <a href="main.html" class="button" style="background-color: #ffaa00;font-size: 60px">●回主選單</a><br>
+    
     
     <script>
         //myFunInput(UserEnter,document.title);
