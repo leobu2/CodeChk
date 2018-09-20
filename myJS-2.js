@@ -80,6 +80,7 @@ function myFunInput(UserEnter,title,User_result){
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
 	var Today = new Date();
+	Today = left(Today,24);
 	var CookieArray = [];
 	var i;
 	//read cookie and write to memory
