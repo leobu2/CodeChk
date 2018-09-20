@@ -83,7 +83,7 @@ function myFunInput(UserEnter,title,User_result){
 	var sToday = Today.toString();
 	var CookieArray = [];
 	var i;
-	User_result = User_result.replace(/\r\n/g,"<br />");
+	User_result = User_result.replace(/\n/g,"<br/>");
 	//read cookie and write to memory
 	for (i = 0; i < 20; i++) { 
 		    CookieArray[i] =  Cookies.get('his_'+ i);
