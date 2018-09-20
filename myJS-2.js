@@ -80,7 +80,7 @@ function myFunInput(UserEnter,title,User_result){
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
 	var Today = new Date();
-
+	var sToday = Today.toString();
 	var CookieArray = [];
 	var i;
 	//read cookie and write to memory
@@ -93,7 +93,7 @@ function myFunInput(UserEnter,title,User_result){
 	}
 	
 	//全部搬完後，再把這次的值寫入第一個 ，也就是[0]
-	Cookies.set('his_0', '查詢日期: ' + Today + '<br>' + '您查詢了: ' + UserEnter + '<br>' + '查詢結果: '+ '<br>' + User_result + '<br><br>');
+	Cookies.set('his_0', '查詢時間: ' + sToday.substring(0,24) + '<br>' + '查詢網頁: ' + title + '<br>' + '查詢代碼: ' + UserEnter + '<br>' + '查詢結果: '+ '<br>' + User_result + '<br><br>');
 	
 	$.getJSON("https://ip-api.io/json/",	
     		function(result) {
@@ -103,7 +103,7 @@ function myFunInput(UserEnter,title,User_result){
 			latitude = result.latitude;
 			longitude = result.longitude;
 			ip = result.ip;
-			var data = [[Today,title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip,UserID,UserName,User_result]];
+			var data = [[sToday.substring(0,24),title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip,UserID,UserName,User_result]];
 			var parameter = {
 				url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
 				name: "工作表1",
