@@ -25,7 +25,7 @@
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
-			font-size: 50vx;
+			font-size: 50px;
 			margin: 6px 4px;
 			cursor: pointer;
 			}
@@ -38,9 +38,10 @@
 	<p id="p_UserID" class="button">工號: </p>
 	<p id="p_UserName" class="button">姓名: </p>
 	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetCookie()" value="如工號或姓名有誤，請按此重新設定" /><br>
-    	<a href="main.html" class="button" style="background-color: #ffaa00;font-size: 60vx">●回主選單</a><br>
+    	<a href="main.html" class="button" style="background-color: #ffaa00;font-size: 60px">●回主選單</a><br>
 	<p id="p_History" style="text-align:left" class="button">查詢紀錄:</p>
-    <script>
+    
+	<script>
 	    //get cookies of 'UserID' & 'UserName'
 		var id = '工號: ';
 		var name = '姓名: ';
@@ -78,6 +79,11 @@
 			location.reload(true);
 		}
 	    
+		function resetHisCookie()
+		{
+		
+		}
+		
 		
 		
     </script>
