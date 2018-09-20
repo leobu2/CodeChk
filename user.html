@@ -51,10 +51,10 @@
 	    	var historyForShow;
 		var i;
 		for (i = 0; i < 20; i++) { 
-		    historyForShow = historyForShow + '\n' + Cookies.get('his_'+ i);
+		    historyForShow = historyForShow + '<br>' + Cookies.get('his_'+ i);
 		}
 	    
-	    	document.getElementById("p_History").innerHTML = '===查詢紀錄===\n' + historyForShow;
+	    	document.getElementById("p_History").innerHTML = '======查詢紀錄======<br><br>' + historyForShow;
 		
 		function resetCookie()
 		{
