@@ -53,9 +53,14 @@
 		for (i = 0; i < 20; i++) { 
 			
 		    if (historyForShow == undefined){ //avoid undefined show in screen at first time
-			historyForShow = Cookies.get('his_'+ i);    
+			if (Cookies.get('his_'+ i) != undefined){
+				historyForShow = Cookies.get('his_'+ i);   
+			}
+			    
 		    }else{
-		    	historyForShow = historyForShow + '<br>' + Cookies.get('his_'+ i);
+			    if (Cookies.get('his_'+ i) != undefined){
+		    		historyForShow = historyForShow + '<br>' + Cookies.get('his_'+ i);
+			    }
 		    }
 			
 			
