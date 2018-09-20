@@ -51,7 +51,14 @@
 	    	var historyForShow;
 		var i;
 		for (i = 0; i < 20; i++) { 
-		    historyForShow = historyForShow + '<br>' + Cookies.get('his_'+ i);
+			
+		    if (historyForShow == undefined){ //avoid undefined show in screen at first time
+			historyForShow = Cookies.get('his_'+ i);    
+		    }else{
+		    	historyForShow = historyForShow + '<br>' + Cookies.get('his_'+ i);
+		    }
+			
+			
 		}
 	    
 	    	document.getElementById("p_History").innerHTML = '======查詢紀錄======<br><br>' + historyForShow;
