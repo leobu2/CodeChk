@@ -151,36 +151,41 @@
 	
     UserEnter = prompt("請輸入EPP(598N)錯誤碼(6碼，例如:500101)!");
     
-    if (UserEnter == null) // user按下取消
+    if (UserEnter == null){ // user按下取消
         alert("請重新選擇!");
     
-    else if (UserEnter == "") // 未輸入任何資料
+    }else if (UserEnter == ""){ // 未輸入任何資料
         alert("未輸入資料!");
 		
-	else if (UserEnter.length != 6)
+	}else if (UserEnter.length != 6){
         alert("請確實輸入6碼!");
 	
-    else { 
+    }else { 
 		GcodeUser = UserEnter.substring(0,2);
 		HcodeUser = UserEnter.substring(2,4); //detail code的前2碼
 		LcodeUser = UserEnter.substring(4,6); //detail code的後2碼
 		
 		if (GcodeUser == 50){ //如6碼中的前二碼為50開頭，則需將detail code拆成H跟L
-			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + HCode[HcodeUser.toUpperCase()] + " " +LCode[LcodeUser.toUpperCase()]);
 			
-			if (GCode[GcodeUser.toUpperCase()] == undefined ||HCode[HcodeUser.toUpperCase()] == undefined || LCode[LcodeUser.toUpperCase()] == undefined)
+			
+			if (GCode[GcodeUser.toUpperCase()] == undefined ||HCode[HcodeUser.toUpperCase()] == undefined || LCode[LcodeUser.toUpperCase()] == undefined){
 				alert("抱歉，查無資料!");
-			else
+				showFinal = 'undefined';
+			}else{
+				showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + HCode[HcodeUser.toUpperCase()] + " " +LCode[LcodeUser.toUpperCase()]);
 				alert(showFinal);
-		}	
-		else{
-			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
+			}
+		}else{
+			
 		
-			if (DCode[UserEnter.toUpperCase()] == undefined)
+			if (DCode[UserEnter.toUpperCase()] == undefined){
 				alert("抱歉，查無資料!");
-			else
-			alert(showFinal);
-		//document.write(showFinal.small()); //可輸出在網頁上
+				showFinal = 'undefined';
+			}else{
+				showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
+				alert(showFinal);
+				//document.write(showFinal.small()); //可輸出在網頁上
+			}
 		}
 	}
 
@@ -193,7 +198,7 @@
     <a href="RG7_UNIT.html">●回上一層</a><br>
     <a href="../main.html">●回主選單</a><br>
 	<script>
-		myFunInput(UserEnter,document.title);
+		myFunInput(UserEnter,document.title,showFinal);
 	</script>
 </body>
 </html>

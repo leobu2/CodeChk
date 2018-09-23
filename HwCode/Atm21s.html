@@ -3833,7 +3833,7 @@
         else if (UserEnter == "")
             alert("未輸入資料!");
         else
-            alert(Answer[UserEnter.toUpperCase()]);
+            result = Answer[UserEnter.toUpperCase()];alert(result);
 
 
 
@@ -3845,7 +3845,7 @@
     <a href="../main.html">●回主選單</a><br>
     <br>
   	<script>
-		myFunInput(UserEnter,document.title);
+		myFunInput(UserEnter,document.title,result);
 	</script>
 </body>
 </html>

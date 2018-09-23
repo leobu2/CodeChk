@@ -186,19 +186,8 @@
         else if (UserEnter == "")
             alert("未輸入資料!");
         else
-            alert(Answer[UserEnter.toUpperCase()]);
-        appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
-        var Today = new Date();
-        var data = [[Today,document.title,UserEnter]];
-        var parameter = {
-            url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
-            name: "工作表1",
-            data: data.toString(),
-            row: data.length,
-            column: data[0].length,
-            insertType:"bottom",
-        };
-        $.get(appUrl, parameter);
+            result = Answer[UserEnter.toUpperCase()];alert(result);
+
 
     </script>
     <a href="Sk5240e.html">●再查一次</a><br>
@@ -207,7 +196,7 @@
     
     <a href="../main.html">●回主選單</a><br>
     	<script>
-		myFunInput(UserEnter,document.title);
+		myFunInput(UserEnter,document.title,result);
 	</script> 
 </body>
 </html>

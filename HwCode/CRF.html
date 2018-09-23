@@ -111,7 +111,7 @@
         else if (UserEnter == "")
             alert("未輸入資料!");
         else
-            alert(Answer[UserEnter.toUpperCase()]);
+            result = Answer[UserEnter.toUpperCase()];alert(result);
         
 
     
@@ -125,7 +125,7 @@
     
     
 <script>
-	myFunInput(UserEnter,document.title);
+	myFunInput(UserEnter,document.title,result);
 </script> 
 </body>
 </html>

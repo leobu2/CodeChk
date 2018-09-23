@@ -269,24 +269,26 @@
 
     UserEnter = prompt("請輸入JPR錯誤碼(6碼，例如:280001)!");
     
-    if (UserEnter == null) // user按下取消
+    if (UserEnter == null){ // user按下取消
         alert("請重新選擇!");
     
-    else if (UserEnter == "") // 未輸入任何資料
+    }else if (UserEnter == ""){ // 未輸入任何資料
         alert("未輸入資料!");
 		
-	else if (UserEnter.length != 6)
+	}else if (UserEnter.length != 6){
         alert("請確實輸入6碼!");
 	
-    else {
-	GcodeUser = UserEnter.substring(0,2);
-	showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
-	if (DCode[UserEnter.toUpperCase()] == undefined)
-		alert("抱歉，查無資料!");
-	else
-		alert(showFinal);
-	//document.write(showFinal.small()); //可輸出在網頁上
-	
+    }else {
+		GcodeUser = UserEnter.substring(0,2);
+		
+		if (DCode[UserEnter.toUpperCase()] == undefined){
+			alert("抱歉，查無資料!");
+			showFinal = 'undefined';
+		}else{
+			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);	
+			alert(showFinal);
+		//document.write(showFinal.small()); //可輸出在網頁上
+		}
 	}
 
         
@@ -301,7 +303,7 @@
 	
     
 	<script>
-		myFunInput(UserEnter,document.title);
+		myFunInput(UserEnter,document.title,showFinal);
 	</script>
 </body>
 </html>

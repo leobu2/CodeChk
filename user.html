@@ -36,15 +36,16 @@
 	
     
 	<p id="p_UserID" class="button">工號: </p>
-	<p id="p_UserName" class="button">姓名: </p>
-	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetCookie()" value="如工號或姓名有誤，請按此重新設定" /><br>
+	<p id="p_UserName" class="button">姓名: </p><br>
+	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetCookie()" value="重新設定工號及姓名" /><br>
     	<a href="main.html" class="button" style="background-color: #ffaa00;font-size: 60px">●回主選單</a><br>
-	<p id="p_History" style="text-align:left" class="button">查詢紀錄:</p>
-    
+	<p id="p_History" style="text-align:left" class="button">查詢紀錄:</p><br>
+	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetHisCookie()" value="刪除所有瀏覽紀錄" /><br>
 	<script>
 	    //get cookies of 'UserID' & 'UserName'
 		var id = '工號: ';
 		var name = '姓名: ';
+		
 		document.getElementById("p_UserID").innerHTML =  id + Cookies.get('UserID');
 		document.getElementById("p_UserName").innerHTML = name + Cookies.get('UserName');
 	    
@@ -67,21 +68,29 @@
 			
 		}
 	    
-	    	document.getElementById("p_History").innerHTML = '===========查   詢   紀   錄===========<br><br>' + historyForShow;
+	    document.getElementById("p_History").innerHTML = '===========查   詢   紀   錄===========<br><br>' + historyForShow;
 		
 		function resetCookie()
 		{
-			Cookies.remove('UserID');
-			Cookies.remove('UserName');
-			getPosition();
-			//window.location.reload();
-			//object.reload(forcedReload);
-			location.reload(true);
+			if(confirm('您確定要刪除工號以及姓名嗎?')){
+				Cookies.remove('UserID');
+				Cookies.remove('UserName');
+				getPosition();
+				//window.location.reload();
+				//object.reload(forcedReload);
+				location.reload(true);
+			}
 		}
 	    
 		function resetHisCookie()
 		{
-		
+			if(confirm('您確定要刪除所有瀏覽紀錄嗎?')){
+				for (i = 0; i < 20; i++) { 
+					Cookies.remove('his_'+ i);
+				}
+				location.reload(true);
+				//alert('已刪除瀏覽紀錄!');
+			}
 		}
 		
 		

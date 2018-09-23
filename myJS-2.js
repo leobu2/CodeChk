@@ -83,6 +83,7 @@ function myFunInput(UserEnter,title,User_result){
 	var sToday = Today.toString();
 	var CookieArray = [];
 	var i;
+	var User_result_before = User_result;
 	User_result = User_result.replace(/\n/g,"<br/>");
 	//read cookie and write to memory
 	for (i = 0; i < 20; i++) { 
@@ -104,7 +105,7 @@ function myFunInput(UserEnter,title,User_result){
 			latitude = result.latitude;
 			longitude = result.longitude;
 			ip = result.ip;
-			var data = [[sToday.substring(0,24),title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip,UserID,UserName,User_result]];
+			var data = [[sToday.substring(0,24),title,UserEnter.toUpperCase(),region_name,country_name,latitude,longitude,ip,UserID,UserName,User_result_before]];
 			var parameter = {
 				url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
 				name: "工作表1",

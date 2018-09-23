@@ -29,7 +29,7 @@
 '29':'\n●Communication error in PIN Pad \n●1. USB communication error.  2. Contact the maintenance staff.',
 '42':'\n●System error in PIN Pad \n●1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.',
 '50':'\n●System error in PIN Pad \n●1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.',
-
+'28':'\n●OKI未提供',
     };
 
     DCode={
@@ -4420,27 +4420,25 @@
 	
     UserEnter = prompt("請輸入EPP(OKI)錯誤碼(6碼，例如:5033FF)!");
     
-    if (UserEnter == null) // user按下取消
+    if (UserEnter == null){ // user按下取消
         alert("請重新選擇!");
     
-    else if (UserEnter == "") // 未輸入任何資料
+    }else if (UserEnter == ""){ // 未輸入任何資料
         alert("未輸入資料!");
 		
-	else if (UserEnter.length != 6)
+	}else if (UserEnter.length != 6){
         alert("請確實輸入6碼!");
 	
-    else { 
+    }else{
 		GcodeUser = UserEnter.substring(0,2);
 		
-
-		showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
-		
-			if (DCode[UserEnter.toUpperCase()] == undefined)
-				alert("抱歉，查無資料!");
-			else
+		if (DCode[UserEnter.toUpperCase()] == undefined){
+			alert("抱歉，查無資料!");
+			showFinal = 'undefined';
+		}else{
+			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);		
 			alert(showFinal);
-		
-		
+		}		
 	}
 
         
@@ -4455,7 +4453,7 @@
 	
     
 	<script>
-		myFunInput(UserEnter,document.title);
+		myFunInput(UserEnter,document.title,showFinal);
 	</script>
 </body>
 </html>

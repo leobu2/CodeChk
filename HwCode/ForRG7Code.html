@@ -2111,81 +2111,27 @@
     UserEnter = prompt("請輸入錯誤碼(RG7-六碼，例如:939311)!");
     if (UserEnter == null){
         alert("請重新選擇!");
-    }
-    else if (UserEnter == ""){
+    }else if (UserEnter == ""){
         alert("未輸入資料!");
-    }
-    else {
+    }else{
         if (UserEnter.length == 6) {
-
-
-
-
-
-            if (Code6[UserEnter.toUpperCase()] == null) {
-
-                UserEnter4 = UserEnter.substr(2, 4);
-               
+            if (Code6[UserEnter.toUpperCase()] == undefined) {
+                UserEnter4 = UserEnter.substr(2, 4);               
 
                 if (Code4[UserEnter4.toUpperCase()] == undefined) {
-                    alert(Code4[UserEnter4.toUpperCase()]);
+					alert("抱歉，查無資料!");
+                    result = 'undefined';
+                }else{
+                    result = Code4[UserEnter4.toUpperCase()];alert(result);
                 }
-                else {
-                    alert(Code4[UserEnter4.toUpperCase()]);
-                }
+            }else{
+				result = Code6[UserEnter.toUpperCase()];alert(result);
             }
-
-
-
-
-
-
-
-
-
-            else
-                alert(Code6[UserEnter.toUpperCase()]);
-
-
-
-
-
-
-        }
-
-
-
-        else {
+        }else {
             alert("輸入錯誤，請確實輸入六碼!");
         }
     }
-    /*
-    if(UserEnter.length ==6 ){
-            UserEnter4 = substr.UserEnter(2, 4);
 
-
-
-            if (Code6[UserEnter.toUpperCase()] == undefined){
-                if (Code4[UserEnter4.toUpperCase()] != undefined) {
-                    alert(Code4[UserEnter.toUpperCase()]);
-                }
-                else {
-                    alert(Code4[UserEnter4.toUpperCase()]);
-                }
-            }
-            else{
-                alert(Code6[UserEnter.toUpperCase()]);
-            }
-                
-     
-        
-        }
-
-        else{
-            alert("輸入錯誤，請確實輸入六碼!");
-        }
-    }
-*/
        
     </script>
     
@@ -2196,7 +2142,7 @@
     <a href="../main.html">●回主選單</a><br>
     
 	<script>
-		myFunInput(UserEnter,document.title);
+		myFunInput(UserEnter,document.title,result);
 	</script>
 </body>
 </html>

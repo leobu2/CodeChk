@@ -388,18 +388,18 @@
         else if (UserEnter == "")
             alert("未輸入資料!");
         else
-            alert(Answer[UserEnter.toUpperCase()]);
+             result = Answer[UserEnter.toUpperCase()];alert(result);
 
 
     </script>
     
-    <a href="Feib.html">A.再查一次</a><br>
+    <a href="Feib.html">●再查一次</a><br>
     
-    <a href="../SwErrorCode.html">B.回上一層</a><br>
+    <a href="../SwErrorCode.html">●回上一層</a><br>
     
-    <a href="../main.html">C.回主選單</a><br>
+    <a href="../main.html">●回主選單</a><br>
     <script>
-        myFunInput(UserEnter,document.title);
+        myFunInput(UserEnter,document.title,result);
     </script> 
 </body>
 </html>
