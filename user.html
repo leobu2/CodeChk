@@ -45,14 +45,14 @@
 	    //get cookies of 'UserID' & 'UserName'
 		var id = '工號: ';
 		var name = '姓名: ';
-		
+		window.cookieMaximum = 20;
 		document.getElementById("p_UserID").innerHTML =  id + Cookies.get('UserID');
 		document.getElementById("p_UserName").innerHTML = name + Cookies.get('UserName');
 	    
 	    //read cookie*20 and show result
 	    	var historyForShow;
 		var i;
-		for (i = 0; i < 20; i++) { 
+		for (i = 0; i < window.cookieMaximum; i++) { 
 			
 		    if (historyForShow == undefined){ //avoid undefined show in screen at first time
 				if (Cookies.get('his_'+ i) != undefined && Cookies.get('his_'+ i) != 'undefined'){
@@ -85,7 +85,7 @@
 		function resetHisCookie()
 		{
 			if(confirm('您確定要刪除所有瀏覽紀錄嗎?')){
-				for (i = 0; i < 20; i++) { 
+				for (i = 0; i < window.cookieMaximum; i++) { 
 					Cookies.remove('his_'+ i);
 				}
 				location.reload(true);

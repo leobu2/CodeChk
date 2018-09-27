@@ -8,7 +8,7 @@ var UserName;
 var UserID;
 var UserFlag = 0;
 var isUserCorrect;
-
+window.cookieMaximum = 20;
 /*
 	if(confirm('您要刪除工號以及姓名的Cookie嗎?')){
 		Cookies.remove('UserID');
@@ -84,18 +84,19 @@ function myFunInput(UserEnter,title,User_result){
 	var sToday = Today.toString();
 	var CookieArray = [];
 	var i;
-	var User_result_before = User_result;
+	//var User_result_before = User_result;
+	var User_result_before = User_result.replace(/,/g,'.');
 	UserEnter = UserEnter.toUpperCase()
 	if (User_result != undefined && User_result != 'undefined'){
 		User_result = User_result.replace(/\n/g,"<br/>");
 	}
 	
 	//read cookie and write to memory
-	for (i = 0; i < 20; i++) { 
+	for (i = 0; i < window.cookieMaximum; i++) { 
 		    CookieArray[i] =  Cookies.get('his_'+ i);
 	}
 	//read memory and write to next cookie
-	for (i = 0; i < 20; i++) { 
+	for (i = 0; i < window.cookieMaximum; i++) { 
 		  Cookies.set('his_'+ (i+1), CookieArray[i] ,{expires: 888});
 	}
 	
