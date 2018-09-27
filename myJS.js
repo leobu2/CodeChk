@@ -8,7 +8,7 @@ var UserName;
 var UserID;
 var UserFlag = 0;
 var isUserCorrect;
-window.cookieMaximum = 20;
+
 /*
 	if(confirm('您要刪除工號以及姓名的Cookie嗎?')){
 		Cookies.remove('UserID');
@@ -92,11 +92,11 @@ function myFunInput(UserEnter,title,User_result){
 	}
 	
 	//read cookie and write to memory
-	for (i = 0; i < window.cookieMaximum; i++) { 
+	for (i = 0; i < 20; i++) { 
 		    CookieArray[i] =  Cookies.get('his_'+ i);
 	}
 	//read memory and write to next cookie
-	for (i = 0; i < window.cookieMaximum; i++) { 
+	for (i = 0; i < 20; i++) { 
 		  Cookies.set('his_'+ (i+1), CookieArray[i] ,{expires: 888});
 	}
 	
