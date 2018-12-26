@@ -61,13 +61,13 @@
 			    
 		    }else{
 			    if (Cookies.get('his_'+ i) != undefined && Cookies.get('his_'+ i) != 'undefined'){
-		    		historyForShow = historyForShow + '<br>' + '========================================='+ '<br>'+Cookies.get('his_'+ i);
+		    		historyForShow = historyForShow + '<br>' + '================================'+ '<br>'+Cookies.get('his_'+ i);
 			    }
 		    }
 			
 			
 		}
-	    
+							
 	    document.getElementById("p_History").innerHTML = '===========查   詢   紀   錄===========<br><br>' + historyForShow;
 		
 		function resetCookie()
