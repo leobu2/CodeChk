@@ -1,40 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>User Info for Google Translate</title>
-  
-	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="myJS-2.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/AllPageStyle.css" />
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-67602727-2');
-	</script>
-	<style>
-		.button {
-			background-color:#216fce;
-			border: none;
-			color: white;
-			padding: 15px 32px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 50px;
-			margin: 6px 4px;
-			cursor: pointer;
-			}
-	</style>
-</head>
 <body>
-	
-	
+
+<h1>My Web Page</h1>
+
+<p>Hello everybody!</p>
+
+<p>Translate this page:</p>
+
+<div id="google_translate_element"></div>
+
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -42,76 +17,8 @@ function googleTranslateElementInit() {
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	
-	<p id="p_UserID" class="button">工號: </p>
-	<p id="p_UserName" class="button">姓名: </p><br>
-	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetCookie()" value="重新設定工號及姓名" /><br>
-    	<a href="main.html" class="button" style="background-color: #ffaa00;font-size: 60px">●回主選單</a><br>
-	<p id="p_History" style="text-align:left" class="button">查詢紀錄:</p><br>
-	<input type="button" style="background-color: #af4c4c;font-size: 40px" class="button" onclick="resetHisCookie()" value="刪除所有瀏覽紀錄" /><br>
-	<script>
-	    //get cookies of 'UserID' & 'UserName'
-		var id = '工號: ';
-		var name = '姓名: ';
-		//window.cookieMaximum = 20;
-		document.getElementById("p_UserID").innerHTML =  id + Cookies.get('UserID');
-		document.getElementById("p_UserName").innerHTML = name + Cookies.get('UserName');
-	    
-	    //read cookie*20 and show result
-	    	var historyForShow;
-		var i;
-		for (i = 0; i < 20; i++) { 
-			
-		    if (historyForShow == undefined){ //avoid undefined show in screen at first time
-				if (Cookies.get('his_'+ i) != undefined && Cookies.get('his_'+ i) != 'undefined'){
-					historyForShow = Cookies.get('his_'+ i);   
-				}
-			    
-		    }else{
-			    if (Cookies.get('his_'+ i) != undefined && Cookies.get('his_'+ i) != 'undefined'){
-		    		historyForShow = historyForShow + '<br>' + '================================'+ '<br>'+Cookies.get('his_'+ i);
-			    }
-		    }
-			
-			
-		}
-							
-	    document.getElementById("p_History").innerHTML = '===========查   詢   紀   錄===========<br><br>' + historyForShow;
-		
-		function resetCookie()
-		{
-			if(confirm('您確定要刪除工號以及姓名嗎?')){
-				Cookies.remove('UserID');
-				Cookies.remove('UserName');
-				getPosition();
-				//window.location.reload();
-				//object.reload(forcedReload);
-				location.reload(true);
-			}
-		}
-	    
-		function resetHisCookie()
-		{
-			if(confirm('您確定要刪除所有瀏覽紀錄嗎?')){
-				for (i = 0; i < 20; i++) { 
-					Cookies.remove('his_'+ i);
-				}
-				location.reload(true);
-				//alert('已刪除瀏覽紀錄!');
-			}
-		}
-		
-		
-		
-    </script>
-    
 
-    
-    
-    
-    
-    <script>
-        //myFunInput(UserEnter,document.title);
-    </script> 
+<p>You can translate the content of this page by selecting a language in the select box.</p>
+
 </body>
 </html>
