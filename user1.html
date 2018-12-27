@@ -35,27 +35,47 @@
   
 <body>
 
+	
 <p>Translate this page--20181227 1011</p>
 
-<div id="google_translate_element">
-  <div class="skiptranslate goog-te-gadget" style="">
-    <div id=":1.targetLanguage">
-    <select class="goog-te-combo">
-    </select>
-  </div>
-Powered by
-  <span style="white-space: nowrap;">
-
-  </span>
-</div>
-
+<div id="google_translate_element"></div>
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element');
+    }
 </script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit"></script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>
+    div#google_translate_element div.goog-te-gadget-simple {
+        font-size: 19px;
+    }
+
+    div#google_translate_element div.goog-te-gadget-simple {
+        background-color: black;
+    }
+
+    div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
+        color: green
+    }
+
+    div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover {
+        color: blue
+    }
+
+    div#google_translate_element div.goog-te-gadget-simple {
+        border: none;
+    }
+</style>
+	
+	
+	
+	
 
 
 	<p id="p_UserID" class="button">工號: </p>
