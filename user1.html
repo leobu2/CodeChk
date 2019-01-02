@@ -36,7 +36,7 @@
 <body>
 
 	
-<p>Translate this page--20190102 1720</p>
+<p>Translate this page--20190102 1727</p>
 <script src="/js/jquery.js"></script>
 <div style="font-size:13vw" id="google_translate_element"></div>
 <script type="text/javascript">
@@ -46,8 +46,8 @@
                 layout: google.translate.TranslateElement.SIMPLE,
 		 includedLanguages: 'en,zh-TW'
             },
-            //'google_translate_element');
-	    'zh-TW');
+            'google_translate_element');
+	    
 	    
     }
 </script>
@@ -59,7 +59,12 @@ cb=googleTranslateElementInit"></script>
 	
 	
 <script>
-	googleTranslateElementInit()
+	  new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.SIMPLE,
+		 includedLanguages: 'en,zh-TW'
+            },
+            'zh-TW');
 </script>
 	
 	<p id="p_UserID" class="button">工號: </p>
