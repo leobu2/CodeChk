@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>CODE-5250</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="../myJS.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-67602727-2');
+</script>
+    
+
+</head>
+<body>
+    	<script>
+		getPosition();
+	</script>
+    <script>
+        Answer = {
+
+			'002':'Operation guide lamp parameter is incorrect',
+			'003':'1st print line adjust. parameter is error',
+			'006':'ATP command is received without ATP option.',
+			'007':'Rejection command is received without rejection option',
+			'008':'MS command is received without MS unit option',
+			'009':'OSU command is received without OSU unit option',
+			'010':'BARCODE command is received without BARCODE option',
+			'011':'PIM command is received without PIM option',
+			'012':'Printing command is received uninstalled ink ribbon',
+			'016':'Undefined function is received erroneously',
+			'017':'Undefined command is received erroneously',
+			'018':'Response from analysis task is out of time',
+			'020':'Command sequence error',
+			'022':'User's CMOS setup error',
+			'023':'RS232C framing error',
+			'024':'RS232C parity error',
+			'025':'RS232C overrun error',
+			'026':'Device not in service',
+			'033':'Space homing error ( Carriage home sensor no detect )',
+			'034':'Printer head over-temperature error',
+			'035':'Space homing error ( Carriage home sensor no off)',
+			'036':'Spacing interrupt error',
+			'038':'Option font is not installed',
+			'041':'Print task interface error',
+			'042':'Print analysis interface error',
+			'044':'Print prescription data received with no medium corresponding',
+			'045':'Print prescription is received without insert command prescribed',
+			'046':'Data other than print prescriptions are received in printing field',
+			'047':'Line feed prescription(n/120) is received in printing field',
+			'048':'Right or left margin prescription is received in printing field',
+			'049':'Not yet 1st line position is received print data',
+			'058':'Print-prohibited area reset error before inserting medium',
+			'062':'Erroneous parameter id first print line adjusting command',
+			'063':'There is no numeric parameter in 'nnn line' insert command or the parameter is not numeric',
+			'065':'Erroneous parameter in left margin prescription command',
+			'066':'A character other than half character is prescribed in half-pitch prescription command, or half-pitch print is prescribed at a CPI other than 10,12 or 13.',
+			'067':'Erroneous parameter in horizontal skip prescription command',
+			'068':'Erroneous parameter in n/120 inch line-feed prescription command',
+			'069':'Erroneous parameter in graphic prescription command',
+			'070':'Format error in graphic prescription command',
+			'071':'Erroneous parameter in right mar.gin prescription command',
+			'074':'PIP function is set in a mode other than ANK mode',
+			'075':'A character other than PIP character is prescribed with PIP command',
+			'080':'Over-column',
+			'081':'Double print error (left side from current position is prescribed in horizontal tab)',
+			'082':'Print prescription(with terminator) is received in prohibition area',
+			'084':'CPI set error',
+			'088':'Erroneous command/period data in Chinese character.',
+			'090':'Analysis task l/F error (a code immediately after ESC is undefined)',
+			'094':'A lateral tab prescription other than 00 l:Snnn :S255 is received',
+			'098':'Position of left or right margin prescription exceeds print range',
+			'099':'Position oflongitudinal tab prescription exceeds print range',
+			'100':'Erroneous prescription for setting line-feed pitch',
+			'101':'Print data are received with a setting of left 2: right margin',
+			'103':'Transport interrupt monitor step in abnormal',
+			'I04':'Media jammed error-I (Insert-left sensor no off : SO)',
+			'105':'Media jammed error-2 (Insert-left sensor no detect: SO)',
+			'106':'Media jammed error-3 (Insert right sensor no off : SI)',
+			'107':'Media jammed error-4 (Insert-right sensor no detect: SI)',
+			'108':'Media jammed error-5 (First sensor no off : S2)',
+			'109':'Media jammed error-6 (First sensor no detect: S2)',
+			'110':'Media jammed error-7 (ATP-front sensorno off : S3)',
+			'111':'Media jammed error-8 (ATP-front sensor no detect: S3)',
+			'112':'Media jammed error-9 (ATP-rear sensor no off : S4)',
+			'113':'Media jammed error-lO(ATP-rear sensor no detect: S4)',
+			'114':'ATP-up sensor no off : S5',
+			'115':'ATP-up sensor no detect : S5',
+			'116':'Sensor are detect not cleared during ejection in initialization(SO-S5)',
+			'117':'Sensor are detect in initialization(SO-S5)',
+			'119':'Left side alignment error',
+			'120':'Passbook size error',
+			'121':'Single-slip size error',
+			'124':'Passbook prescription is received single-slip processing',
+			'125':'Single-slip prescription is received passbook processing',
+			'126':'Rejection command is received during single-slip processing',
+			'127':'Scan or ATP command is received during single-slip processing',
+			'128':'Line-feed system command is received without insert command',
+			'130':'Number of feeding lines exceeds paper length (line-feed over)',
+			'131':'ATP's home sensor no off',
+			'132':'ATP's home sensor no detect',
+			'133':'Rejection sensor no off',
+			'134':'Rejection sensor no detect',
+			'135':'Top prohibition area error',
+			'136':'Center prohibition area error',
+			'137':'Bottom prohibition area error',
+			'138':'Erroneous parameter in insertion prescription command',
+			'140':'Erroneous parameter in lateral skip command',
+			'141':'Insertion amount exceeds 4,095 steps in media insert command',
+			'142':'A command other than those in line-feed system is received in transport analysis processing',
+			'144':'Passbook removing standby',
+			'145':'Passbook inserting standby',
+			'146':'Page-end detect',
+			'148':'No passbook error (passbook empty)',
+			'149':'No single-slip error (single-slip empty)',
+			'152':'Bottom prohibition area media is warned',
+			'153':'Media is missing printing ( sensor error )',
+			'154':'Media is missing MSR/W function',
+			'155':'Media is missing ATP function',
+			'156':'Media is missing Scan function',
+			'157':'Media is missing Barcode function',
+			'158':'Media is missing PIM function',
+			'163':'Undefined command is issued from analysis',
+			'176':'Scan or ATP command is received in single-slip prescription',
+			'177':'Scanner's white balancing error',
+			'180':'CMOS setting error related to Scanner',
+			'181':'Faulty connection of Scanner unit',
+			'183':'A line feed pitch other than 1/6 or 1/5 inches is prescribed when page mark/line sensing is prescribed (line-feed pitch command error)',
+			'185':'Page Mark collection disagreement error Cun-matching)',
+			'187':'Page Mark more than prescribed number are detected when sensing Page mark or line',
+			'188':'Page Mark /Line sense and transport error ( insufficient transport operation amount )',
+			'189':'Sequence error in page mark/Line sensing or a ATP command',
+			'190':'A line prescription in non-print area is received when sensing density',
+			'191':'Page mark at reference position can't be detected in mechanical Adjustment (Scanner position adjustment)',
+			'193':'Illegal MS-setting condition ( CMOS )',
+			'194':'Faulty connection of MS unit',
+			'195':'Illegal Scanner condition ( CMOS )',
+			'196':'Faulty connection of Scan unit',
+			'197':'Illegal CRSPOT-setting condition ( CMOS )',
+			'198':'Faulty connection of CRSPOT unit',
+			'199':'Illegal FXSPOT-setting condition ( CMOS )',
+			'200':'Faulty connection ofFXSPOT unit',
+			'201':'Illegal Barcode Reader-setting condition ( CMOS )',
+			'202':'Faulty connection ofBarcode Reader unit',
+			'203':'Illegal PIM-setting condition ( CMOS )',
+			'204':'Faulty connection of PIM unit',
+			'205':'Illegal Ribbon-setting condition (CMOS)',
+			'206':'Faulty connection of Ribbon',
+			'207':'Illegal INK Cartridge setting condition ( CMOS )',
+			'208':'Faulty connection of INK cartridge unit',
+			'212':'MS home position sensor is not shaded ( no detect)',
+			'214':'MS home position sensor is not cleared (no off)',
+			'217':'MS parity error',
+			'218':'MS LRC error ( or CRC error)',
+			'219':'Virgin stripe ( when MS Read clock < 10 )',
+			'220':'No SS code when reading MS ( Start Sentinel)',
+			'221':'No ES code when reading MS ( End Sentinel)',
+			'222':'MS read data over',
+			'223':'MS write & verify error',
+			'224':'Illegal MS read type setting related CMOS',
+			'228':'MS jitter error',
+			'229':'MS code conversion unable error',
+			'230':'MS low-level detection error',
+			'233':'No MS unit is connected',
+			'234':'Illegal MS-setting condition (CMOS)',
+			'235':'MS R/W command is received although passbook in not prescribed',
+			'236':'Illegal MS-setting condition ( SS code )',
+			'237':'Illegal MS-setting condition ( ES code )',
+			'238':'Illegal MS-setting condition ( BS code )',
+			'239':'Illegal MS-setting condition (variable data length without ES code)',
+			'240':'MS write data over error',
+			'242':'MS write position exceeds media area',
+			'243':'The number of data written in MS differs from max. number of data',
+			'244':'MS write data error ( Ox30-0x39,0x3a,Ox3c,Ox3d,Ox3e)',
+			'248':'MS write no-data error',
+			'250':'Sequence error in MS write command',
+			'251':'Format error in MS write command',
+			'252':'MS Read command sequence error',
+			'254':'Scanner read time out or no scanner unit is connected',
+			'255':'Page Mark/ Line read error',
+			'257':'Illegal Scanner-setting condition ( CMOS )',
+			'258':'Scan command is received although passbook in not prescribed',
+			'259':'Scan error (over-run, parity or framing error)',
+			'260':'Scan read command sequence error',
+			'263':'Barcode read error (BCR)',
+			'264':'Check sum error (BCR)',
+			'265':'Read data length error (BCR)',
+			'266':'FPGA error (BCR)',
+			'267':'Barcode Reader white balancing error (BCR)',
+			'268':'Barcode Reader home sensor no off (BCR)',
+			'269':'Barcode Reader home sensor no detect (BCR)',
+			'271':'Virgin Barcode (BCR)',
+			'274':'System halt related CMOS setup missing',
+			'280':'Inner RAM read/write check error',
+			'281':'Outer RAM read/write check error',
+			'284':'Inner FROM sum check error',
+			'285':'Outer FROM sum check error',
+			'286':'FPGA data download error',
+			'291':'Uninstalled USB',
+			'294':'Watchdog error (print task)',
+			'295':'Watchdog error (transport task)',
+			'296':'Watchdog error (print / transport task)',
+			'297':'Watchdog error (MS task)',
+			'298':'Watchdog error (Scanner)',
+			'299':'Watchdog error due to runaway CPU',
+			'301':'ATP fail (forward direction)',
+			'302':'ATP fail (backward direction)',
+			'307':'Retraction counter full-count error',
+			'308':'Cover open',
+			'309':'Tilt open (Upper module open)',
+			'311':'Rejection box open',
+			'312':'Printer status abnormal (engage sensor no detect)',
+			'315':'Uninstalled ATP unit',
+			'316':'Uninstalled MS unit',
+			'317':'Uninstalled Scanner',
+			'318':'Uninstalled CRSPOT unit',
+			'319':'Uninstalled FXSPOT unit',
+			'320':'Uninstalled Barcode Reader (BCR) unit',
+			'321':'Uninstalled PIM unit',
+			'322':'Uninstalled Ribbon cartridge',
+			'323':'Uninstalled INK cartridge',
+			'325':'Font attribute set error Print data',
+			'326':'length error Reserved',
+			'329':'Setup parameter is incorrect Error',
+			'331':'Conditional clamp time out error',
+			'332':'Conditional eject time out error',
+			'342':'Ribbon darkness low',
+			'343':'Ribbon darkness out of spec.',
+
+           
+
+        };
+
+        UserEnter = prompt("請輸入錯誤碼(5250 為3碼，例如:776)!");
+        if (UserEnter == null)
+            alert("請重新選擇!");
+        else if (UserEnter == "")
+            alert("未輸入資料!");
+        else
+            result = Answer[UserEnter.toUpperCase()];alert(result);if(result == undefined){result = 'undefined';}
+
+
+    </script>
+    <a href="Sk5240e.html">●再查一次</a><br>
+    
+    <a href="../HwErrorCode.html">●回上一層</a><br>
+    
+    <a href="../main.html">●回主選單</a><br>
+    	<script>
+		myFunInput(UserEnter,document.title,result);
+	</script> 
+</body>
+</html>
