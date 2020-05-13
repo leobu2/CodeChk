@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CODE-醫療繳費機</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="../myJS.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-67602727-2');
+</script>
+    
+</head>
+<body>
+	<script>
+		getPosition();
+	</script>
+    
+    <script>
+        Answer = {
+        
+'EA00':'系統異常',
+'EA01':'無法連線APServer',
+'EA02':'無法連線HISServer',
+'EB00':'條碼讀取機硬體錯誤',
+'EB99':'條碼讀取機未知錯誤',
+'EC00':'硬幣存吐機硬體錯誤',
+'EC01':'硬幣存吐機重置發生錯誤',
+'EC02':'硬幣存吐機內硬幣不足，無法交易',
+'EC11':'硬幣存吐機存幣過程發生錯誤',
+'EC12':'硬幣存吐機結束存幣過程發生錯誤',
+'EC13':'硬幣存吐機無法取得總硬幣數量',
+'EC51':'硬幣存吐機找零過程發生錯誤',
+'EC99':'硬幣存吐機未知錯誤',
+'EF00':'現鈔吐款機硬體錯誤',
+'EF01':'現鈔吐款機重置發生錯誤',
+'EF02':'現鈔吐款機內鈔票不足找錢，無法交易',
+'EF03':'現鈔吐款機找鈔過程發生錯誤',
+'EF99':'現鈔吐款機未知錯誤',
+'EG00':'訊號設備硬體錯誤',
+'EG99':'訊號設備未知錯誤',
+'EI00':'硬體錯誤',
+'EI01':'現鈔存款機重置發生錯誤',
+'EI02':'現鈔存款機混鈔箱快滿，無法交易',
+'EI03':'現鈔存款機存鈔過程發生錯誤',
+'EI04':'現鈔存款機結束存鈔過程發生錯誤',
+'EI05':'現鈔存款機無法取得總鈔票數量',
+'EI99':'現鈔存款機未知錯誤',
+'EP00':'A4雷射印表機硬體錯誤',
+'EP99':'A4雷射印表機未知錯誤',
+'ET00':'熱感紙印表機硬體錯誤',
+'ET99':'熱感紙印表機未知錯誤',
+'EU01':'斷電，無法交易',
+
+        };
+
+        UserEnter = prompt("請輸入錯誤碼(醫療繳費機為 4碼)!");
+        if (UserEnter == null)
+            alert("請重新選擇!");
+        else if (UserEnter == "")
+            alert("未輸入資料!");
+        else
+             result = Answer[UserEnter.toUpperCase()];alert(result);if(result == undefined){result = 'undefined';}
+
+
+    </script>
+    
+    
+    <a href="醫療繳費機.html">●再查一次</a><br>
+    
+    <a href="../SwErrorCode.html">●回上一層</a><br>
+    
+    <a href="../main.html">●回主選單</a><br>
+
+    <script>
+        myFunInput(UserEnter,document.title,result);
+    </script> 
+</body>
+</html>
