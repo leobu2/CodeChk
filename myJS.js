@@ -8,6 +8,7 @@ var UserName;
 var UserID;
 var UserFlag = 0;
 var isUserCorrect;
+var picName;
 
 /*
 	if(confirm('您要刪除工號以及姓名的Cookie嗎?')){
