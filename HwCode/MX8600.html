@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>CODE-MX8600</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="../myJS.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+</head>
+<body>
+    	<script>
+		getPosition();
+	</script>
+    <script>
+        Answer = {
+			'186400':'故障描述:Failed check CRC of USB bulk data\n排除說明:Check line of USB communication',
+
+        };
+
+        UserEnter = prompt("請輸入MX8600錯誤碼!");
+        if (UserEnter == null)
+            alert("請重新選擇!");
+        else if (UserEnter == "")
+            alert("未輸入資料!");
+        else
+            result = Answer[UserEnter.toUpperCase()];alert(result);if(result == undefined){result = 'undefined';}
+
+
+    </script>
+    
+    <a href="MX8600.html">●再查一次</a><br>
+    
+    <a href="../HwErrorCode.html">●回上一層</a><br>
+  
+    <a href="../main.html">●回主選單</a><br>
+    	<script>
+		myFunInput(UserEnter,document.title,result);
+	</script> 
+</body>
+</html>
