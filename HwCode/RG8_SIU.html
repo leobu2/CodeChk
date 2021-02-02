@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>CODE-RG8/SIU</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="../myJS.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-67602727-2');
+</script>
+    
+
+</head>
+<body>
+	<script>
+		getPosition();
+	</script>
+
+    <script>
+    GCode={
+'03':'\n●故障概述:\nFailure in ATM cabinet\n●基本處置動作:\n1. CPU failure was detected in ATM cabinet.  2. Contact the maintenance staff.\n',
+'04':'\n●故障概述:\nPower device error in ATM cabinet\n●基本處置動作:\n1. Internal UPS or 24 voltage power device error in ATM cabinet.  2. Contact the maintenance staff.\n',
+'05':'\n●故障概述:\nBBM power device error in ATM cabinet\n●基本處置動作:\n1. BBM power device error in ATM cabinet.  2. Check the battery on PCB 3. Exchange the PCB in ATM Cabinet. 4. Contact the maintenance staff.\n',
+'06':'\n●故障概述:\nFuse blown of ATM cabinet shutter in ATM cabinet\n●基本處置動作:\n1. Fuse blown of ATM cabinet shutter was detected in ATM cabinet.  2. Contact the maintenance staff.\n',
+'07':'\n●故障概述:\nCommunication error to rear ten keypad in ATM cabinet\n●基本處置動作:\n1. Communication error to rear ten keypad.  2. Check the rear ten keypad, cable, and configuration. 3. Contact the maintenance staff.\n',
+'08':'\n●故障概述:\nFailure in ATM cabinet\n●基本處置動作:\n1. RAM failure was detected in ATM cabinet. 2. Check the PCB. 3. Exchange the PCB in ATM Cabinet. 4. Contact the maintenance staff. \n',
+'09':'\n●故障概述:\nFailure of cabinet shutter in ATM cabinet\n●基本處置動作:\n1. Check the cabinet shutter position, cable, and sensors. 2. Contact the maintenance staff.\n',
+'10':'\n●故障概述:\nCabinet shutter error in ATM cabinet\n●基本處置動作:\n1. There is banknote or foreign object in cabinet shutter inside. 2. Remove the banknote or foreign object from cabinet shutter. 3. Restart the system from maintenance menu.\n',
+'11':'\n●故障概述:\nSkimmer was detected on card slot\n●基本處置動作:\n1. There is foreign object on card slot. 2. Remove the foreign object from card slot  3. Reset the system from maintenance menu. 4. In case error can not be cleared, restart the system from maintenance menu.\n',
+'12':'\n●故障概述:\nPIN Pad cover damaged\n●基本處置動作:\n1. PIN Pad cover damage was detected on front panel. 2. Contact the maintenance staff.\n',
+'13':'\n●故障概述:\nAbnormal vibration in ATM\n●基本處置動作:\n1. Abnormal vibration was detected in ATM. 2. Contact the maintenance staff.\n',
+'14':'\n●故障概述:\nAbnormal hot temperature in ATM\n●基本處置動作:\n1. Abnormal hot temperature was detected in ATM. 2. Contact the maintenance staff.\n',
+'15':'\n●故障概述:\nPower supply error for side cabinet in ATM cabinet\n●基本處置動作:\n1. Power supply for side cabinet is powered off. 2. Open the front panel of side cabinet and turn power supply on. 3. Reset the system from maintenance menu. 4. In case error can not be cleared, restart the system from maintenance menu.\n',
+'26':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'27':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'28':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'29':'\n●故障概述:\nCommunication error in ATM cabinet\n●基本處置動作:\n1. USB communication error. 2. Contact the maintenance staff.\n',
+'85':'\n●故障概述:\nCabinet shutter error in ATM cabinet\n●基本處置動作:\n1. There is banknote or foreign object at cabinet shutter. 2. Remove the banknote or foreign object from cabinet shutter. 3. Restart the system from maintenance menu. 4. Check the cable, connector. \n',
+'87':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. Check the cable, connector. 3. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'98':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. Check the cable, connector.3. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'99':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. Check the cable, connector. 3. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'88':'\n●故障概述:\nSystem error in ATM cabinet\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. Check the battery on PCB 3. Exchange the PCB in ATM Cabinet.\n',
+
+    };
+
+
+
+    DCode={
+'030000':'\n●故障概述:\nHW failure error \n●說明:\nCABC CPU　error\n',
+'040100':'\n●故障概述:\nHW failure error \n●說明:\nBattery（UPS) NG\n',
+'040200':'\n●故障概述:\nHW failure error \n●說明:\nElectric discharge error\n',
+'040400':'\n●故障概述:\nHW failure error \n●說明:\n24V I/O　error\n',
+'050000':'\n●故障概述:\nHW failure error \n●說明:\nLack of power supply capacity　for BBM\n',
+'060100':'\n●故障概述:\nFuse blow-out error\n●說明:\nCABINET Shutter\n',
+'070100':'\n●故障概述:\nHW failure error \n●說明:\nKeyboard Communication error\n',
+'080100':'\n●故障概述:\nHW failure error \n●說明:\nRAM error\n',
+'090000':'\n●故障概述:\nHW failure error \n●說明:\nCABINET Shutter error\n',
+'100000':'\n●故障概述:\nRemained media error \n●說明:\nBehind a CABINET shutter\n',
+'110000':'\n●故障概述:\nAbnormal status\n●說明:\nSkimming sensor ON\n',
+'120000':'\n●故障概述:\nAbnormal status\n●說明:\nPINPAD cover destruction was detected\n',
+'130000':'\n●故障概述:\nAbnormal status\n●說明:\nSeismic sensor detected abnormal status\n',
+'140000':'\n●故障概述:\nAbnormal status\n●說明:\nHeat sensor detected abnormal status\n',
+'150000':'\n●故障概述:\nHW failure error \n●說明:\nSide CAB power error\n',
+'160001':'\n●故障概述:\nPINPAD skimmer detect error\n●說明:\nPINPAD skimmer sensor 1\n',
+'160002':'\n●故障概述:\nPINPAD skimmer detect error\n●說明:\nPINPAD skimmer sensor 2\n',
+'170000':'\n●故障概述:\n12V Fuse cut error\n●說明:\n12V Fuse cut error\n',
+'180000':'\n●故障概述:\n5V Fuse cut error\n●說明:\n5V Fuse cut error\n',
+'190000':'\n●故障概述:\n24V Fuse cut error\n●說明:\n24V Fuse cut error\n',
+'260601':'\n●故障概述:\nSystem error\n●說明:\nWin32API error\n',
+'260602':'\n●故障概述:\nSystem error\n●說明:\nMemory error\n',
+'260603':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260604':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260605':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260606':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260607':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'270701':'\n●故障概述:\nProgram error\n●說明:\nSP Program Failure\n',
+'280001':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280002':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280003':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280004':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'280102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'280201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280311':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280312':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280313':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281103':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281104':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281105':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281106':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281107':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281203':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281204':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281205':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281206':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281207':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281303':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281304':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281305':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281306':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281307':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281404':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282311':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282312':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282313':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282402':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283001':'\n●故障概述:\nDriver Initialize error\n●說明:\nDIPL error\n',
+'283101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283312':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283313':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283314':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284103':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284104':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284105':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284106':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284107':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284108':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284109':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284113':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284114':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284115':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284203':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284204':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284205':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284206':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284207':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284208':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284209':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284211':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284212':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284213':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284214':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284215':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284303':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284304':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284305':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284306':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284307':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284308':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284309':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284402':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284420':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284421':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284422':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285121':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285131':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285141':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285142':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285151':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285152':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285161':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285162':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285163':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285171':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285172':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285173':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285181':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285191':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B3':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C3':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851D1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851D2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851E1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285211':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285212':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285232':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285241':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285312':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285313':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285314':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285315':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285316':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285413':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'28B400':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'290901':'\n●故障概述:\nCommunication error\n●說明:\nCommand Send error\n',
+'290902':'\n●故障概述:\nCommunication error\n●說明:\nResponse Receive  Wait Time Out\n',
+'290903':'\n●故障概述:\nCommunication error\n●說明:\nReceive Data error\n',
+'290904':'\n●故障概述:\nCommunication error\n●說明:\nReceive Data error\n',
+'851001':'\n●故障概述:\nShutter OPEN error\n●說明:\nSensor error (Before Open Action)\n',
+'851002':'\n●故障概述:\nShutter OPEN error\n●說明:\nSensor error (After Open Action)\n',
+'851003':'\n●故障概述:\nShutter OPEN error\n●說明:\nLOCK Sensor does not become OFF\n',
+'851004':'\n●故障概述:\nShutter OPEN error\n●說明:\nCLOSE Sensor does not become OFF\n',
+'851005':'\n●故障概述:\nShutter OPEN error\n●說明:\nOPEN Sensor does not become ON\n',
+'852001':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nSensor error (Before Close Action)\n',
+'852002':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nSensor error (After Close Action)\n',
+'852003':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN Sensor does not become OFF\n',
+'852004':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nCLOSE Sensor does not become ON\n',
+'852005':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nLOCK Sensor does not become ON\n',
+'852006':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nMalposition after the shutter close (Another LOCK Position)\n',
+'852107':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN Sensor does not become ON\n',
+'852108':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN Sensor does not become ON\n',
+'852109':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN Sensor does not become ON\n',
+'852110':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN error (After close sensor T.O.)\n',
+'852111':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN error (After lock sensor T.O.)\n',
+'852112':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN error (After close sensor T.O. retry over.)\n',
+'852113':'\n●故障概述:\nShutter CLOSE error (Hand Check Valid)\n●說明:\nOPEN error (After lock sensor T.O. retry over.)\n',
+'854001':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nSensor error (Before Close Action)\n',
+'854002':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nSensor error (After Close Action)\n',
+'854003':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nOPEN Sensor does not become OFF\n',
+'854004':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nCLOSE Sensor does not become ON\n',
+'854005':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nLOCK Sensor does not become ON\n',
+'854006':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nMalposition after the shutter close (Another LOCK Position)\n',
+'854107':'\n●故障概述:\nShutter CLOSE error (Hand Check Invalid)\n●說明:\nOPEN Sensor does not become ON\n',
+'858001':'\n●故障概述:\nShutter OPEN error (Recovery)\n●說明:\nOPEN Sensor does not become ON\n',
+'858112':'\n●故障概述:\nShutter Command parameter error\n●說明:\nCommand Parameter error\n',
+'8581FE':'\n●故障概述:\nShutter Command parameter error\n●說明:\nCommand Parameter error\n',
+'859001':'\n●故障概述:\nAnti-theft\n●說明:\nLock or Close Sensor does not become OFF\n',
+'859002':'\n●故障概述:\nAnti-theft\n●說明:\nLock or Close Sensor does not become ON\n',
+'859003':'\n●故障概述:\nAnti-theft\n●說明:\nLock position error\n',
+'859004':'\n●故障概述:\nAnti-theft\n●說明:\nSensor status NG\n',
+'87D001':'\n●故障概述:\nLoop Check error\n●說明:\nData Mismatch\n',
+'87D002':'\n●故障概述:\nLoop Check error\n●說明:\nAn overrun error\n',
+'87D003':'\n●故障概述:\nLoop Check error\n●說明:\nA framing error\n',
+'87D004':'\n●故障概述:\nLoop Check error\n●說明:\nA parity error\n',
+'87D005':'\n●故障概述:\nLoop Check error\n●說明:\nA transmission interrupt T.O error\n',
+'87D006':'\n●故障概述:\nLoop Check error\n●說明:\nA reception interrupt T.O error\n',
+'87D007':'\n●故障概述:\nLoop Check error\n●說明:\nA T.O error between the beam\n',
+'87D008':'\n●故障概述:\nLoop Check error\n●說明:\nKB I/F error（DSR）\n',
+'88F101':'\n●故障概述:\nRAM error\n●說明:\nMemory Compare error\n',
+'88F102':'\n●故障概述:\nRAM error\n●說明:\nMemory Compare error\n',
+'88F103':'\n●故障概述:\nRAM error\n●說明:\nMemory Compare error\n',
+'88F104':'\n●故障概述:\nRAM error\n●說明:\nMemory Compare error\n',
+'88F113':'\n●故障概述:\nBBM Hash error\n●說明:\nControl Information Data Area Hash error\n',
+'88F114':'\n●故障概述:\nBBM Hash error\n●說明:\nLog Area Hash error\n',
+'88F115':'\n●故障概述:\nBBM Hash error\n●說明:\nLog Area Hash error\n',
+'88F116':'\n●故障概述:\nBBM Hash error\n●說明:\nLog Area Hash error\n',
+'88F117':'\n●故障概述:\nBBM Hash error\n●說明:\nLog Area Hash error\n',
+'88F121':'\n●故障概述:\nBBM Hash error\n●說明:\nSensor Adjustment Data Area Hash error\n',
+'88F122':'\n●故障概述:\nBBM Hash error\n●說明:\nSchedule Data Area Hash error\n',
+'88F123':'\n●故障概述:\nBBM Hash error\n●說明:\nSG Load Data Area Hash error\n',
+'88F124':'\n●故障概述:\nBBM Hash error\n●說明:\nLog Threshold Value Data Area Hash error\n',
+'98F001':'\n●故障概述:\nProgram Hash error\n●說明:\nCABINET Controller Program Hash error\n',
+'98F002':'\n●故障概述:\nProgram Hash error\n●說明:\nCABINET Controller Program Hash error\n',
+'99F701':'\n●故障概述:\nProgram error\n●說明:\nFirmware Program Failure\n',
+'99F702':'\n●故障概述:\nProgram error\n●說明:\nFirmware Program Failure\n',
+'99F703':'\n●故障概述:\nProgram error\n●說明:\nFirmware Program Failure\n',
+'99F980':'\n●故障概述:\nSG load command error\n●說明:\nSG load command not received\n',
+'99F981':'\n●故障概述:\nCommand Sequence error\n●說明:\nUp Load Command Sequence error\n',
+'99F998':'\n●故障概述:\nCommand parameter error\n●說明:\nShutter Command parameter error\n',
+'99F999':'\n●故障概述:\nCommand parameter error\n●說明:\nShutter Command parameter error\n',
+'99FF16':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nSession number is 0 and 15 only.\n',
+'99FF17':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nUnavailable session number was received.\n',
+'99FF1E':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nxx sequence error\n',
+'99FF1F':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nFCS error\n',
+'99FF36':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nDownload start command not received\n',
+'99FF37':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nStatus mismatch\n',
+'99FF3E':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFlash-ROM delete error\n',
+'99FF3F':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFlash-ROM write error\n',
+'99FF46':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFrame attribute error\n',
+'99FF47':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nSequence error\n',
+'99FF4E':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFile hash error\n',
+'99FF4F':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nLoading address error\n',
+'99FF66':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFile No. error\n',
+'99FF67':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nImpossible to download\n',
+'99FF86':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nSetting error\n',
+'99FF87':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nNo freeze data (The data has been cleared.)\n',
+'99FF8E':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nData up to final frame has been sent. \n',
+'99FF8F':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nFrame attribute error\n',
+'99FF96':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nSequence error\n',
+'99FF97':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nLength specification error\n',
+'99FFB6':'\n●故障概述:\nMaintenance command error (with IPL support)\n●說明:\nI/F check data pattern matching error\n',
+
+  };
+
+
+    UserEnter = prompt("請輸入RG8 SIU(CABC)錯誤碼(6碼，例如:99FF96)!");
+    
+    if (UserEnter == null){ // user按下取消
+        alert("請重新選擇!");
+    
+    }else if (UserEnter == ""){ // 未輸入任何資料
+        alert("未輸入資料!");
+		
+	}else if (UserEnter.length != 6){
+        alert("請確實輸入6碼!");
+	}else{
+		GcodeUser = UserEnter.substring(0,2);
+		if (DCode[UserEnter.toUpperCase()] == undefined){
+			alert("抱歉，查無資料!");
+			showFinal = 'undefined';
+		}else{
+			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
+			alert(showFinal);
+			//document.write(showFinal.small()); //可輸出在網頁上
+		}
+	}
+	
+
+        
+
+    </script>
+    
+    <a href="RG8_SIU.html">●再查一次</a><br>
+    <a href="RG8_UNIT.html">●回上一層</a><br>
+    <a href="../main.html">●回主選單</a><br>
+	
+	
+	
+    	<script>
+		myFunInput(UserEnter,document.title,showFinal);
+	</script>
+
+</body>
+</html>

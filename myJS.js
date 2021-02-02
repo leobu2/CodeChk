@@ -77,10 +77,24 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 }//KEEP THIS FUNCTION FOR HTML PAGE USE
 
 
-
+function FromSS(){
+	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
+	url: "https://docs.google.com/spreadsheets/d/1trX7v1VnJi15k_oRFX4s2fCjVDKUqHCH3mXw5WnSv-A/edit?usp=sharing",
+	var parameter = {
+		url: url,
+		name: '工作表1',
+		startRow: 1,
+		startColumn: 1,
+	};
+	
+	$.post(appUrl, parameter, function(data) {
+	console.log(data);
+	});
+}
 function myFunInput(UserEnter,title,User_result){
 		
 	appUrl = "https://script.google.com/macros/s/AKfycbxzZTtlQrGpENBGfgF50cwMwq3jgf67XBsFmNz5jQTSn8TTw15V/exec";
+	          
 	var Today = new Date();
 	var sToday = Today.toString();
 	var CookieArray = [];
@@ -122,9 +136,11 @@ function myFunInput(UserEnter,title,User_result){
 				insertType:"bottom",
 			};
 			$.get(appUrl, parameter);
-    	});	
-	 
+    	});		 
 }
+
+
+
 
 /*!
  * JavaScript Cookie v2.2.0

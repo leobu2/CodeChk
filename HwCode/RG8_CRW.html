@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>CODE-RG8/CRW</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="../myJS.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-67602727-2');
+</script>
+    
+
+</head>
+<body>
+	<script>
+		getPosition();
+	</script>
+
+    <script>
+    GCode={
+'11':'\n●故障概述:\nSkimmer was detected on card slot\n●基本處置動作:\n1. There is foreign object on card slot. 2. Remove the foreign object from card slot 3. Reset the system from maintenance menu. 4. In case error can not be cleared, restart the system from maintenance menu.\n',
+'12':'\n●故障概述:\nPIN Pad cover damaged\n●基本處置動作:\n1. PIN Pad cover damage was detected on front panel. 2. Contact the maintenance staff.\n',
+'22':'\n●故障概述:\nCard reader is unfixed\n●基本處置動作:\n1. Install the Card Reader with tray properly. 2. Reset the system from maintenance menu.\n',
+'26':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'27':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'28':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'29':'\n●故障概述:\nCommunication error in card reader\n●基本處置動作:\n1. USB communication error. 2. Contact the maintenance staff.\n',
+'90':'\n●故障概述:\nCard retain box is full in card reader\n●基本處置動作:\n1. Remove cards from card retain box. 2. Reset the system from maintenance menu. 3. Clear the card retain counter in maintenance menu.\n',
+'91':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'92':'\n●故障概述:\nCard jam in card reader\n●基本處置動作:\n1. Check the card transport path and remove the jammed card. 2. If anti-fishing lock is activated, release the locking mechanism in \n',
+'93':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'95':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'96':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'97':'\n●故障概述:\nSystem error in card reader\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'94':'\n●故障概述:\nMagnetic Stripe Read/Write error\n●基本處置動作:\n1. Check the card. 2. Reset the system from maintenance menu. 3. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'98':'\n●故障概述:\nDoor open in ATM cabinet\n●基本處置動作:\n1. Close the safe door and front/back door. 2. Reset the system from maintenance menu. 3. In case error can not be cleared, restart the system from maintenance menu.\n',
+
+    };
+
+
+
+    DCode={
+'110000':'\n●故障概述:\nAbnormal status\n●說明:\nSkimming sensor ON\n',
+'110001':'\n●故障概述:\nAbnormal status\n●說明:\nMetallic fraud object (ex.skimmer) is detected.\n',
+'220205':'\n●故障概述:\nUnit unset error\n●說明:\nCRW,RPR Unit\n',
+'260601':'\n●故障概述:\nSystem error\n●說明:\nWin32API error\n',
+'260602':'\n●故障概述:\nSystem error\n●說明:\nMemory error\n',
+'260603':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260604':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260605':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260606':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260607':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260608':'\n●故障概述:\nSystem error\n●說明:\nCRW does not ESU (Enhanced Security Unit) model.  Check the CRW module and application (firmware, SP) configuration.\n',
+'270701':'\n●故障概述:\nProgram error\n●說明:\nSP Program Failure\n',
+'280001':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280002':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280003':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280004':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'280102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'280201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280311':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280312':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280313':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281103':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281104':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281105':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281106':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281107':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281203':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281204':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281205':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281206':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281207':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281303':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281304':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281305':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281306':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281307':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281404':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282311':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282312':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282313':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282402':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283001':'\n●故障概述:\nDriver Initialize error\n●說明:\nDIPL error\n',
+'283101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283312':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283313':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283314':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284103':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284104':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284105':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284106':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284107':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284108':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284109':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284113':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284114':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284115':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284203':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284204':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284205':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284206':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284207':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284208':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284209':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284211':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284212':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284213':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284214':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284215':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284303':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284304':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284305':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284306':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284307':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284308':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284309':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284402':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284420':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284421':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284422':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285121':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285131':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285141':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285142':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285151':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285152':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285161':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285162':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285163':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285171':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285172':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285173':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285181':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285191':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B3':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C3':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851D1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851D2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851E1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285211':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285212':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285232':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285241':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285312':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285313':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285314':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285315':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285316':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285413':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'289311':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289312':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289313':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289314':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289315':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289321':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289322':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'289323':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A311':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A312':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A321':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A322':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A323':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A332':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A333':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A335':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A336':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A338':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A339':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A33A':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A33B':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A33C':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A341':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A342':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A344':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A345':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A346':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A351':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A363':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28A370':'\n●故障概述:\nDriver Initialize error\n●說明:\nVendor Driver error\n',
+'28B400':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'290901':'\n●故障概述:\nCommunication error\n●說明:\nCommand Send error\n',
+'290902':'\n●故障概述:\nCommunication error\n●說明:\nResponse Receive  Wait Time Out\n',
+'290903':'\n●故障概述:\nCommunication error\n●說明:\nReceive Data error\n',
+'290904':'\n●故障概述:\nCommunication error\n●說明:\nReceive Data error\n',
+'909000':'\n●故障概述:\nCard Retract error\n●說明:\nRetract BOX Full\n',
+'919100':'\n●故障概述:\nCommand error\n●說明:\nCommand Code error\n',
+'919101':'\n●故障概述:\nCommand error\n●說明:\nCommand Parameter error\n',
+'919102':'\n●故障概述:\nCommand error\n●說明:\nCommand Execute Impossible\n',
+'919103':'\n●故障概述:\nCommand error\n●說明:\nCommand to the hardware that does not exist was received\n',
+'919104':'\n●故障概述:\nCommand error\n●說明:\nCommand Data error\n',
+'919105':'\n●故障概述:\nCommand error\n●說明:\nCommand Sequence error (Received at Card Feed Command  in IC contacting)\n',
+'919106':'\n●故障概述:\nCommand error\n●說明:\nCommand Sequence error (Do not Have Key)\n',
+'9191B0':'\n●故障概述:\nCommand error\n●說明:\nCommand Sequence error (Not receiving Initial Command)\n',
+'929210':'\n●故障概述:\nCard Jam (In the case of DIP,Hardware error)\n●說明:\nCard Jam (In the case of DIP,Latch operation error)\n',
+'929213':'\n●故障概述:\nCard Jam\n●說明:\nAbnormal Card (LONG)(Over 92mm)\n',
+'929214':'\n●故障概述:\nCard Jam\n●說明:\nAbnormal Card (SHORT)(Under 78mm)\n',
+'929216':'\n●故障概述:\nCard Jam\n●說明:\nForced move of card/Forced open to shutter\n',
+'929217':'\n●故障概述:\nCard Jam\n●說明:\nCollect Card Jam\n',
+'929240':'\n●故障概述:\nCard Jam\n●說明:\nRetracting card was pulled.\n',
+'929245':'\n●故障概述:\nCard Jam\n●說明:\nIC Reader/Writer is forced eject of card.\n',
+'929246':'\n●故障概述:\nCard Jam\n●說明:\nEject card Collect Timeout\n',
+'929255':'\n●故障概述:\nCard Jam: Anti-Fishing\n●說明:\nAnti-Fishing was Trapped Card. Command cannot be executed.\n',
+'929258':'\n●故障概述:\nCard Jam: Anti-Fishing\n●說明:\nAnti-Fishing working now\n',
+'939311':'\n●故障概述:\nHardware error\n●說明:\nShutter error\n',
+'939312':'\n●故障概述:\nHardware error\n●說明:\nSensor error\n',
+'939315':'\n●故障概述:\nHardware error\n●說明:\nFlash Memory error\n',
+'939318':'\n●故障概述:\nHardware error\n●說明:\nSwitch error\n',
+'939319':'\n●故障概述:\nHardware error\n●說明:\nCard Insert timeout\n',
+'939351':'\n●故障概述:\nHardware error\n●說明:\nActuator error\n',
+'939354':'\n●故障概述:\nHardware error ( Anti-Fishing)\n●說明:\nAnti-Fishing Hardware Abnormal (Check the Anti-Fishing Pin,and Reset the system from maintenance menu.)\n',
+'939370':'\n●故障概述:\nHardware error\n●說明:\nF-ROM write error\n',
+'939371':'\n●故障概述:\nHardware error\n●說明:\nCRC error of User program code area\n',
+'939372':'\n●故障概述:\nHardware error\n●說明:\nEEPROM operation error\n',
+'939374':'\n●故障概述:\nHardware error\n●說明:\nRAM error\n',
+'939376':'\n●故障概述:\nHardware error\n●說明:\nCommunication error between ESU and ICRW\n',
+'939395':'\n●故障概述:\nHardware error\n●說明:\nESU is abnormal or disconnected\n',
+'939399':'\n●故障概述:\nHardware error\n●說明:\nAbnonnal current was found on the coil of ESU.\n',
+'949407':'\n●故障概述:\nMagnetic Stripe Read error\n●說明:\nCard insert or pull-out incomplete ( Except "9408","9409" )\n',
+'949408':'\n●故障概述:\nMagnetic Stripe Read error\n●說明:\nCard insert timeout ( At least one Magnetic track Read )\n',
+'949409':'\n●故障概述:\nMagnetic Stripe Read error\n●說明:\nCard insert or pull-out timeout\n',
+'949420':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nRead error(Parity error) (In the case of DIP,the magnetic data has not been read.(or reading data buffer is clear))\n',
+'949421':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nRead error(Other errors) (In the case of DIP,Read error(No SS))\n',
+'949422':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nWrite error (In the case of DIP,Read error(Parity error))\n',
+'949423':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nRead error(Only SS- ES- LRC Card) (In the case of DIP,Read error(No ES))\n',
+'949424':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nRead error(no magnetic track) (In the case of DIP,Read error(No LRC))\n',
+'949425':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nWrite Verify error(Quality error) (In the case of DIP,Read error(no magnetic data))\n',
+'949426':'\n●故障概述:\nMagnetic Stripe Read/Write error\n●說明:\nRead error(No SS)\n',
+'949427':'\n●故障概述:\nMagnetic Stripe Read/Write error (In the case of DIP,Magnetic Stripe Read error)\n●說明:\nRead error(No ES) (In the case of DIP,Read error(Only SS- ES- LRC Card))\n',
+'949428':'\n●故障概述:\nMagnetic Stripe Read/Write error\n●說明:\nRead error(No LRC)\n',
+'949429':'\n●故障概述:\nMagnetic Stripe Read/Write error\n●說明:\nWrite Verify error(Data discordance)\n',
+'949453':'\n●故障概述:\nMagnetic Stripe Read/Write error\n●說明:\nTo show that read error in Digital Decode Read command \n',
+'959530':'\n●故障概述:\nPower Supply error\n●說明:\nPower Low\n',
+'959531':'\n●故障概述:\nCommunication error\n●說明:\nDSR Signal is OFF\n',
+'969641':'\n●故障概述:\nIC Card Reader/Writer error\n●說明:\nIC contact Solenoid or Sensor ICD error\n',
+'969643':'\n●故障概述:\nIC Card Reader/Writer error\n●說明:\nSensor PDI error\n',
+'969650':'\n●故障概述:\nHardware error\n●說明:\nRetract Counter Overflow\n',
+'979760':'\n●故障概述:\nFirmware error\n●說明:\nExcess current was IC Card Detection in power line(Vcc)\n',
+'979761':'\n●故障概述:\nFirmware error\n●說明:\nIC Card Reset No Response\n',
+'979762':'\n●故障概述:\nFirmware error\n●說明:\nIC Card mismatch in specified protocol\n',
+'979763':'\n●故障概述:\nFirmware error\n●說明:\nProtocol error (IC Card No Response)\n',
+'979764':'\n●故障概述:\nFirmware error\n●說明:\nProtocol error (without "63)\n',
+'979765':'\n●故障概述:\nFirmware error\n●說明:\nSequence error\n',
+'979766':'\n●故障概述:\nFirmware error\n●說明:\nAttempting to communicate in card with Protocol ISO/IEC7816-3 non-support\n',
+'979769':'\n●故障概述:\nFirmware error\n●說明:\nAttempting to communicate in card with Protocol EMV96 ver3.1.1 non-support\n',
+'989800':'\n●故障概述:\nFirmware error\n●說明:\nDoor is open.\n',
+	
+
+    };
+
+
+    UserEnter = prompt("請輸入CRW錯誤碼(6碼，例如:939311)!");
+    
+    if (UserEnter == null) // user按下取消
+        alert("請重新選擇!");
+    
+    else if (UserEnter == "") // 未輸入任何資料
+        alert("未輸入資料!");
+		
+	else if (UserEnter.length != 6)
+        alert("請確實輸入6碼!");
+	
+    else {
+	GcodeUser = UserEnter.substring(0,2);
+	showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
+	if (DCode[UserEnter.toUpperCase()] == undefined)
+		alert("抱歉，查無資料!");
+	else
+		alert(showFinal);
+	//document.write(showFinal.small()); //可輸出在網頁上
+	
+	}
+
+        
+   
+    </script>
+    
+    <a href="RG8_CRW.html">●再查一次</a><br>
+    <a href="RG8_UNIT.html">●回上一層</a><br>
+    <a href="../main.html">●回主選單</a><br>
+	
+	
+	
+    
+	<script>
+		myFunInput(UserEnter,document.title,showFinal);
+	</script>
+</body>
+</html>

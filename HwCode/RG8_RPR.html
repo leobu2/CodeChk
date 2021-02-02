@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>CODE-RG8/RPR</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="../myJS.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/AllPageStyle.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67602727-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-67602727-2');
+</script>
+    
+
+</head>
+<body>
+	<script>
+		getPosition();
+	</script>
+
+    <script>
+    GCode={
+'22':'\n●故障概述:\nReceipt printer is unfixed\n●基本處置動作:\n1. Install the Receipt Printer with tray properly. 2. Reset the system from maintenance menu.\n',
+'23':'\n●故障概述:\nReceipt printer faulty status\n●基本處置動作:\n1. Close the printing head.  2. Reset the system from maintenance menu.\n',
+'24':'\n●故障概述:\nBitMap Data error\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff. \n',
+'26':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff. \n',
+'27':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff. \n',
+'28':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu. 2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff. \n',
+'29':'\n●故障概述:\nCommunication error in receipt printer\n●基本處置動作:\n1. USB communication error.  2. Contact the maintenance staff.\n',
+'34':'\n●故障概述:\nPaper jam in receipt printer\n●基本處置動作:\n1. Check the roll paper or transport path of the Receipt Printer and remove the jammed paper. 2. If needed, replace the roll paper.  3. Reset the system from maintenance menu.\n',
+'36':'\n●故障概述:\nMark sensor error in receipt printer\n●基本處置動作:\n1. Check  the roll paper or the transport path of the Receipt Printer and remove the jammed paper.  2. If needed, replace the roll paper.  3. Reset the system from maintenance menu.\n',
+'71':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'72':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'73':'\n●故障概述:\nPaper not loaded in receipt printer\n●基本處置動作:\n1. Load the receipt paper.  2. Reset the system from maintenance menu. 3. In case error can not be cleared, restart the system from maintenance menu.\n',
+'74':'\n●故障概述:\nPrinting unit is unfixed in receipt printer\n●基本處置動作:\n1. Close the printing head.  2. Reset the system from maintenance menu.\n',
+'75':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff. \n',
+'76':'\n●故障概述:\nMark detecting error in receipt printer\n●基本處置動作:\n1. Check  the roll paper or the transport path of the Receipt Printer and remove the jammed paper.  2. If needed, replace the roll paper.  3. Reset the system from maintenance menu.\n',
+'79':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'82':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'83':'\n●故障概述:\nPaper cut error in receipt printer\n●基本處置動作:\n1. Check  the roll paper or the transport path of the Receipt Printer and remove the jammed paper.  2. If needed, replace the roll paper.  3. Reset the system from maintenance menu.\n',
+'91':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+'98':'\n●故障概述:\nWrong test number in receipt printer\n●基本處置動作:\nInput the correct test number.\n',
+'99':'\n●故障概述:\nSystem error in receipt printer\n●基本處置動作:\n1. Reset the system from maintenance menu.  2. In case error can not be cleared, restart the system from maintenance menu and contact the maintenance staff.\n',
+
+    };
+
+
+
+    DCode={
+'220205':'\n●故障概述:\nUnit unset error\n●說明:\nCRW,RPR Unit is unfixed\n',
+'240401':'\n●故障概述:\nBitMap Data error\n●說明:\nPrint Data (BitMap Data) Conversion error\n',
+'260601':'\n●故障概述:\nSystem error\n●說明:\nWin32API error\n',
+'260602':'\n●故障概述:\nSystem error\n●說明:\nMemory error\n',
+'260603':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260604':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260605':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260606':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'260607':'\n●故障概述:\nSystem error\n●說明:\nDriver Program Failure\n',
+'270701':'\n●故障概述:\nProgram error\n●說明:\nSP Program Failure\n',
+'280001':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280002':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280003':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280004':'\n●故障概述:\nDriver Initialize error\n●說明:\nSP Program Failure\n',
+'280101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'280102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'280201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280311':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280312':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'280313':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281103':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281104':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281105':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281106':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281107':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'281201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281203':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281204':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281205':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281206':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281207':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281303':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281304':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281305':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281306':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281307':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'281404':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'282201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282311':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282312':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282313':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'282401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282402':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'282412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283001':'\n●故障概述:\nDriver Initialize error\n●說明:\nDIPL error\n',
+'283101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'283201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'283311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283312':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283313':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283314':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'283411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284101':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284102':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284103':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284104':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284105':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284106':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284107':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284108':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284109':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284112':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284113':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284114':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284115':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'284201':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284202':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284203':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284204':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284205':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284206':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284207':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284208':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284209':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284211':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284212':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284213':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284214':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284215':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284301':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284302':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284303':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284304':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284305':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284306':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284307':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284308':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284309':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'284311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284401':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284402':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284420':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284421':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'284422':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285111':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285121':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285131':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285141':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285142':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285151':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285152':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285161':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285162':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285163':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285171':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285172':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285173':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285181':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285191':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851B3':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851C3':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851D1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851D2':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'2851E1':'\n●故障概述:\nDriver Initialize error\n●說明:\nRouter Driver error\n',
+'285211':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285212':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285232':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285241':'\n●故障概述:\nDriver Initialize error\n●說明:\nDevice Driver error\n',
+'285311':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285312':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285313':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285314':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285315':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285316':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285410':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285411':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285412':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'285413':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'28B400':'\n●故障概述:\nDriver Initialize error\n●說明:\nUSB Start Up Driver error\n',
+'290901':'\n●故障概述:\nCommunication error\n●說明:\nCommand Send error\n',
+'290902':'\n●故障概述:\nCommunication error\n●說明:\nResponse Receive  Wait Time Out\n',
+'290903':'\n●故障概述:\nCommunication error\n●說明:\nReceive Data error\n',
+'290904':'\n●故障概述:\nCommunication error\n●說明:\nReceive Data error\n',
+'341001':'\n●故障概述:\nReceipt Jam\n●說明:\nReceipt Taken Check Sensor does not become ON　（S1 sensor failure）\n',
+'342001':'\n●故障概述:\nReceipt Jam\n●說明:\nReceipt Taken Check Sensor does not become OFF　（S1 sensor failure）\n',
+'347806':'\n●故障概述:\nReceipt Jam\n●說明:\nLoading Jam （Eject Sensor does not become ON）\n',
+'365000':'\n●故障概述:\nReceipt Unit (Mark Sensor Parts) error\n●說明:\nMark Sensor adjustment error (LED current overflow)\n',
+'365001':'\n●故障概述:\nReceipt Unit (Mark Sensor Parts) error\n●說明:\nMark Sensor adjustment error (LED current underrun)\n',
+'365002':'\n●故障概述:\nReceipt Unit (Mark Sensor Parts) error\n●說明:\nMark Sensor adjustment error (LED current overflow)\n',
+'365003':'\n●故障概述:\nReceipt Unit (Mark Sensor Parts) error\n●說明:\nMark Sensor adjustment media error\n',
+'717711':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nData Transfer Sequence Alarm　（PCB or Thermal Head failure）\n',
+'717720':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nThermistor Disconnection　（PCB or Thermal Head failure）\n',
+'717722':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nAbnormal high temperature　（PCB or Thermal Head failure）\n',
+'717726':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nStrobe signal error　（PCB or Thermal Head failure）\n',
+'717730':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nThermal Head(Generation of heat) was short-circuit　（PCB or Thermal Head failure）\n',
+'717731':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\ndot print  miss　（PCB or Thermal Head failure）\n',
+'717734':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nLatch Signal error　（PCB or Thermal Head failure）\n',
+'717735':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nDriver short-circuit　（PCB or Thermal Head failure）\n',
+'717736':'\n●故障概述:\nReceipt Unit (Thermal Head Parts) error\n●說明:\nCOM voltage error　（PCB or Thermal Head failure）\n',
+'727901':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nFuse Alarm　（Thermal head）\n',
+'727902':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nFuse Alarm (Cutter motor)\n',
+'727903':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nFuse Alarm (RF motor)\n',
+'727904':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nFuse Alarm (LF motor)\n',
+'737602':'\n●故障概述:\nPaper of Receipt Unset\n●說明:\nPaper End\n',
+'757910':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nBattery Low　（PCB failure）\n',
+'757911':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\n24 VIO LOW\n',
+'767607':'\n●故障概述:\nAbnormal Paper of Receipt\n●說明:\nMark Undetected in Printing　（S2 sensor or RFmotor failure）\n',
+'767807':'\n●故障概述:\nReceipt Jam\n●說明:\nMark Undetected in Loading　（S2 sensor or RFmotor failure）\n',
+'797631':'\n●故障概述:\nCommand error\n●說明:\nPrint Data Length error\n',
+'797632':'\n●故障概述:\nCommand error\n●說明:\nPrint Data error\n',
+'79F994':'\n●故障概述:\nCommand error\n●說明:\nCommand receive error (24 VIO OFF)\n',
+'79F995':'\n●故障概述:\nCommand error\n●說明:\nForm Data Unregistered\n',
+'79F996':'\n●故障概述:\nCommand error\n●說明:\nCommand sequence error\n',
+'79F998':'\n●故障概述:\nCommand error\n●說明:\nCommand Reject Parameter error\n',
+'79F999':'\n●故障概述:\nCommand error\n●說明:\nCommand Reject Abnormal Command error\n',
+'827610':'\n●故障概述:\nReceipt Unit (Cut Parts) error\n●說明:\nCut Knife error (does not become ON)　（S6 sensor or Cut motor failure）\n',
+'827611':'\n●故障概述:\nReceipt Unit (Cut Parts) error\n●說明:\nCut Knife error (does not become OFF)　（S6 sensor or Cut motor failure）\n',
+'837660':'\n●故障概述:\nPaper End\n●說明:\nPaper was torn\n',
+'91E001':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91E002':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91E003':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91E004':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91E005':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91E006':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91E007':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F112':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F113':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F120':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nEEPROM Sensor Adjust Data HASH error\n',
+'91F121':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nEEPROM Adjust Data HASH error\n',
+'91F122':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F124':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F130':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F131':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F132':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F133':'\n●故障概述:\nReceipt Unit (Board) error\n●說明:\nProgram error\n',
+'91F201':'\n●故障概述:\nRead EEPROM error\n●說明:\nProgram error\n',
+'91F202':'\n●故障概述:\nRead EEPROM error\n●說明:\nProgram error\n',
+'91F203':'\n●故障概述:\nRead EEPROM error\n●說明:\nProgram error\n',
+'91F204':'\n●故障概述:\nRead EEPROM error\n●說明:\nProgram error\n',
+'91F205':'\n●故障概述:\nRead EEPROM error\n●說明:\nProgram error\n',
+'91F206':'\n●故障概述:\nRead EEPROM error\n●說明:\nProgram error\n',
+'91F211':'\n●故障概述:\nWrite EEPROM error\n●說明:\nProgram error\n',
+'91F212':'\n●故障概述:\nWrite EEPROM error\n●說明:\nProgram error\n',
+'91F213':'\n●故障概述:\nWrite EEPROM error\n●說明:\nProgram error\n',
+'91F214':'\n●故障概述:\nWrite EEPROM error\n●說明:\nProgram error\n',
+'91F215':'\n●故障概述:\nWrite EEPROM error\n●說明:\nProgram error\n',
+'91F216':'\n●故障概述:\nWrite EEPROM error\n●說明:\nProgram error\n',
+'91F221':'\n●故障概述:\nRead I/O Expandor error\n●說明:\nProgram error\n',
+'91F222':'\n●故障概述:\nRead I/O Expandor error\n●說明:\nProgram error\n',
+'91F223':'\n●故障概述:\nRead I/O Expandor error\n●說明:\nProgram error\n',
+'91F224':'\n●故障概述:\nRead I/O Expandor error\n●說明:\nProgram error\n',
+'91F225':'\n●故障概述:\nRead I/O Expandor error\n●說明:\nProgram error\n',
+'91F226':'\n●故障概述:\nRead I/O Expandor error\n●說明:\nProgram error\n',
+'91F231':'\n●故障概述:\nWrite I/O Expandor error\n●說明:\nProgram error\n',
+'91F232':'\n●故障概述:\nWrite I/O Expandor error\n●說明:\nProgram error\n',
+'91F233':'\n●故障概述:\nWrite I/O Expandor error\n●說明:\nProgram error\n',
+'91F234':'\n●故障概述:\nWrite I/O Expandor error\n●說明:\nProgram error\n',
+'91F235':'\n●故障概述:\nWrite I/O Expandor error\n●說明:\nProgram error\n',
+'91F236':'\n●故障概述:\nWrite I/O Expandor error\n●說明:\nProgram error\n',
+'98F800':'\n●故障概述:\nMaintenance test error\n●說明:\nTest No. error\n',
+'98F801':'\n●故障概述:\nMaintenance test error\n●說明:\nType error\n',
+'98F820':'\n●故障概述:\nMaintenance test error\n●說明:\nReceipt Insert Timeout in Mark Sensor Adjust Test\n',
+'98F821':'\n●故障概述:\nMaintenance test error\n●說明:\nAlready loading in Mark Sensor Adjust Test\n',
+'98F822':'\n●故障概述:\nMaintenance test error\n●說明:\nno-mark  receipt settings in Mark Sensor Adjust Test\n',
+'98F830':'\n●故障概述:\nEEPROM write test error\n●說明:\nType error (Printing start position)\n',
+'98F831':'\n●故障概述:\nEEPROM write test error\n●說明:\nType error (Left margin)\n',
+'98F833':'\n●故障概述:\nEEPROM write test error\n●說明:\nType error (Cut position)\n',
+'98F834':'\n●故障概述:\nEEPROM write test error\n●說明:\nType error (Thermal head)\n',
+'99FF16':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nSession number is 0 and 15 only.\n',
+'99FF17':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nUnavailable session number was received.\n',
+'99FF1E':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nxx sequence error\n',
+'99FF1F':'\n●故障概述:\nCommand rejected (with IPL support)\n●說明:\nFCS error\n',
+'99FF36':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nDownload start command not received\n',
+'99FF37':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nStatus mismatch\n',
+'99FF3E':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFlash-ROM delete error\n',
+'99FF3F':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFlash-ROM write error\n',
+'99FF46':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFrame attribute error\n',
+'99FF47':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nSequence error\n',
+'99FF4E':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFile hash error\n',
+'99FF4F':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nLoading address error\n',
+'99FF66':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nFile No. error\n',
+'99FF67':'\n●故障概述:\nDownload error (with IPL support)\n●說明:\nImpossible to download\n',
+'99FF86':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nSetting error\n',
+'99FF87':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nNo freeze data (The data has been cleared.)\n',
+'99FF8E':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nData up to final frame has been sent. \n',
+'99FF8F':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nFrame attribute error\n',
+'99FF96':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nSequence error\n',
+'99FF97':'\n●故障概述:\nFreeze error (with IPL support)\n●說明:\nLength specification error\n',
+'99FFB6':'\n●故障概述:\nMaintenance command error (with IPL support)\n●說明:\nI/F check data pattern matching error\n',
+
+
+	};
+
+
+    UserEnter = prompt("請輸入RPR錯誤碼(6碼，例如:99FFB6)!");
+    
+    if (UserEnter == null){ // user按下取消
+        alert("請重新選擇!");
+    
+    }else if (UserEnter == ""){ // 未輸入任何資料
+        alert("未輸入資料!");
+		
+	}else if (UserEnter.length != 6){
+        alert("請確實輸入6碼!");
+	
+    }else {
+		GcodeUser = UserEnter.substring(0,2);
+		
+		if (DCode[UserEnter.toUpperCase()] == undefined){
+			alert("抱歉，查無資料!");
+			showFinal = 'undefined';
+		}else{
+			showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
+			alert(showFinal);
+			//document.write(showFinal.small()); //可輸出在網頁上
+		}
+	}
+
+        
+
+    </script>
+    
+    <a href="RG8_RPR.html">●再查一次</a><br>
+    <a href="RG8_UNIT.html">●回上一層</a><br>
+    <a href="../main.html">●回主選單</a><br>
+	
+	
+	
+   	<script>
+		myFunInput(UserEnter,document.title,showFinal);
+	</script>
+
+</body>
+</html>
