@@ -20,7 +20,7 @@
 </head>
 <body>
 	<script>
-		getPosition();
+		//getPosition();
 	</script>    
     <script>
 
@@ -38,9 +38,20 @@
     <a href="debug.html">●再查一次</a><br>
     <a href="main.html">●回主選單</a><br>
     <script>
-        
+		
+  var 客戶 = "郵局";
+  var 代碼 = "C011";
+  var 網址 = "https://docs.google.com/spreadsheets/d/1UsepTCoHEOB4y31AO5pbf12F4vLr8Igv_IgZ2jJDNfI/edit?usp=sharing";
+
+        var parameter = {
+			name: 客戶,
+			keyValue:代碼,
+			url: 網址
+		};
 		//myFunInput(UserEnter,document.title,result);
-		FromSS();
+		$.get('Google App Script 網址', parameter, function(data) {
+			console.log(data);
+		});
 		
     </script>   
 </body>
