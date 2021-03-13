@@ -43,6 +43,7 @@
 				url: 網址
 			};
 			//myFunInput(UserEnter,document.title,result);
+			$.ajaxSettings.async = false;
 			$.get('https://script.google.com/macros/s/AKfycbz0Ma1bdsOvbAhU9vKbbmnsDhNOF5Mb_akwzcDMaJw7LgkzOqQobSbK7umVqmBPXl15Dg/exec', parameter, function(data) {
 				console.log(data);
 				if(data == "" || data == undefined){
