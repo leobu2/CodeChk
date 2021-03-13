@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -26,11 +26,34 @@
 
 
         UserEnter = prompt("請輸入debug錯誤碼");
-        if (UserEnter == null)
+        if (UserEnter == null){		
             alert("請重新選擇!");
-        else if (UserEnter == "")
+			
+        }else if (UserEnter == ""){		
             alert("未輸入資料!");
-        else
+			
+        }else{
+			var 客戶 = "郵局";
+			var 代碼 = UserEnter;
+			var 網址 = "https://docs.google.com/spreadsheets/d/1UsepTCoHEOB4y31AO5pbf12F4vLr8Igv_IgZ2jJDNfI/edit?usp=sharing";
+
+			var parameter = {
+				name: 客戶,
+				keyValue:代碼,
+				url: 網址
+			};
+			//myFunInput(UserEnter,document.title,result);
+			$.get('https://script.google.com/macros/s/AKfycbz0Ma1bdsOvbAhU9vKbbmnsDhNOF5Mb_akwzcDMaJw7LgkzOqQobSbK7umVqmBPXl15Dg/exec', parameter, function(data) {
+				console.log(data);
+				if(data == "" || data == undefined){
+					alert("查無資料!");
+				}else{
+					alert(data);
+				}
+					
+			});
+		}
+			
              //result = Answer[UserEnter.toUpperCase()];alert(result);if(result == undefined){result = 'undefined';}
 
     </script>
@@ -38,20 +61,7 @@
     <a href="debug.html">●再查一次</a><br>
     <a href="main.html">●回主選單</a><br>
     <script>
-		
-  var 客戶 = "郵局";
-  var 代碼 = "C011";
-  var 網址 = "https://docs.google.com/spreadsheets/d/1UsepTCoHEOB4y31AO5pbf12F4vLr8Igv_IgZ2jJDNfI/edit?usp=sharing";
-
-        var parameter = {
-			name: 客戶,
-			keyValue:代碼,
-			url: 網址
-		};
-		//myFunInput(UserEnter,document.title,result);
-		$.get('Google App Script 網址', parameter, function(data) {
-			console.log(data);
-		});
+	
 		
     </script>   
 </body>
