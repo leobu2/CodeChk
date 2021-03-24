@@ -23,7 +23,9 @@
 		getPosition();
 	</script>    
 	
-	<p id="Output" style="font-size:7vw; position:left" >查詢結果:</p>
+	<a href="debug.html">●再查一次</a><br>
+    <a href="main.html">●回主選單</a><br>
+	<p id="Output" style="font-size:7vw; position:left" >查無資料!</p>
 	
     <script>
 
@@ -36,11 +38,15 @@
             alert("未輸入資料!");
 			
         }else{
-			var 客戶 = "郵局";
-			var 代碼 = UserEnter;
+			var 客戶 = "郵局"; //sheet name
+			var 代碼 = UserEnter; //user 輸入的值
+			
+			//試算表共用連結
 			var 網址 = "https://docs.google.com/spreadsheets/d/1UsepTCoHEOB4y31AO5pbf12F4vLr8Igv_IgZ2jJDNfI/edit?usp=sharing";
-			var 欄名 = "代碼"; //查哪個標題
+			
+			var 欄名 = "代碼"; //查哪個標題(欄位)
 			var 模糊 = 0; // 0=模糊搜尋； 1=精準搜尋
+			
 			
 			var parameter = {
 				name: 客戶,
@@ -75,15 +81,6 @@
 
 
     </script>
-    
 
-	
-	
-    <a href="debug.html">●再查一次</a><br>
-    <a href="main.html">●回主選單</a><br>
-    <script>
-	
-		
-    </script>   
 </body>
 </html>
