@@ -23,6 +23,7 @@
 		getPosition();
 	</script>    
 	
+	<p id="Output" >查詢結果:</p>
     <script>
 
 
@@ -37,22 +38,30 @@
 			var 客戶 = "郵局";
 			var 代碼 = UserEnter;
 			var 網址 = "https://docs.google.com/spreadsheets/d/1UsepTCoHEOB4y31AO5pbf12F4vLr8Igv_IgZ2jJDNfI/edit?usp=sharing";
-
+			var 欄名 = "代碼"; //查哪個標題
+			var 模糊 = 1; // 0=模糊搜尋； 1=精準搜尋
+			
 			var parameter = {
 				name: 客戶,
 				keyValue:代碼,
-				url: 網址
+				url: 網址,
+				keyName: 欄名,
+				searchType: 模糊,
 			};
 			
 			$.ajaxSettings.async = false;
 				
-			$.get('https://script.google.com/macros/s/AKfycbz0Ma1bdsOvbAhU9vKbbmnsDhNOF5Mb_akwzcDMaJw7LgkzOqQobSbK7umVqmBPXl15Dg/exec', parameter, function(data) {
+			$.get('https://script.google.com/macros/s/AKfycbx0oNiTZFqCTNapVYzLvhMo41R-xHQ2d6nhVd2fQvL1t1GiD5NUtyjOsXuNfjbGNBKbDg/exec', parameter, function(data) {
 				console.log(data);
 				if(data == "" || data == undefined){
 					alert("查無資料!");
 				}else{
+				
 					alert(data);
+					$.ajaxSettings.async = true;
 					myFunInput(UserEnter,document.title,data);
+					
+					//$('#Output').text(data)
 				}
 					
 			});
@@ -62,6 +71,9 @@
 
     </script>
     
+
+	
+	
     <a href="debug.html">●再查一次</a><br>
     <a href="main.html">●回主選單</a><br>
     <script>
