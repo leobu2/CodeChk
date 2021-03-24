@@ -23,7 +23,8 @@
 		getPosition();
 	</script>    
 	
-	<p id="Output" >查詢結果:</p>
+	<p id="Output" style="font-size:7vw; position:left" >查詢結果:</p>
+	
     <script>
 
 
@@ -61,6 +62,9 @@
 					$.ajaxSettings.async = true;
 					myFunInput(UserEnter,document.title,data);
 					
+					var obj = $("#Output").text(data);
+					obj.html(obj.html().replace(/\n/g,'<br/>'));
+					
 					//$('#Output').text(data)
 				}
 					
@@ -68,6 +72,7 @@
 		}
 			
              //result = Answer[UserEnter.toUpperCase()];alert(result);if(result == undefined){result = 'undefined';}
+
 
     </script>
     
