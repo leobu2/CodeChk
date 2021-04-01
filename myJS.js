@@ -9,7 +9,7 @@ var UserID;
 var UserFlag = 0;
 var isUserCorrect;
 var picName;
-
+var	finalData;
 /*
 	if(confirm('您要刪除工號以及姓名的Cookie嗎?')){
 		Cookies.remove('UserID');
@@ -19,10 +19,65 @@ var picName;
 		alert('===不刪除Cookie===\n目前UserID的值為: ' + UserID + '\n目前UserName的值為: ' + UserName);
 	}
 */
+	function read_finalData(){
+		var r = finalData;
+		return r;
+	}
 
- 
-function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
+	function readSS(cls,sheet,title_chk,type,sRow,sCol){	
+		////////////// 決定 sheet---開始
+		//試算表共用後複製出來的連結
+		var hw_code = "https://docs.google.com/spreadsheets/d/191ebFViUYDTgbCD4wyyqP1RkNxl1lTPnMIlgJOePP6o/edit?usp=sharing";
+		var sw_code = "https://docs.google.com/spreadsheets/d/1cpX0tQd2ynPX92CrIuVurxVDVu-6R9qQCReXwD1YL6s/edit?usp=sharing";
+		
+		if (cls == "HW"){
+			var 網址 = hw_code;						
+		}else if (cls == "SW"){			
+			var 網址 = sw_code;			
+		}
+		console.log("網址= " + 網址 );
+		
+		//////////////  決定 sheet---結束
+		
+		var 客戶 = sheet; //sheet name
+		var 欄名 = title_chk; //查哪個標題
+		var 代碼 = ""; //查詢值
+		var 模糊 = type; // 0=模糊搜尋； 1=精準搜尋
+		var 開始行 = sRow; //行 (1234....) -row 直
+		var 開始列 = sCol; //列 (ABCD....) - coulmn 橫	
+		
+		代碼 = prompt("請輸入錯誤碼");
+		self.location="wait.html";
+		
+		var parameter = {
+			name: 客戶,
+			keyValue: 代碼,
+			url: 網址,
+			keyName: 欄名,
+			searchType: 模糊,
+			startRow: 開始行,
+			startColumn: 開始列,
+		};
+		console.log("代碼= " + 代碼);
+			
+		//$.ajaxSettings.async = false;
+			
+		$.get('https://script.google.com/macros/s/AKfycbx0oNiTZFqCTNapVYzLvhMo41R-xHQ2d6nhVd2fQvL1t1GiD5NUtyjOsXuNfjbGNBKbDg/exec', parameter, function(data) {
+			console.log(data);
+			if(data == "" || data == undefined){
+				alert("查無資料!");
+			}else{
+				localStorage.setItem('final',data);
+				//$.ajaxSettings.async = true;
+				self.location.href="ShowResult.html";
+				myFunInput(代碼,客戶,data);				
+				
+			}					
+		});
+	}
 	
+	
+function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15	
 	
 	if(Cookies.get('UserID')== null){
 		UserID = prompt('===關於使用者===\n請輸入工號(不需英文)!');

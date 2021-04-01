@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>硬體主選單</title>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="myJS.js"></script>	
+		<link type="text/css" rel="stylesheet" href="css/AllPageStyle.css" />
+	</head>
+	<body>
+		<div>		
+			<div style="filter: glow(color:blue, strength=2);
+				color:white; font-weight:900; text-shadow: 1px 1px 5px #0094ff;">★硬體★</div>
+		
+			<!--
+			送入 readSS() 的參數一定要單引號
+			
+			readSS(分類,sheetName, title, 模糊/精準, 開始行,開始列)
+			
+			分類: 供區分要用哪個試算表
+			sheetName: 要找試算表內的哪一個 sheetName
+			title: sheet 內的哪一列為關鍵值
+			模糊/精準: 相等於查詢值才會 return 或是 包含查詢值就會 return
+			開始行: 從哪行開始
+			開始列: 從哪列開始
+			-->
+			
+			<P>===存提款機===</P>
+			<a href="HwCode/RG7_UNIT.html">RG7</a><br>
+			<!--<a href="HwCode/ForRG7Code.html">RG7(舊版)</a><br>-->
+			<a href="HwCode/TG7.html">TG7</a><br>		
+			
+			<a href="javascript: void(0)" onClick="readSS('HW','WN-CDM','錯誤碼',0,1,1)">WN-CDM</a><br>
+			
+			<a href="HwCode/WN_8.html">WN(8碼)</a><br>
+			<a href="HwCode/Atm21s.html">ATM21S</a><br>
+			
+			<P>===醫療繳費機===</P>
+			<a href="HwCode/CRF.html">CRF</a><br>
+			<a href="HwCode/F53.html">F53(出鈔)</a><br>
+			<a href="HwCode/IVIZION.html">iVizion(入鈔)</a><br>
+			
+			<P>===補摺機===</P>
+			<a href="HwCode/Sk5240e.html">5240</a><br>
+			<a href="HwCode/5250.html">5250</a><br>
+			<a href="HwCode/S4680.html">S4680</a><br>
+			
+			<P>===整鈔機===</P>
+			<a href="HwCode/Uw100.html">UW-100<a><br>
+			<a href="HwCode/Usf100.html">USF-100</a><br>
+			<a href="HwCode/Usf300.html">USF-300</a><br>
+			<a href="HwCode/Uw500.html">UW-500</a><br>
+			<a href="HwCode/UWF4.html">UW-F4</a><br>
+			
+			<P>===未上線===</P>						
+			<a href="https://drive.google.com/file/d/1zMVfoUPlHE7-S01eUZWYRbTxi4tt-q2J/view?usp=sharing">MX5600(手冊)</a><br>
+			<a href="HwCode/MX8600.html">MX8600</a><br>
+			<a href="HwCode/RG8_UNIT.html">RG8</a><br><br>
+
+			<a href="main.html">●回主選單</a>
+
+	</div>
+
+	</body>
+</html>
