@@ -20,6 +20,19 @@
 	</head>
 	
 	<body>		
+	<script>
+		var d = localStorage.getItem('final');
+
+
+		do {
+			var d = localStorage.getItem('final');
+			//code block to be executed
+		    console.log("Waiting");
+		}
+		while (d == "");
+		
+		self.location.href="ShowResult.html";
+	</script>
 		<p id="Output" style="font-size:6vw; position:left" >查詢中...</p>
 	</body>
 </html>

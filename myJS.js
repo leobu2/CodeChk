@@ -19,12 +19,37 @@ var	finalData;
 		alert('===不刪除Cookie===\n目前UserID的值為: ' + UserID + '\n目前UserName的值為: ' + UserName);
 	}
 */
-	function read_finalData(){
+/* 	function read_finalData(){
 		var r = finalData;
 		return r;
+	} */
+	
+	function openNav(cls) {
+		if (cls == "HW"){
+			document.getElementById("hw-Waiting").style.display = "block";
+		}else if(cls == "SW"){
+			document.getElementById("sw-Waiting").style.display = "block";
+		}	  
 	}
 
+	function closeNav() {
+	  document.getElementById("myNav").style.display = "none";
+	}
+
+
+	function goBack(){
+			
+		var w = localStorage.getItem('who');
+		if (w == "HW"){
+			self.location.href="HwErrorCodeSS.html";					
+		}else if (w == "SW"){			
+			self.location.href="SwErrorCodeSS.html";	
+		}
+
+	}
 	function readSS(cls,sheet,title_chk,type,sRow,sCol){	
+		
+		
 		////////////// 決定 sheet---開始
 		//試算表共用後複製出來的連結
 		var hw_code = "https://docs.google.com/spreadsheets/d/191ebFViUYDTgbCD4wyyqP1RkNxl1lTPnMIlgJOePP6o/edit?usp=sharing";
@@ -47,7 +72,21 @@ var	finalData;
 		var 開始列 = sCol; //列 (ABCD....) - coulmn 橫	
 		
 		代碼 = prompt("請輸入錯誤碼");
-		self.location="wait.html";
+		//self.location="wait.html";
+		//localStorage.setItem('final',"");
+		localStorage.setItem('who',cls);
+		console.log("代碼=" & 代碼);
+		
+		//如果按取消就離開
+		if (代碼 == null ){
+			return;
+		}else if  (代碼 == ""){
+			alert("未輸入值!");
+			return;
+		}
+		
+		openNav(cls);
+		
 		
 		var parameter = {
 			name: 客戶,
@@ -64,15 +103,12 @@ var	finalData;
 			
 		$.get('https://script.google.com/macros/s/AKfycbx0oNiTZFqCTNapVYzLvhMo41R-xHQ2d6nhVd2fQvL1t1GiD5NUtyjOsXuNfjbGNBKbDg/exec', parameter, function(data) {
 			console.log(data);
-			if(data == "" || data == undefined){
-				alert("查無資料!");
-			}else{
+
 				localStorage.setItem('final',data);
 				//$.ajaxSettings.async = true;
 				self.location.href="ShowResult.html";
 				myFunInput(代碼,客戶,data);				
 				
-			}					
 		});
 	}
 	

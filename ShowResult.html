@@ -20,12 +20,16 @@
 	</head>
 	
 	<body>
-		<a href="HwErrorCode.html">●返回</a><br>
-		<p id="Output" style="font-size:6vw; position:left" >請稍等...!</p>
+		
+		<a href="javascript: void(0)" onClick="goBack()">●返回</a><br>
+		<p id="Output" style="font-size:6vw; position:left" >查詢中...</p>
 		
 		
 		<script>	
 			var d = localStorage.getItem('final');
+			if (d == "" ){
+				d = "查無資料!";
+			}
 			var obj = $("#Output").text(d);
 			obj.html(obj.html().replace(/\n/g,'<br/>'));			
 		</script>
