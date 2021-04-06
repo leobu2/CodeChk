@@ -107,7 +107,8 @@ var	finalData;
 				localStorage.setItem('final',data);
 				//$.ajaxSettings.async = true;
 				self.location.href="ShowResult.html";
-				myFunInput(代碼,客戶,data);				
+				myFunInput(代碼,客戶,data);	
+				closeNav();
 				
 		});
 	}
