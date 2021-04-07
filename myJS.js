@@ -32,8 +32,13 @@ var	finalData;
 		}	  
 	}
 
-	function closeNav() {
-	  document.getElementById("myNav").style.display = "none";
+	function closeNav(cls) {
+		if (cls == "HW"){
+			document.getElementById("hw-Waiting").style.display = "none";
+		}else if(cls == "SW"){
+			document.getElementById("sw-Waiting").style.display = "none";
+		}	  
+
 	}
 
 
@@ -105,10 +110,12 @@ var	finalData;
 			console.log(data);
 
 				localStorage.setItem('final',data);
+				closeNav(cls);
+				
 				//$.ajaxSettings.async = true;
 				self.location.href="ShowResult.html";
 				myFunInput(代碼,客戶,data);	
-				closeNav();
+				
 				
 		});
 	}
