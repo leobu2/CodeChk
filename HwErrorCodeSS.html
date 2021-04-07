@@ -17,12 +17,12 @@
 			
 			readSS(分類,sheetName, title, 模糊/精準, 開始行,開始列)
 			
-			分類: 供區分要用哪個試算表
-			sheetName: 要找試算表內的哪一個 sheetName
-			title: sheet 內的哪一列為關鍵值
-			模糊/精準: 相等於查詢值才會 return 或是 包含查詢值就會 return
-			開始行: 從哪行開始
-			開始列: 從哪列開始
+			1.分類: 供區分要用哪個試算表
+			2.sheetName: 要找試算表內的哪一個 sheetName
+			3.title: sheet 內的哪一列為關鍵值
+			4.模糊/精準: 相等於查詢值才會 return 或是 包含查詢值就會 return (0=模糊/1=精準)
+			5.開始行: 從哪行開始
+			6.開始列: 從哪列開始
 			-->
 			
 			<P>===存提款機===</P>
@@ -30,13 +30,14 @@
 			<!--<a href="HwCode/ForRG7Code.html">RG7(舊版)</a><br>-->
 			<a href="HwCode/TG7.html">TG7</a><br>		
 			
-			<a href="javascript: void(0)" onClick="readSS('HW','WN-CDM','錯誤碼',0,1,1)">WN-CDM</a><br>
+			<a href="javascript: void(0)" onClick="readSS('HW','WN-CDM','錯誤碼',1,1,1)">WN-CDM</a><br>
 			
 			<a href="HwCode/WN_8.html">WN(8碼)</a><br>
-			<a href="HwCode/Atm21s.html">ATM21S</a><br>
+			<!-- <a href="HwCode/Atm21s.html">ATM21S</a><br> -->
 			
 			<P>===醫療繳費機===</P>
-			<a href="HwCode/CRF.html">CRF</a><br>
+			<!-- <a href="HwCode/CRF.html">CRF</a><br> -->
+			<a href="javascript: void(0)" onClick="readSS('HW','CRF','代碼',1,1,1)">CRF</a><br>
 			<a href="HwCode/F53.html">F53(出鈔)</a><br>
 			<a href="HwCode/IVIZION.html">iVizion(入鈔)</a><br>
 			

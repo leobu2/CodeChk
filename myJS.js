@@ -111,10 +111,11 @@ var	finalData;
 
 				localStorage.setItem('final',data);
 				closeNav(cls);
+				myFunInput(代碼,客戶,data);	
 				
 				//$.ajaxSettings.async = true;
 				self.location.href="ShowResult.html";
-				myFunInput(代碼,客戶,data);	
+				
 				
 				
 		});
