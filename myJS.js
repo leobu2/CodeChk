@@ -90,7 +90,7 @@ var	finalData;
 			return;
 		}
 		
-		//openNav(cls);
+		openNav(cls);
 		
 		
 		var parameter = {
@@ -111,7 +111,7 @@ var	finalData;
 			console.log(data);
 
 				localStorage.setItem('final',data);
-				//closeNav(cls);
+				closeNav(cls);
 				
 				
 				//$.ajaxSettings.async = true;
