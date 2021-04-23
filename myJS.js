@@ -90,7 +90,7 @@ var	finalData;
 			return;
 		}
 		
-		openNav(cls);
+		//openNav(cls);
 		
 		
 		var parameter = {
@@ -106,11 +106,12 @@ var	finalData;
 			
 		//$.ajaxSettings.async = false;
 			
+			//script 發布網址
 		$.get('https://script.google.com/macros/s/AKfycbx0oNiTZFqCTNapVYzLvhMo41R-xHQ2d6nhVd2fQvL1t1GiD5NUtyjOsXuNfjbGNBKbDg/exec', parameter, function(data) {
 			console.log(data);
 
 				localStorage.setItem('final',data);
-				closeNav(cls);
+				//closeNav(cls);
 				
 				
 				//$.ajaxSettings.async = true;
@@ -121,7 +122,7 @@ var	finalData;
 		});
 	}
 	
-	
+	/* 
 function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15	
 	
 	if(Cookies.get('UserID')== null){
@@ -174,7 +175,7 @@ function getPosition(){ //新增內容for cookie testing-2018.09.10 17:15
 			
 	
 
-}//KEEP THIS FUNCTION FOR HTML PAGE USE
+}//KEEP THIS FUNCTION FOR HTML PAGE USE */
 
 /*
 function FromSS(){
