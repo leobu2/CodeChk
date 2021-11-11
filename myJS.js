@@ -24,6 +24,24 @@ var	finalData;
 		return r;
 	} */
 	
+	function simpleOutput(UpLowerCase = 1) {
+		
+		if (UpLowerCase == 1 ){
+			result = "您查詢的代碼為:  " + UserEnter + "\n\n" + Answer[UserEnter.toUpperCase()];
+		}else if(UpLowerCase == 0){
+			result = "您查詢的代碼為:  " + UserEnter + "\n\n" + Answer[UserEnter.toLowerCase()];
+		}
+		
+		alert(result);
+		if(result == undefined){result = 'undefined';}
+			
+	}
+	
+	function OKIOutput() {
+		showFinal = "您查詢的代碼為:  " + UserEnter + "\n\n" + showFinal;
+		alert(showFinal);
+	}
+			
 	function openNav(cls) {
 		if (cls == "HW"){
 			document.getElementById("hw-Waiting").style.display = "block";

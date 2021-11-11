@@ -272,7 +272,7 @@
 				showFinal = 'undefined';
 			}else{
 				showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + HCode[HcodeUser.toUpperCase()] + " " +LCode[LcodeUser.toUpperCase()]);
-				alert(showFinal);
+				OKIOutput();
 			}
 		}else{//進入這裡的group code，應該只有26,28,29,42 (oki未提供group code 28 的內容)
 			
@@ -282,7 +282,7 @@
 				showFinal = 'undefined';
 			}else{
 				showFinal = ("【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
-				alert(showFinal);
+				OKIOutput();
 				//document.write(showFinal.small()); //可輸出在網頁上
 			}
 		}

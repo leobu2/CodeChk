@@ -2083,7 +2083,7 @@
 					showFinal = 'undefined';
 				}else{
 					showFinal = (showuser + "【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + XFSCode[UserEnter.toUpperCase()]);
-					alert(showFinal);
+					OKIOutput();
 				}
 			}else{//沒查到xfs code, 就看其他BRM 4碼code
 				
@@ -2093,7 +2093,7 @@
 					showFinal = 'undefined';
 				}else{
 					showFinal = (showuser + "【GROUP CODE】\n"   + GCode[GcodeUser.toUpperCase()] + "\n\n" + "【DETAIL CODE】\n" + DCode[DcodeUser.toUpperCase()]);
-					alert(showFinal);
+					OKIOutput();
 				}
 			}	
 			
@@ -2105,7 +2105,7 @@
 				showFinal = 'undefined';
 			}else{
 				showFinal = (showuser + "【DETAIL CODE】\n" + DCode[UserEnter.toUpperCase()]);
-				alert(showFinal);
+				OKIOutput();
 			//document.write(showFinal.small()); //可輸出在網頁上
 			}
 		}
